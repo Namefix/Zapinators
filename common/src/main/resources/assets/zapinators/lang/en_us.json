@@ -1,0 +1,9 @@
+{
+    "sound.zapinators.space_gun_shoot": "Space Gun shot",
+    "sound.zapinators.laser_rifle_shoot": "Laser Rifle shot",
+    "sound.zapinators.zapinator_shot": "Zapinator shot",
+
+    "item.zapinators.space_gun": "Space Gun",
+    "item.zapinators.laser_rifle": "Laser Rifle",
+    "item.zapinators.zapinator": "Zapinator"
+}

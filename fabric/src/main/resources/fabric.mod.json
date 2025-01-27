@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "zapinators",
+  "version": "${version}",
+  "name": "Zapinators",
+  "description": "Adds the laser guns from Terraria",
+  "authors": [
+    "Namefix"
+  ],
+  "contact": {
+    "homepage": "https://github.com/Namefix/Zapinators",
+    "sources": "https://github.com/Namefix/Zapinators",
+    "issues": "https://github.com/Namefix/Zapinators/issues"
+  },
+  "license": "GPL-3.0",
+  "icon": "assets/zapinators/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.namefix.fabric.ZapinatorsModFabric"
+    ],
+    "client": [
+      "com.namefix.fabric.client.ZapinatorsModFabricClient"
+    ]
+  },
+  "mixins": [
+    "zapinators.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.10",
+    "minecraft": "~1.21.4",
+    "java": ">=21",
+    "architectury": ">=15.0.1",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

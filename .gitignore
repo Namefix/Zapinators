@@ -1,0 +1,10 @@
+build/
+fabric/build
+neoforge/build
+
+.gradle/
+fabric/.gradle/
+neoforge/.gradle/
+
+fabric/run/
+neoforge/run/

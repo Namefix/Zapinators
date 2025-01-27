@@ -1,0 +1,20 @@
+{
+  "space_gun_shoot": {
+    "subtitle": "sound.zapinators.space_gun_shoot",
+    "sounds": [
+      "zapinators:space_gun_shoot"
+    ]
+  },
+  "laser_rifle_shoot": {
+    "subtitle": "sound.zapinators.laser_rifle_shoot",
+    "sounds": [
+      "zapinators:laser_rifle_shoot"
+    ]
+  },
+  "zapinator_shoot": {
+    "subtitle": "sound.zapinators.zapinator_shoot",
+    "sounds": [
+      "zapinators:zapinator_shoot"
+    ]
+  }
+}

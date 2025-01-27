@@ -1,0 +1,38 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+#issueTrackerURL = ""
+license = "GPL-3.0"
+
+[[mods]]
+modId = "zapinators"
+version = "${version}"
+displayName = "Zapinators"
+authors = "Namefix"
+description = '''
+Adds the laser guns from Terraria
+'''
+#logoFile = ""
+
+[[dependencies.zapinators]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.4,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.zapinators]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.4,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.zapinators]]
+modId = "architectury"
+type = "required"
+versionRange = "[15.0.1,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[mixins]]
+config = "zapinators.mixins.json"
