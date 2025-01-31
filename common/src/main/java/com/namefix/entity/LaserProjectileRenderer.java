@@ -32,7 +32,8 @@ public class LaserProjectileRenderer<T extends LaserProjectile, S extends LaserP
             float yaw = (float) (Math.toDegrees(Math.atan2(vel.z, vel.x)) - 90.0);
             float pitch = (float) Math.toDegrees(Math.atan2(vel.y, Math.sqrt(vel.x * vel.x + vel.z * vel.z)));
 
-            //poseStack.translate(0.0, entityRenderState.size.z/ 2.0, 0.0);
+            poseStack.translate(-entityRenderState.size.x / 2, entityRenderState.size.y / 2, 0);
+
             poseStack.mulPose(Axis.YP.rotationDegrees(-yaw));
             poseStack.mulPose(Axis.XP.rotationDegrees(-pitch));
         }
@@ -53,45 +54,44 @@ public class LaserProjectileRenderer<T extends LaserProjectile, S extends LaserP
         int skyLight = (light >> 16) & 0xFFFF;
 
         poseStack.pushPose();
-        poseStack.scale(1.0f, 1.0f, 1.0f);
+        poseStack.translate(-width/2, -height/2, -length/2);
 
         PoseStack.Pose entry = poseStack.last();
         Matrix4f matrix = poseStack.last().pose();
 
-        // FRONT FACE
         renderQuad(vertexConsumer, matrix, entry,
-                -width / 2, 0.0f, 0.0f,  // Bottom-left
-                width / 2, height, 0.0f,  // Top-right
+                0, 0, 0,           // Bottom-left
+                width, height, 0,  // Top-right
                 r, g, b, alpha, blockLight, skyLight);
 
         // BACK FACE
         renderQuad(vertexConsumer, matrix, entry,
-                width / 2, 0.0f, length,  // Bottom-right
-                -width / 2, height, length, // Top-left
+                width, 0, length,  // Bottom-right
+                0, height, length, // Top-left
                 r, g, b, alpha, blockLight, skyLight);
 
         // TOP FACE
         renderQuad(vertexConsumer, matrix, entry,
-                -width / 2, height, 0.0f,  // Front-left
-                width / 2, height, length, // Back-right
+                0, height, 0,      // Front-left
+                width, height, length, // Back-right
                 r, g, b, alpha, blockLight, skyLight);
 
         // BOTTOM FACE
         renderQuad(vertexConsumer, matrix, entry,
-                -width / 2, 0.0f, 0.0f,  // Front-left
-                width / 2, 0.0f, length, // Back-right
+                0, 0, 0,          // Front-left
+                width, 0, length, // Back-right
                 r, g, b, alpha, blockLight, skyLight);
 
         // LEFT FACE
         renderQuad(vertexConsumer, matrix, entry,
-                -width / 2, 0.0f, 0.0f,    // Front-bottom
-                -width / 2, height, length, // Back-top
+                0, 0, 0,         // Front-bottom
+                0, height, length, // Back-top
                 r, g, b, alpha, blockLight, skyLight);
 
         // RIGHT FACE
         renderQuad(vertexConsumer, matrix, entry,
-                width / 2, 0.0f, 0.0f,    // Front-bottom
-                width / 2, height, length, // Back-top
+                width, 0, 0,         // Front-bottom
+                width, height, length, // Back-top
                 r, g, b, alpha, blockLight, skyLight);
 
         poseStack.popPose();
@@ -102,41 +102,23 @@ public class LaserProjectileRenderer<T extends LaserProjectile, S extends LaserP
                             float x2, float y2, float z2,
                             float r, float g, float b, float alpha,
                             int blockLight, int skyLight) {
-        // Front Face (Positive Z)
-        vertexConsumer.addVertex(matrix, x1, y1, z1).setColor(r, g, b, alpha).setUv(0.0f, 0.0f).setOverlay(OverlayTexture.NO_OVERLAY).setUv2(blockLight, skyLight).setNormal(entry, 0.0f, 0.0f, 1.0f);
-        vertexConsumer.addVertex(matrix, x2, y1, z1).setColor(r, g, b, alpha).setUv(1.0f, 0.0f).setOverlay(OverlayTexture.NO_OVERLAY).setUv2(blockLight, skyLight).setNormal(entry, 0.0f, 0.0f, 1.0f);
-        vertexConsumer.addVertex(matrix, x2, y2, z1).setColor(r, g, b, alpha).setUv(1.0f, 1.0f).setOverlay(OverlayTexture.NO_OVERLAY).setUv2(blockLight, skyLight).setNormal(entry, 0.0f, 0.0f, 1.0f);
-        vertexConsumer.addVertex(matrix, x1, y2, z1).setColor(r, g, b, alpha).setUv(0.0f, 1.0f).setOverlay(OverlayTexture.NO_OVERLAY).setUv2(blockLight, skyLight).setNormal(entry, 0.0f, 0.0f, 1.0f);
-
-        // Back Face (Negative Z)
+        // Back-Front
         vertexConsumer.addVertex(matrix, x2, y1, z2).setColor(r, g, b, alpha).setUv(0.0f, 0.0f).setOverlay(OverlayTexture.NO_OVERLAY).setUv2(blockLight, skyLight).setNormal(entry, 0.0f, 0.0f, -1.0f);
         vertexConsumer.addVertex(matrix, x1, y1, z2).setColor(r, g, b, alpha).setUv(1.0f, 0.0f).setOverlay(OverlayTexture.NO_OVERLAY).setUv2(blockLight, skyLight).setNormal(entry, 0.0f, 0.0f, -1.0f);
         vertexConsumer.addVertex(matrix, x1, y2, z2).setColor(r, g, b, alpha).setUv(1.0f, 1.0f).setOverlay(OverlayTexture.NO_OVERLAY).setUv2(blockLight, skyLight).setNormal(entry, 0.0f, 0.0f, -1.0f);
         vertexConsumer.addVertex(matrix, x2, y2, z2).setColor(r, g, b, alpha).setUv(0.0f, 1.0f).setOverlay(OverlayTexture.NO_OVERLAY).setUv2(blockLight, skyLight).setNormal(entry, 0.0f, 0.0f, -1.0f);
 
-        // Left Face (Negative X)
+        // Left-Right
         vertexConsumer.addVertex(matrix, x1, y1, z1).setColor(r, g, b, alpha).setUv(0.0f, 0.0f).setOverlay(OverlayTexture.NO_OVERLAY).setUv2(blockLight, skyLight).setNormal(entry, -1.0f, 0.0f, 0.0f);
         vertexConsumer.addVertex(matrix, x1, y2, z1).setColor(r, g, b, alpha).setUv(1.0f, 0.0f).setOverlay(OverlayTexture.NO_OVERLAY).setUv2(blockLight, skyLight).setNormal(entry, -1.0f, 0.0f, 0.0f);
         vertexConsumer.addVertex(matrix, x1, y2, z2).setColor(r, g, b, alpha).setUv(1.0f, 1.0f).setOverlay(OverlayTexture.NO_OVERLAY).setUv2(blockLight, skyLight).setNormal(entry, -1.0f, 0.0f, 0.0f);
         vertexConsumer.addVertex(matrix, x1, y1, z2).setColor(r, g, b, alpha).setUv(0.0f, 1.0f).setOverlay(OverlayTexture.NO_OVERLAY).setUv2(blockLight, skyLight).setNormal(entry, -1.0f, 0.0f, 0.0f);
 
-        // Right Face (Positive X)
-        vertexConsumer.addVertex(matrix, x2, y1, z1).setColor(r, g, b, alpha).setUv(0.0f, 0.0f).setOverlay(OverlayTexture.NO_OVERLAY).setUv2(blockLight, skyLight).setNormal(entry, 1.0f, 0.0f, 0.0f);
-        vertexConsumer.addVertex(matrix, x2, y2, z1).setColor(r, g, b, alpha).setUv(1.0f, 0.0f).setOverlay(OverlayTexture.NO_OVERLAY).setUv2(blockLight, skyLight).setNormal(entry, 1.0f, 0.0f, 0.0f);
-        vertexConsumer.addVertex(matrix, x2, y2, z2).setColor(r, g, b, alpha).setUv(1.0f, 1.0f).setOverlay(OverlayTexture.NO_OVERLAY).setUv2(blockLight, skyLight).setNormal(entry, 1.0f, 0.0f, 0.0f);
-        vertexConsumer.addVertex(matrix, x2, y1, z2).setColor(r, g, b, alpha).setUv(0.0f, 1.0f).setOverlay(OverlayTexture.NO_OVERLAY).setUv2(blockLight, skyLight).setNormal(entry, 1.0f, 0.0f, 0.0f);
-
-        // Top Face
+        // Top-Bottom
         vertexConsumer.addVertex(matrix, x1, y2, z1).setColor(r, g, b, alpha).setUv(0.0f, 0.0f).setOverlay(OverlayTexture.NO_OVERLAY).setUv2(blockLight, skyLight).setNormal(entry, 0.0f, 1.0f, 0.0f);
         vertexConsumer.addVertex(matrix, x2, y2, z1).setColor(r, g, b, alpha).setUv(1.0f, 0.0f).setOverlay(OverlayTexture.NO_OVERLAY).setUv2(blockLight, skyLight).setNormal(entry, 0.0f, 1.0f, 0.0f);
         vertexConsumer.addVertex(matrix, x2, y2, z2).setColor(r, g, b, alpha).setUv(1.0f, 1.0f).setOverlay(OverlayTexture.NO_OVERLAY).setUv2(blockLight, skyLight).setNormal(entry, 0.0f, 1.0f, 0.0f);
         vertexConsumer.addVertex(matrix, x1, y2, z2).setColor(r, g, b, alpha).setUv(0.0f, 1.0f).setOverlay(OverlayTexture.NO_OVERLAY).setUv2(blockLight, skyLight).setNormal(entry, 0.0f, 1.0f, 0.0f);
-
-        // Bottom Face
-        vertexConsumer.addVertex(matrix, x1, y1, z1).setColor(r, g, b, alpha).setUv(0.0f, 0.0f).setOverlay(OverlayTexture.NO_OVERLAY).setUv2(blockLight, skyLight).setNormal(entry, 0.0f, -1.0f, 0.0f);
-        vertexConsumer.addVertex(matrix, x2, y1, z1).setColor(r, g, b, alpha).setUv(1.0f, 0.0f).setOverlay(OverlayTexture.NO_OVERLAY).setUv2(blockLight, skyLight).setNormal(entry, 0.0f, -1.0f, 0.0f);
-        vertexConsumer.addVertex(matrix, x2, y1, z2).setColor(r, g, b, alpha).setUv(1.0f, 1.0f).setOverlay(OverlayTexture.NO_OVERLAY).setUv2(blockLight, skyLight).setNormal(entry, 0.0f, -1.0f, 0.0f);
-        vertexConsumer.addVertex(matrix, x1, y1, z2).setColor(r, g, b, alpha).setUv(0.0f, 1.0f).setOverlay(OverlayTexture.NO_OVERLAY).setUv2(blockLight, skyLight).setNormal(entry, 0.0f, -1.0f, 0.0f);
     }
 
     @Override

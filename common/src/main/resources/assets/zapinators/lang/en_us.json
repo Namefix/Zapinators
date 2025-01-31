@@ -1,9 +1,12 @@
 {
-    "sound.zapinators.space_gun_shoot": "Space Gun shot",
-    "sound.zapinators.laser_rifle_shoot": "Laser Rifle shot",
+    "sound.zapinators.space_gun_shot": "Space Gun shot",
+    "sound.zapinators.laser_rifle_shot": "Laser Rifle shot",
     "sound.zapinators.zapinator_shot": "Zapinator shot",
+    "sound.zapinators.color_zapinator_shot": "Color Zapinator shot",
 
     "item.zapinators.space_gun": "Space Gun",
     "item.zapinators.laser_rifle": "Laser Rifle",
-    "item.zapinators.zapinator": "Zapinator"
+    "item.zapinators.zapinator": "Zapinator",
+    "item.zapinators.gray_zapinator": "Gray Zapinator",
+    "item.zapinators.orange_zapinator": "Orange Zapinator"
 }

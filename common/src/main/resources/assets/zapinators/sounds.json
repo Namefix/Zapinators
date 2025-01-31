@@ -1,20 +1,26 @@
 {
   "space_gun_shoot": {
-    "subtitle": "sound.zapinators.space_gun_shoot",
+    "subtitle": "sound.zapinators.space_gun_shot",
     "sounds": [
       "zapinators:space_gun_shoot"
     ]
   },
   "laser_rifle_shoot": {
-    "subtitle": "sound.zapinators.laser_rifle_shoot",
+    "subtitle": "sound.zapinators.laser_rifle_shot",
     "sounds": [
       "zapinators:laser_rifle_shoot"
     ]
   },
   "zapinator_shoot": {
-    "subtitle": "sound.zapinators.zapinator_shoot",
+    "subtitle": "sound.zapinators.zapinator_shot",
     "sounds": [
       "zapinators:zapinator_shoot"
+    ]
+  },
+  "color_zapinator_shoot": {
+    "subtitle": "sound.zapinators.color_zapinator_shot",
+    "sounds": [
+      "zapinators:color_zapinator_shoot"
     ]
   }
 }

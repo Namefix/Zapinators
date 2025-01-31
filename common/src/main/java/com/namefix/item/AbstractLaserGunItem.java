@@ -1,6 +1,7 @@
 package com.namefix.item;
 
 import com.namefix.entity.LaserProjectile;
+import com.namefix.enums.ZapinatorType;
 import com.namefix.registry.EntityRegistry;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
@@ -25,6 +26,8 @@ public abstract class AbstractLaserGunItem extends Item {
     protected float laserHeight = 0.15f;
     protected boolean blockPiercing = false;
     protected boolean entityPiercing = true;
+    protected int maxPiercing = 3;
+    protected ZapinatorType zapinatorType = ZapinatorType.NONE;
     protected SoundEvent shootSound;
 
     public AbstractLaserGunItem(Properties properties) {
@@ -37,6 +40,7 @@ public abstract class AbstractLaserGunItem extends Item {
             LaserProjectile projectile = new LaserProjectile(EntityRegistry.LASER_PROJECTILE.get(), level);
             projectile.setPos(player.getX(), player.getEyeY() - 0.1, player.getZ());
             Vec3 lookVec = player.getLookAngle();
+            projectile.setOwner(player);
             projectile.setDeltaMovement(
                     lookVec.x * projectileSpeed,
                     lookVec.y * projectileSpeed,
@@ -49,6 +53,8 @@ public abstract class AbstractLaserGunItem extends Item {
             projectile.setSize(new Vector3f(laserWidth, laserHeight, laserLength));
             projectile.setBlockPiercing(blockPiercing);
             projectile.setEntityPiercing(entityPiercing);
+            projectile.setMaxPiercing(maxPiercing);
+            projectile.setZapinatorType(zapinatorType);
             level.addFreshEntity(projectile);
         }
         player.getCooldowns().addCooldown(this.arch$registryName(), itemCooldown);

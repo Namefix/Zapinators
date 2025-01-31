@@ -13,6 +13,7 @@ public class SoundRegistry {
     public static final RegistrySupplier<SoundEvent> SPACE_GUN_SHOOT = SOUNDS.register("space_gun_shoot", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "space_gun_shoot")));
     public static final RegistrySupplier<SoundEvent> LASER_RIFLE_SHOOT = SOUNDS.register("laser_rifle_shoot", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "laser_rifle_shoot")));
     public static final RegistrySupplier<SoundEvent> ZAPINATOR_SHOOT = SOUNDS.register("zapinator_shoot", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "zapinator_shoot")));
+    public static final RegistrySupplier<SoundEvent> COLOR_ZAPINATOR_SHOOT = SOUNDS.register("color_zapinator_shoot", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "color_zapinator_shoot")));
 
     public static void register() {
         SOUNDS.register();

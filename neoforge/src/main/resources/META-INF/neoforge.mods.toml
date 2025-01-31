@@ -11,7 +11,7 @@ authors = "Namefix"
 description = '''
 Adds the laser guns from Terraria
 '''
-#logoFile = ""
+logoFile = "assets/zapinators/icon.png"
 
 [[dependencies.zapinators]]
 modId = "neoforge"

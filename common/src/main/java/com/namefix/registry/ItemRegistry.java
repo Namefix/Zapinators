@@ -1,6 +1,8 @@
 package com.namefix.registry;
 
 import com.namefix.ZapinatorsMod;
+import com.namefix.enums.ZapinatorType;
+import com.namefix.item.ColorZapinatorItem;
 import com.namefix.item.LaserRifleItem;
 import com.namefix.item.SpaceGunItem;
 import com.namefix.item.ZapinatorItem;
@@ -17,6 +19,8 @@ public class ItemRegistry {
     public static final RegistrySupplier<Item> SPACE_GUN = registerItem("space_gun", properties -> new SpaceGunItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB)));
     public static final RegistrySupplier<Item> LASER_RIFLE = registerItem("laser_rifle", properties -> new LaserRifleItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB)));
     public static final RegistrySupplier<Item> ZAPINATOR = registerItem("zapinator", properties -> new ZapinatorItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB)));
+    public static final RegistrySupplier<Item> GRAY_ZAPINATOR = registerItem("gray_zapinator", properties -> new ColorZapinatorItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB), ZapinatorType.GRAY, 2.0f));
+    public static final RegistrySupplier<Item> ORANGE_ZAPINATOR = registerItem("orange_zapinator", properties -> new ColorZapinatorItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB), ZapinatorType.ORANGE, 5.0f));
 
     public static void register() {
         ITEMS.register();
