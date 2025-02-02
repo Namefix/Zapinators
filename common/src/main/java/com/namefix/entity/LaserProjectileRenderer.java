@@ -37,7 +37,7 @@ public class LaserProjectileRenderer<T extends LaserProjectile, S extends LaserP
             poseStack.mulPose(Axis.YP.rotationDegrees(-yaw));
             poseStack.mulPose(Axis.XP.rotationDegrees(-pitch));
         }
-        renderLaser(entityRenderState, poseStack, multiBufferSource, r, g, b, 1.0f);
+        renderLaser(entityRenderState, poseStack, multiBufferSource, r, g, b, 0.5f);
         poseStack.popPose();
         super.render(entityRenderState, poseStack, multiBufferSource, i);
     }
@@ -58,8 +58,91 @@ public class LaserProjectileRenderer<T extends LaserProjectile, S extends LaserP
 
         PoseStack.Pose entry = poseStack.last();
         Matrix4f matrix = poseStack.last().pose();
-
         // uv1 - front left, uv2 - front right, uv3 - back-right, uv4 - back-left
+        // TO-DO: Toggleable laser rendering options, fancy and fast
+        // LASER CORE
+
+        float coreThickness = 0.04f;
+        // front
+        renderQuad(vertexConsumer, matrix, entry,
+                coreThickness, coreThickness, length/4,          // x1, y1, z1 (bottom-left)
+                width-coreThickness, coreThickness, length/4,      // x2, y2, z2 (bottom-right)
+                width-coreThickness, height-coreThickness, length/4, // x3, y3, z3 (top-right)
+                coreThickness, height-coreThickness, length/4,     // x4, y4, z4 (top-left)
+                0.0f, 0.0f,
+                1.0f, 0.0f,
+                1.0f, 1.0f,
+                0.0f, 1.0f,
+                r, g, b, 1.0f, blockLight, skyLight,
+                0.0f, 0.0f, -1.0f
+        );
+        // back
+        renderQuad(vertexConsumer, matrix, entry,
+                width-coreThickness, coreThickness, length-(length/4),      // bottom-right
+                coreThickness, coreThickness, length-(length/4),          // bottom-left
+                coreThickness, height-coreThickness, length-(length/4),     // top-left
+                width-coreThickness, height-coreThickness, length-(length/4), // top-right
+                0.0f, 0.0f,
+                1.0f, 0.0f,
+                1.0f, 1.0f,
+                0.0f, 1.0f,
+                r, g, b, 1.0f, blockLight, skyLight,
+                0.0f, 0.0f, 1.0f
+        );
+        // top
+        renderQuad(vertexConsumer, matrix, entry,
+                coreThickness, height-coreThickness, length/4,          // front-left
+                width-coreThickness, height-coreThickness, length/4,      // front-right
+                width-coreThickness, height-coreThickness, length-(length/4), // back-right
+                coreThickness, height-coreThickness, length-(length/4),     // back-left
+                0.0f, 0.0f,
+                1.0f, 0.0f,
+                1.0f, 1.0f,
+                0.0f, 1.0f,
+                r, g, b, 1.0f, blockLight, skyLight,
+                0.0f, 1.0f, 0.0f
+        );
+        // bottom
+        renderQuad(vertexConsumer, matrix, entry,
+                coreThickness, coreThickness, length/4,          // front-left
+                width-coreThickness, coreThickness, length/4,      // front-right
+                width-coreThickness, coreThickness, length-(length/4), // back-right
+                coreThickness, coreThickness, length-(length/4),     // back-left
+                0.0f, 0.0f,
+                1.0f, 0.0f,
+                1.0f, 1.0f,
+                0.0f, 1.0f,
+                r, g, b, 1.0f, blockLight, skyLight,
+                0.0f, -1.0f, 0.0f
+        );
+        // left
+        renderQuad(vertexConsumer, matrix, entry,
+                coreThickness, coreThickness, length/4,          // Bottom-front
+                coreThickness, coreThickness, length-(length/4),     // Bottom-back
+                coreThickness, height-coreThickness, length-(length/4),// Top-back
+                coreThickness, height-coreThickness, length/4,     // Top-front
+                1.0f, 0.0f,
+                1.0f, 1.0f,
+                0.0f, 1.0f,
+                0.0f, 0.0f,
+                r, g, b, alpha, blockLight, skyLight,
+                -1.0f, 0.0f, 0.0f
+        );
+        // right
+        renderQuad(vertexConsumer, matrix, entry,
+                width-coreThickness, coreThickness, length-(length/4),     // Bottom-back
+                width-coreThickness, coreThickness, length/4,          // Bottom-front
+                width-coreThickness, height-coreThickness, length/4,     // Top-front
+                width-coreThickness, height-coreThickness, length-(length/4),// Top-back
+                0.0f, 1.0f,
+                0.0f, 0.0f,
+                1.0f, 0.0f,
+                1.0f, 1.0f,
+                r, g, b, 1.0f, blockLight, skyLight,
+                1.0f, 0.0f, 0.0f
+        );
+
+        // LASER OUTLINE
         // Front face (z=0)
         renderQuad(vertexConsumer, matrix, entry,
                 0, 0, 0,          // x1, y1, z1 (bottom-left)
