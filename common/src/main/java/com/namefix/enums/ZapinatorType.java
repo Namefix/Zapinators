@@ -3,5 +3,10 @@ package com.namefix.enums;
 public enum ZapinatorType {
     NONE,
     GRAY,
-    ORANGE
+    ORANGE,
+    RED,
+    GREEN,
+    BLUE,
+    PURPLE,
+    BLACK
 }

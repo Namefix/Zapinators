@@ -7,6 +7,9 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -209,8 +212,31 @@ public class LaserProjectile extends AbstractHurtingProjectile {
             Utils.slowdownEntity(this, slowAmount);
         }
 
+        // custom zapinators
+        boolean customChance = random.nextFloat() < 0.5f;
+        if(customChance && target instanceof LivingEntity livingTarget) {
+            switch (zapinatorType) {
+                case RED: {
+                    livingTarget.setRemainingFireTicks(livingTarget.getRemainingFireTicks() + random.nextInt(5, 201));
+                    break;
+                }
+                case GREEN: {
+                    livingTarget.addEffect(new MobEffectInstance(MobEffects.POISON, random.nextInt(20, 201), 1));
+                    break;
+                }
+                case BLUE: {
+                    livingTarget.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, random.nextInt(20, 201), 1));
+                    break;
+                }
+                case PURPLE: {
+                    Utils.applyKnockback(livingTarget, this, baseKnockback*10);
+                    break;
+                }
+            }
+        }
+
         target.hurtServer((ServerLevel) target.level(), damageSources().playerAttack((Player) this.getOwner()), damage);
-        if(target instanceof LivingEntity livingtarget) Utils.applyKnockback(livingtarget, this, baseKnockback);
+        if(target instanceof LivingEntity livingTarget) Utils.applyKnockback(livingTarget, this, baseKnockback);
     }
 
     @Override
