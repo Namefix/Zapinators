@@ -15,10 +15,24 @@
     "item.zapinators.purple_zapinator": "Purple Zapinator",
     "item.zapinators.black_zapinator": "Black Zapinator",
 
+    "item.zapinators.raw_meteorite": "Raw Meteorite",
+    "item.zapinators.meteorite_ingot": "Meteorite Ingot",
+    "item.zapinators.meteorite_nugget": "Meteorite Nugget",
+    "item.zapinators.zapinator_reset_smithing_template": "Zapinator Reset",
+
     "item.zapinators.color_zapinator.description": "'It might be broken'",
     "item.zapinators.red_zapinator.description": "High chance to lit the target on fire",
     "item.zapinators.green_zapinator.description": "High chance to poison the target",
     "item.zapinators.blue_zapinator.description": "High chance to apply slowness to the target",
     "item.zapinators.purple_zapinator.description": "High chance to apply additional knockback to the target",
-    "item.zapinators.black_zapinator.description": "Not obtainable in survival"
+    "item.zapinators.black_zapinator.description": "Not obtainable in survival",
+
+    "item.zapinators.meteorite_ore": "Meteorite Ore",
+    "item.zapinators.raw_meteorite_block": "Block of Raw Meteorite",
+    "item.zapinators.meteorite_block": "Block of Meteorite",
+
+    "item.zapinators.smithing_template.zapinator_reset.applies_to": "Any Colored Zapinator",
+    "item.zapinators.smithing_template.zapinator_reset.base_slot_description": "Add a colored zapinator",
+    "item.zapinators.smithing_template.zapinator_reset.ingredients": "Any Zapinator Core",
+    "item.zapinators.smithing_template.zapinator_reset.additions_slot_description": "Add a Zapinator Core"
 }

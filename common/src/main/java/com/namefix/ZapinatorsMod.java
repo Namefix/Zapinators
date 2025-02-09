@@ -1,9 +1,6 @@
 package com.namefix;
 
-import com.namefix.registry.EntityRegistry;
-import com.namefix.registry.ItemRegistry;
-import com.namefix.registry.SoundRegistry;
-import com.namefix.registry.TabRegistry;
+import com.namefix.registry.*;
 import com.namefix.trade.ModVillagerTrades;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,10 +13,11 @@ public final class ZapinatorsMod {
         EntityRegistry.register();
         SoundRegistry.register();
         TabRegistry.register();
+        BlockRegistry.register();
         ItemRegistry.register();
 
         ModVillagerTrades.register();
 
-        LOGGER.info("--- Zapinator --- Mod --- initialized. ---");
+        LOGGER.info("--- Zapinators --- Mod --- initialized. ---");
     }
 }

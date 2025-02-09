@@ -8,11 +8,16 @@ import com.namefix.item.SpaceGunItem;
 import com.namefix.item.ZapinatorItem;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.SmithingTemplateItem;
+
+import java.util.Collections;
 
 public class ItemRegistry {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ZapinatorsMod.MOD_ID, Registries.ITEM);
@@ -27,6 +32,19 @@ public class ItemRegistry {
     public static final RegistrySupplier<Item> BLUE_ZAPINATOR = registerItem("blue_zapinator", properties -> new ColorZapinatorItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB), ZapinatorType.BLUE, 4.0f));
     public static final RegistrySupplier<Item> PURPLE_ZAPINATOR = registerItem("purple_zapinator", properties -> new ColorZapinatorItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB), ZapinatorType.PURPLE, 4.5f));
     public static final RegistrySupplier<Item> BLACK_ZAPINATOR = registerItem("black_zapinator", properties -> new ColorZapinatorItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB).rarity(Rarity.EPIC), ZapinatorType.BLACK, 999f));
+
+    public static final RegistrySupplier<Item> RAW_METEORITE = registerItem("raw_meteorite", properties -> new Item(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
+    public static final RegistrySupplier<Item> METEORITE_INGOT = registerItem("meteorite_ingot", properties -> new Item(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
+    public static final RegistrySupplier<Item> METEORITE_NUGGET = registerItem("meteorite_nugget", properties -> new Item(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
+    public static final RegistrySupplier<Item> ZAPINATOR_RESET_SMITHING_TEMPLATE = registerItem("zapinator_reset_smithing_template", properties -> new SmithingTemplateItem(
+            Component.translatable("item.zapinators.smithing_template.zapinator_reset.applies_to").withStyle(ChatFormatting.BLUE),
+            Component.translatable("item.zapinators.smithing_template.zapinator_reset.ingredients").withStyle(ChatFormatting.BLUE),
+            Component.translatable("item.zapinators.smithing_template.zapinator_reset.base_slot_description"),
+            Component.translatable("item.zapinators.smithing_template.zapinator_reset.additions_slot_description"),
+            null,
+            null,
+            properties.arch$tab(TabRegistry.ZAPINATORS_TAB).rarity(Rarity.UNCOMMON)
+    ));
 
     public static void register() {
         ITEMS.register();
