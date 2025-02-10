@@ -16,6 +16,9 @@
   "icon": "assets/zapinators/icon.png",
   "environment": "*",
   "entrypoints": {
+    "fabric-datagen": [
+      "com.namefix.fabric.datagen.ZapinatorsModDataGenerator"
+    ],
     "main": [
       "com.namefix.fabric.ZapinatorsModFabric"
     ],

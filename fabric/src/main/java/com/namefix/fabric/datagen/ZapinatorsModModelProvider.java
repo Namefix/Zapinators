@@ -1,0 +1,49 @@
+package com.namefix.fabric.datagen;
+
+import com.namefix.ZapinatorsMod;
+import com.namefix.registry.BlockRegistry;
+import com.namefix.registry.ItemRegistry;
+import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.minecraft.client.data.models.BlockModelGenerators;
+import net.minecraft.client.data.models.ItemModelGenerators;
+import net.minecraft.client.data.models.model.ModelTemplate;
+import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.data.models.model.TextureSlot;
+import net.minecraft.resources.ResourceLocation;
+
+import java.util.Optional;
+
+public class ZapinatorsModModelProvider extends FabricModelProvider {
+    public ZapinatorsModModelProvider(FabricDataOutput output) {
+        super(output);
+    }
+
+    @Override
+    public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
+        blockModelGenerators.createTrivialCube(BlockRegistry.METEORITE_ORE.getA().get());
+        blockModelGenerators.createTrivialCube(BlockRegistry.RAW_METEORITE_BLOCK.getA().get());
+        blockModelGenerators.createTrivialCube(BlockRegistry.METEORITE_BLOCK.getA().get());
+    }
+
+    @Override
+    public void generateItemModels(ItemModelGenerators itemModelGenerators) {
+        ModelTemplate gunTemplate = new ModelTemplate(Optional.of(ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "item/gun")), Optional.empty(), TextureSlot.LAYER0);;
+
+        itemModelGenerators.generateFlatItem(ItemRegistry.SPACE_GUN.get(), gunTemplate);
+        itemModelGenerators.generateFlatItem(ItemRegistry.LASER_RIFLE.get(), gunTemplate);
+        itemModelGenerators.generateFlatItem(ItemRegistry.ZAPINATOR.get(), gunTemplate);
+        itemModelGenerators.generateFlatItem(ItemRegistry.GRAY_ZAPINATOR.get(), gunTemplate);
+        itemModelGenerators.generateFlatItem(ItemRegistry.ORANGE_ZAPINATOR.get(), gunTemplate);
+        itemModelGenerators.generateFlatItem(ItemRegistry.RED_ZAPINATOR.get(), gunTemplate);
+        itemModelGenerators.generateFlatItem(ItemRegistry.GREEN_ZAPINATOR.get(), gunTemplate);
+        itemModelGenerators.generateFlatItem(ItemRegistry.BLUE_ZAPINATOR.get(), gunTemplate);
+        itemModelGenerators.generateFlatItem(ItemRegistry.PURPLE_ZAPINATOR.get(), gunTemplate);
+        itemModelGenerators.generateFlatItem(ItemRegistry.BLACK_ZAPINATOR.get(), gunTemplate);
+
+        itemModelGenerators.generateFlatItem(ItemRegistry.RAW_METEORITE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ItemRegistry.METEORITE_INGOT.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ItemRegistry.METEORITE_NUGGET.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ItemRegistry.ZAPINATOR_RESET_SMITHING_TEMPLATE.get(), ModelTemplates.FLAT_ITEM);
+    }
+}

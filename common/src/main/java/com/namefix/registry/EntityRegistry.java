@@ -25,7 +25,9 @@ public class EntityRegistry {
 
     public static void register() {
         ENTITY_TYPES.register();
+    }
 
+    public static void registerRenderers() {
         EntityRendererRegistry.register(LASER_PROJECTILE, LaserProjectileRenderer::new);
     }
 }

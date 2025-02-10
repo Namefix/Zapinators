@@ -20,6 +20,7 @@ public class TabRegistry {
     );
 
     public static void register() {
+
         TABS.register();
     }
 }
