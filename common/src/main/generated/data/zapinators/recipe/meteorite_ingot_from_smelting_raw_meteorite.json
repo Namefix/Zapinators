@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "group": "meteorite_ingot",
+  "ingredient": "zapinators:raw_meteorite",
+  "result": {
+    "id": "zapinators:meteorite_ingot"
+  }
+}

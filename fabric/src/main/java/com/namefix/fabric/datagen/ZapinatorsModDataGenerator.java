@@ -9,5 +9,8 @@ public class ZapinatorsModDataGenerator implements DataGeneratorEntrypoint {
         FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
         pack.addProvider(ZapinatorsModModelProvider::new);
+        pack.addProvider(ZapinatorsModRecipeProvider::new);
+        pack.addProvider(ZapinatorsModBlockTagProvider::new);
+        pack.addProvider(ZapinatorsModLootTableProvider::new);
     }
 }
