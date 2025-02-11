@@ -1,4 +1,5 @@
 build/
+.idea/
 fabric/build
 neoforge/build
 
