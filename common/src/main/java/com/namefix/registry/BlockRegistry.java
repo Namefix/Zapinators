@@ -58,7 +58,7 @@ public class BlockRegistry {
         RegistrySupplier<T> block = registerBlock(name, blockFactory, base);
         return new Tuple<>(
                 block,
-                ItemRegistry.registerItem(name, (settings) -> itemFactory.create(settings,block))
+                ItemRegistry.registerItem(name, (settings) -> itemFactory.create(settings.arch$tab(TabRegistry.ZAPINATORS_TAB),block))
         );
     }
 
