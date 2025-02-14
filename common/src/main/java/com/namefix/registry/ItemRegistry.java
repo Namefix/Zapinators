@@ -2,10 +2,7 @@ package com.namefix.registry;
 
 import com.namefix.ZapinatorsMod;
 import com.namefix.enums.ZapinatorType;
-import com.namefix.item.ColorZapinatorItem;
-import com.namefix.item.LaserRifleItem;
-import com.namefix.item.SpaceGunItem;
-import com.namefix.item.ZapinatorItem;
+import com.namefix.item.*;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.ChatFormatting;
@@ -16,6 +13,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.SmithingTemplateItem;
+import net.minecraft.world.item.equipment.ArmorType;
 
 import java.util.Collections;
 
@@ -45,6 +43,11 @@ public class ItemRegistry {
             null,
             properties.arch$tab(TabRegistry.ZAPINATORS_TAB).rarity(Rarity.UNCOMMON)
     ));
+
+    public static final RegistrySupplier<Item> METEORITE_HELMET = registerItem("meteorite_helmet", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, ArmorType.HELMET, properties.arch$tab(TabRegistry.ZAPINATORS_TAB), 25));
+    public static final RegistrySupplier<Item> METEORITE_CHESTPLATE = registerItem("meteorite_chestplate", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, ArmorType.CHESTPLATE, properties.arch$tab(TabRegistry.ZAPINATORS_TAB), 25));
+    public static final RegistrySupplier<Item> METEORITE_LEGGINGS = registerItem("meteorite_leggings", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, ArmorType.LEGGINGS, properties.arch$tab(TabRegistry.ZAPINATORS_TAB), 25));
+    public static final RegistrySupplier<Item> METEORITE_BOOTS = registerItem("meteorite_boots", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, ArmorType.BOOTS, properties.arch$tab(TabRegistry.ZAPINATORS_TAB), 25));
 
     public static void register() {
         ITEMS.register();

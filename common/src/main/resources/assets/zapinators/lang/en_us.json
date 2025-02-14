@@ -27,12 +27,18 @@
     "item.zapinators.purple_zapinator.description": "High chance to apply additional knockback to the target",
     "item.zapinators.black_zapinator.description": "Not obtainable in survival",
 
-    "item.zapinators.meteorite_ore": "Meteorite Ore",
-    "item.zapinators.raw_meteorite_block": "Block of Raw Meteorite",
-    "item.zapinators.meteorite_block": "Block of Meteorite",
-
     "item.zapinators.smithing_template.zapinator_reset.applies_to": "Any Colored Zapinator",
     "item.zapinators.smithing_template.zapinator_reset.base_slot_description": "Add a colored zapinator",
     "item.zapinators.smithing_template.zapinator_reset.ingredients": "Any Zapinator Core",
-    "item.zapinators.smithing_template.zapinator_reset.additions_slot_description": "Add a Zapinator Core"
+    "item.zapinators.smithing_template.zapinator_reset.additions_slot_description": "Add a Zapinator Core",
+
+    "item.zapinators.meteorite_helmet": "Meteorite Helmet",
+    "item.zapinators.meteorite_chestplate": "Meteorite Chestplate",
+    "item.zapinators.meteorite_leggings": "Meteorite Leggings",
+    "item.zapinators.meteorite_boots": "Meteorite Boots",
+    "item.zapinators.meteorite_armor.save_percent_tooltip": "%s%% chance to save ammo",
+
+    "item.zapinators.meteorite_ore": "Meteorite Ore",
+    "item.zapinators.raw_meteorite_block": "Block of Raw Meteorite",
+    "item.zapinators.meteorite_block": "Block of Meteorite"
 }
