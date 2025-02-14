@@ -12,6 +12,6 @@ public class ZapinatorsModDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(ZapinatorsModRecipeProvider::new);
         pack.addProvider(ZapinatorsModBlockTagProvider::new);
         pack.addProvider(ZapinatorsModItemTagProvider::new);
-        pack.addProvider(ZapinatorsModLootTableProvider::new);
+        pack.addProvider(ZapinatorsModBlockLootTableProvider::new);
     }
 }

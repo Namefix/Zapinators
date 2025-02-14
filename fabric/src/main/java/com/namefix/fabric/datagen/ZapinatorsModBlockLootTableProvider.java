@@ -8,8 +8,8 @@ import net.minecraft.core.HolderLookup;
 
 import java.util.concurrent.CompletableFuture;
 
-public class ZapinatorsModLootTableProvider extends FabricBlockLootTableProvider {
-    protected ZapinatorsModLootTableProvider(FabricDataOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
+public class ZapinatorsModBlockLootTableProvider extends FabricBlockLootTableProvider {
+    protected ZapinatorsModBlockLootTableProvider(FabricDataOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
         super(dataOutput, registryLookup);
     }
 

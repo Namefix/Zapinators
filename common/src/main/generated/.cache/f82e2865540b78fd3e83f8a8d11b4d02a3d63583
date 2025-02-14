@@ -1,6 +1,7 @@
-// 1.21.4	-999999999-01-01T00:00:00	Zapinators/
+// 1.21.4	-999999999-01-01T00:00:00	Zapinators/zapinators:recipe_provier
 da71be6168cf2311286421f6a4738878823e8415 data/zapinators/advancement/recipes/building_blocks/meteorite_block.json
 81ebb562137afb70b625cb1ce48b235b997e27a0 data/zapinators/advancement/recipes/building_blocks/raw_meteorite_block.json
+13cba959d405e125a89a7d408ad67403f633697c data/zapinators/advancement/recipes/combat/space_gun.json
 916e22bf9e0c25c65f095bee46080b0cb15f1db5 data/zapinators/advancement/recipes/misc/meteorite_ingot.json
 d7f8170534e95a1a15e8041c05d7dfacee677e01 data/zapinators/advancement/recipes/misc/meteorite_ingot_from_blasting_meteorite_ore.json
 566a51b7ca2be6d3111d7ba7b33b0e28f91408da data/zapinators/advancement/recipes/misc/meteorite_ingot_from_blasting_raw_meteorite.json
@@ -19,3 +20,4 @@ aa00ae27f60ef95ef40390aeb706a9d674b6e9cb data/zapinators/recipe/meteorite_ingot_
 314940a6a55002034de013107b5c98516f832abd data/zapinators/recipe/meteorite_nugget_from_meteorite_ingot.json
 5d2a6264e69cfc4c58866fab5c570f1706c51b0e data/zapinators/recipe/raw_meteorite.json
 e75d18a7ddad473dfa753bca91323018b29508ea data/zapinators/recipe/raw_meteorite_block.json
+aa097523ddb6ae8900993ff5608f0a89199108e1 data/zapinators/recipe/space_gun.json

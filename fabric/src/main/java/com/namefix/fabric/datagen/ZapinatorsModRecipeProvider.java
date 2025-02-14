@@ -1,5 +1,6 @@
 package com.namefix.fabric.datagen;
 
+import com.namefix.ZapinatorsMod;
 import com.namefix.registry.BlockRegistry;
 import com.namefix.registry.ItemRegistry;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -8,6 +9,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.resources.ResourceLocation;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -30,12 +32,20 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
                 this.oreSmelting(List.of(ItemRegistry.RAW_METEORITE.get(), BlockRegistry.METEORITE_ORE.getB().get()), RecipeCategory.MISC, ItemRegistry.METEORITE_INGOT.get(), 0.7f, 200, "meteorite_ingot");
                 this.oreBlasting(List.of(ItemRegistry.RAW_METEORITE.get(), BlockRegistry.METEORITE_ORE.getB().get()), RecipeCategory.MISC, ItemRegistry.METEORITE_INGOT.get(), 0.7f, 100, "meteorite_ingot");
 
+                // space gun
+                this.shaped(RecipeCategory.COMBAT, ItemRegistry.SPACE_GUN.get())
+                        .pattern("M  ")
+                        .pattern("MMM")
+                        .pattern("M  ")
+                        .define('M', ItemRegistry.METEORITE_INGOT.get())
+                        .unlockedBy(RecipeProvider.getHasName(ItemRegistry.METEORITE_INGOT.get()), this.has(ItemRegistry.METEORITE_INGOT.get()))
+                        .save(recipeOutput);
             }
         };
     }
 
     @Override
     public String getName() {
-        return "";
+        return ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "recipe_provier").toString();
     }
 }
