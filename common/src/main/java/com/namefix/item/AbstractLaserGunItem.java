@@ -38,14 +38,25 @@ public abstract class AbstractLaserGunItem extends Item {
     public @NotNull InteractionResult use(Level level, Player player, InteractionHand interactionHand) {
         if(!level.isClientSide) {
             LaserProjectile projectile = new LaserProjectile(EntityRegistry.LASER_PROJECTILE.get(), level);
-            projectile.setPos(player.getX(), player.getEyeY() - 0.1, player.getZ());
+
             Vec3 lookVec = player.getLookAngle();
-            projectile.setOwner(player);
-            projectile.setDeltaMovement(
-                    lookVec.x * projectileSpeed,
-                    lookVec.y * projectileSpeed,
-                    lookVec.z * projectileSpeed
+            Vec3 offsetVec = interactionHand == InteractionHand.MAIN_HAND ? lookVec.cross(new Vec3(0, 1, 0)).normalize() : lookVec.cross(new Vec3(0, -1, 0)).normalize();
+            double offsetAmount = 0.2;
+            projectile.setPos(
+                    player.getX() + offsetVec.x * offsetAmount,
+                    player.getEyeY() - 0.1 + offsetVec.y * offsetAmount,
+                    player.getZ() + offsetVec.z * offsetAmount
             );
+
+            double trajectoryCorrection = 0.07;
+            Vec3 adjustedLookVec = lookVec.add(offsetVec.scale(-trajectoryCorrection * offsetAmount));
+            projectile.setDeltaMovement(
+                    adjustedLookVec.x * projectileSpeed,
+                    adjustedLookVec.y * projectileSpeed,
+                    adjustedLookVec.z * projectileSpeed
+            );
+
+            projectile.setOwner(player);
             projectile.setXRot(player.getXRot());
             projectile.setYRot(player.getYRot());
             projectile.setColor(color);
