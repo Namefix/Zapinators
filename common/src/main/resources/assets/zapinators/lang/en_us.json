@@ -40,5 +40,6 @@
 
     "item.zapinators.meteorite_ore": "Meteorite Ore",
     "item.zapinators.raw_meteorite_block": "Block of Raw Meteorite",
-    "item.zapinators.meteorite_block": "Block of Meteorite"
+    "item.zapinators.meteorite_block": "Block of Meteorite",
+    "item.zapinators.energy_cell": "Energy Cell"
 }

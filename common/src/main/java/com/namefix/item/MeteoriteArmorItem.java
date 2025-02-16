@@ -11,7 +11,7 @@ import net.minecraft.world.item.equipment.ArmorType;
 import java.util.List;
 
 public class MeteoriteArmorItem extends ArmorItem {
-    int savePercent;
+    private int savePercent;
 
     public MeteoriteArmorItem(ArmorMaterial armorMaterial, ArmorType armorType, Properties properties, int savePercent) {
         super(armorMaterial, armorType, properties);
@@ -23,5 +23,9 @@ public class MeteoriteArmorItem extends ArmorItem {
         list.add(Component.translatable("item.zapinators.meteorite_armor.save_percent_tooltip", savePercent).withStyle(ChatFormatting.BLUE));
 
         super.appendHoverText(itemStack, tooltipContext, list, tooltipFlag);
+    }
+
+    public int getSavePercent() {
+        return savePercent;
     }
 }

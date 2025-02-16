@@ -43,6 +43,7 @@ public class ItemRegistry {
             null,
             properties.arch$tab(TabRegistry.ZAPINATORS_TAB).rarity(Rarity.UNCOMMON)
     ));
+    public static final RegistrySupplier<Item> ENERGY_CELL = registerItem("energy_cell", properties -> new Item(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
 
     public static final RegistrySupplier<Item> METEORITE_HELMET = registerItem("meteorite_helmet", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, ArmorType.HELMET, properties.arch$tab(TabRegistry.ZAPINATORS_TAB), 25));
     public static final RegistrySupplier<Item> METEORITE_CHESTPLATE = registerItem("meteorite_chestplate", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, ArmorType.CHESTPLATE, properties.arch$tab(TabRegistry.ZAPINATORS_TAB), 25));

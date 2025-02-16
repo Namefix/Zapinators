@@ -10,6 +10,8 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Recipe;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -38,6 +40,15 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
                         .pattern("MMM")
                         .pattern("M  ")
                         .define('M', ItemRegistry.METEORITE_INGOT.get())
+                        .unlockedBy(RecipeProvider.getHasName(ItemRegistry.METEORITE_INGOT.get()), this.has(ItemRegistry.METEORITE_INGOT.get()))
+                        .save(recipeOutput);
+
+                // energy cell
+                this.shaped(RecipeCategory.MISC, ItemRegistry.ENERGY_CELL.get(), 16)
+                        .pattern("MRG")
+                        .define('M', ItemRegistry.METEORITE_NUGGET.get())
+                        .define('R', Items.REDSTONE)
+                        .define('G', Items.GLOWSTONE_DUST)
                         .unlockedBy(RecipeProvider.getHasName(ItemRegistry.METEORITE_INGOT.get()), this.has(ItemRegistry.METEORITE_INGOT.get()))
                         .save(recipeOutput);
             }

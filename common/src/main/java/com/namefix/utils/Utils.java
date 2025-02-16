@@ -1,8 +1,14 @@
 package com.namefix.utils;
 
+import com.namefix.item.MeteoriteArmorItem;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Utils {
     public static void rotateMotionXZ(Entity projectile, float degrees) {
@@ -44,5 +50,31 @@ public class Utils {
     public static void applyKnockback(LivingEntity target, Entity projectile, double knockbackPower) {
         target.knockback(knockbackPower, projectile.getX()-target.getX(), projectile.getZ()-target.getZ());
         target.hurtMarked = true;
+    }
+
+    public static void removeOneItem(Player player, Item item) {
+        for (int i = 0; i < player.getInventory().getContainerSize(); i++) {
+            ItemStack slotStack = player.getInventory().getItem(i);
+            if (!slotStack.isEmpty() && slotStack.getItem() == item) { // Match item
+                slotStack.shrink(1);
+                if (slotStack.isEmpty()) {
+                    player.getInventory().setItem(i, ItemStack.EMPTY);
+                }
+                break;
+            }
+        }
+    }
+
+    public static int getPlayerAmmoSaveChance(Player player) {
+        AtomicInteger total = new AtomicInteger();
+
+        var playerArmor = player.getArmorSlots();
+        playerArmor.forEach((piece) -> {
+            if(piece.getItem() instanceof MeteoriteArmorItem armor) {
+                total.addAndGet(armor.getSavePercent());
+            }
+        });
+
+        return total.get();
     }
 }
