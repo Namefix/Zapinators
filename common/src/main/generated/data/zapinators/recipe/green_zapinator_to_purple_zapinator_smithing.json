@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "zapinators:purple_core",
+  "base": "zapinators:green_zapinator",
+  "result": {
+    "count": 1,
+    "id": "zapinators:purple_zapinator"
+  },
+  "template": "zapinators:zapinator_reset_smithing_template"
+}

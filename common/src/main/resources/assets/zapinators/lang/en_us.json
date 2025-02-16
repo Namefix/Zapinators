@@ -15,6 +15,14 @@
     "item.zapinators.purple_zapinator": "Purple Zapinator",
     "item.zapinators.black_zapinator": "Black Zapinator",
 
+    "item.zapinators.gray_core": "Gray Core",
+    "item.zapinators.orange_core": "Orange Core",
+    "item.zapinators.red_core": "Red Core",
+    "item.zapinators.green_core": "Green Core",
+    "item.zapinators.blue_core": "Blue Core",
+    "item.zapinators.purple_core": "Purple Core",
+    "item.zapinators.black_core": "Black Core",
+
     "item.zapinators.raw_meteorite": "Raw Meteorite",
     "item.zapinators.meteorite_ingot": "Meteorite Ingot",
     "item.zapinators.meteorite_nugget": "Meteorite Nugget",

@@ -1,20 +1,28 @@
 package com.namefix.fabric.datagen;
 
 import com.namefix.ZapinatorsMod;
+import com.namefix.enums.ZapinatorType;
 import com.namefix.registry.BlockRegistry;
 import com.namefix.registry.ItemRegistry;
+import com.namefix.utils.Utils;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.SmithingTransformRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.Ingredient;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 
 public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
     public ZapinatorsModRecipeProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
@@ -51,12 +59,29 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
                         .define('G', Items.GLOWSTONE_DUST)
                         .unlockedBy(RecipeProvider.getHasName(ItemRegistry.METEORITE_INGOT.get()), this.has(ItemRegistry.METEORITE_INGOT.get()))
                         .save(recipeOutput);
+
+                // zapinator cores
+                for(ZapinatorType zap1 : ZapinatorType.values()) {
+                    if(zap1.equals(ZapinatorType.NONE)) continue;
+                    for (ZapinatorType zap2 : ZapinatorType.values()) {
+                        if(zap2.equals(ZapinatorType.NONE) || zap1.equals(zap2)) continue;
+                        zapinatorReset(Utils.getZapinatorFromEnum(zap1), Utils.getCoreFromEnum(zap2), Utils.getZapinatorFromEnum(zap2), recipeOutput, this);
+                    }
+                }
             }
         };
     }
 
+    private void zapinatorReset(Item zapinator, Item core, Item result, RecipeOutput output, RecipeProvider provider) {
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(ItemRegistry.ZAPINATOR_RESET_SMITHING_TEMPLATE.get()), Ingredient.of(zapinator), Ingredient.of(core), RecipeCategory.MISC, result).unlocks("has_zapinator_core", provider.has(ZapinatorsModItemTagProvider.ZAPINATOR_CORES)).save(output, itemName(zapinator)+"_to_"+itemName(result)+"_smithing");
+    }
+
+    private String itemName(Item item) {
+        return item.toString().replace(ZapinatorsMod.MOD_ID+":", "");
+    }
+
     @Override
     public String getName() {
-        return ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "recipe_provier").toString();
+        return ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "recipe_provider").toString();
     }
 }

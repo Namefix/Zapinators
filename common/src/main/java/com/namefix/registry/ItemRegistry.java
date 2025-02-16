@@ -31,6 +31,14 @@ public class ItemRegistry {
     public static final RegistrySupplier<Item> PURPLE_ZAPINATOR = registerItem("purple_zapinator", properties -> new ColorZapinatorItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB), ZapinatorType.PURPLE, 4.5f));
     public static final RegistrySupplier<Item> BLACK_ZAPINATOR = registerItem("black_zapinator", properties -> new ColorZapinatorItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB).rarity(Rarity.EPIC), ZapinatorType.BLACK, 999f));
 
+    public static final RegistrySupplier<Item> GRAY_CORE = registerItem("gray_core", properties -> new Item(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
+    public static final RegistrySupplier<Item> ORANGE_CORE = registerItem("orange_core", properties -> new Item(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
+    public static final RegistrySupplier<Item> RED_CORE = registerItem("red_core", properties -> new Item(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
+    public static final RegistrySupplier<Item> GREEN_CORE = registerItem("green_core", properties -> new Item(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
+    public static final RegistrySupplier<Item> BLUE_CORE = registerItem("blue_core", properties -> new Item(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
+    public static final RegistrySupplier<Item> PURPLE_CORE = registerItem("purple_core", properties -> new Item(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
+    public static final RegistrySupplier<Item> BLACK_CORE = registerItem("black_core", properties -> new Item(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
+
     public static final RegistrySupplier<Item> RAW_METEORITE = registerItem("raw_meteorite", properties -> new Item(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
     public static final RegistrySupplier<Item> METEORITE_INGOT = registerItem("meteorite_ingot", properties -> new Item(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
     public static final RegistrySupplier<Item> METEORITE_NUGGET = registerItem("meteorite_nugget", properties -> new Item(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));

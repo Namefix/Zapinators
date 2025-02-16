@@ -1,6 +1,11 @@
 package com.namefix.utils;
 
+import com.namefix.ZapinatorsMod;
+import com.namefix.enums.ZapinatorType;
 import com.namefix.item.MeteoriteArmorItem;
+import com.namefix.registry.ItemRegistry;
+import dev.architectury.registry.registries.RegistrySupplier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -76,5 +81,14 @@ public class Utils {
         });
 
         return total.get();
+    }
+
+    public static Item getZapinatorFromEnum(ZapinatorType type) {
+        return ItemRegistry.ITEMS.getRegistrar().get(ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, type.toString().toLowerCase()+"_zapinator"));
+    }
+
+    public static Item getCoreFromEnum(ZapinatorType type) {
+        return ItemRegistry.ITEMS.getRegistrar().get(ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, type.toString().toLowerCase()+"_core"));
+
     }
 }
