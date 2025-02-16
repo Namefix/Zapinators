@@ -60,6 +60,17 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(RecipeProvider.getHasName(ItemRegistry.METEORITE_INGOT.get()), this.has(ItemRegistry.METEORITE_INGOT.get()))
                         .save(recipeOutput);
 
+                // zapinator reset smithing template
+                this.shaped(RecipeCategory.MISC, ItemRegistry.ZAPINATOR_RESET_SMITHING_TEMPLATE.get(), 2)
+                        .pattern("ITI")
+                        .pattern("NIN")
+                        .pattern("INI")
+                        .define('I', ItemRegistry.METEORITE_INGOT.get())
+                        .define('N', ItemRegistry.METEORITE_NUGGET.get())
+                        .define('T', ItemRegistry.ZAPINATOR_RESET_SMITHING_TEMPLATE.get())
+                        .unlockedBy(RecipeProvider.getHasName(ItemRegistry.ZAPINATOR_RESET_SMITHING_TEMPLATE.get()), this.has(ItemRegistry.ZAPINATOR_RESET_SMITHING_TEMPLATE.get()))
+                        .save(recipeOutput);
+
                 // zapinator cores
                 for(ZapinatorType zap1 : ZapinatorType.values()) {
                     if(zap1.equals(ZapinatorType.NONE)) continue;
