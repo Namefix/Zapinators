@@ -53,6 +53,7 @@ public class Utils {
     }
 
     public static void applyKnockback(LivingEntity target, Entity projectile, double knockbackPower) {
+        if(target instanceof Player pl && pl.isCreative()) return;
         target.knockback(knockbackPower, projectile.getX()-target.getX(), projectile.getZ()-target.getZ());
         target.hurtMarked = true;
     }
