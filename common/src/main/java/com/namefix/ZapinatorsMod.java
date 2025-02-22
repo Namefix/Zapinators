@@ -1,5 +1,6 @@
 package com.namefix;
 
+import com.namefix.loot.ModLootTables;
 import com.namefix.registry.*;
 import com.namefix.trade.ModVillagerTrades;
 import org.slf4j.Logger;
@@ -19,6 +20,7 @@ public final class ZapinatorsMod {
         ItemRegistry.register();
 
         ModVillagerTrades.register();
+        ModLootTables.register();
 
         LOGGER.info("--- Zapinators --- Mod --- initialized. ---");
     }
