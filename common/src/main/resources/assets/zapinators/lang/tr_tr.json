@@ -1,0 +1,56 @@
+{
+    "sound.zapinators.space_gun_shot": "Uzay Silahı vuruldu",
+    "sound.zapinators.laser_rifle_shot": "Lazer Tüfeği vuruldu",
+    "sound.zapinators.zapinator_shot": "Zapinatör vuruldu",
+    "sound.zapinators.color_zapinator_shot": "Renkli Zapinatör vuruldu",
+
+    "item.zapinators.space_gun": "Uzay Silahı",
+    "item.zapinators.laser_rifle": "Lazer Tüfeği",
+    "item.zapinators.zapinator": "Zapinatör",
+    "item.zapinators.gray_zapinator": "Gri Zapinatör",
+    "item.zapinators.orange_zapinator": "Turuncu Zapinatör",
+    "item.zapinators.red_zapinator": "Kırmızı Zapinatör",
+    "item.zapinators.green_zapinator": "Yeşil Zapinatör",
+    "item.zapinators.blue_zapinator": "Mavi Zapinatör",
+    "item.zapinators.purple_zapinator": "Mor Zapinatör",
+    "item.zapinators.black_zapinator": "Siyah Zapinatör",
+
+    "item.zapinators.gray_core": "Gri Çekirdek",
+    "item.zapinators.orange_core": "Turuncu Çekirdek",
+    "item.zapinators.red_core": "Kırmızı Çekirdek",
+    "item.zapinators.green_core": "Yeşil Çekirdek",
+    "item.zapinators.blue_core": "Mavi Çekirdek",
+    "item.zapinators.purple_core": "Mor Çekirdek",
+    "item.zapinators.black_core": "Siyah Çekirdek",
+
+    "item.zapinators.raw_meteorite": "Ham Meteorit",
+    "item.zapinators.meteorite_ingot": "Meteorit Külçesi",
+    "item.zapinators.meteorite_nugget": "Meteorit Parçası",
+    "item.zapinators.zapinator_reset_smithing_template": "Zapinatör Sıfırlama",
+    "item.zapinators.energy_cell": "Enerji Hücresi",
+
+    "item.zapinators.color_zapinator.description": "'Bozuk olabilir'",
+    "item.zapinators.red_zapinator.description": "Yüksek şansla hedefi tutuşturur",
+    "item.zapinators.green_zapinator.description": "Yüksek şansla hedefi zehirler",
+    "item.zapinators.blue_zapinator.description": "Yüksek şansla hedefe yavaşlık uygular",
+    "item.zapinators.purple_zapinator.description": "Yüksek şansla hedefe ekstra savurma uygular",
+    "item.zapinators.black_zapinator.description": "Hayatta kalmada edinilemez",
+
+    "item.zapinators.smithing_template.zapinator_reset.applies_to": "Renkli Zapinatörler",
+    "item.zapinators.smithing_template.zapinator_reset.base_slot_description": "Bir renkli zapinatör ekle",
+    "item.zapinators.smithing_template.zapinator_reset.ingredients": "Zapinatör Çekirdekleri",
+    "item.zapinators.smithing_template.zapinator_reset.additions_slot_description": "Bir zapinatör çekirdeği ekle",
+
+    "item.zapinators.meteorite_helmet": "Meteorit Miğfer",
+    "item.zapinators.meteorite_chestplate": "Meteorit Göğüslük",
+    "item.zapinators.meteorite_leggings": "Meteorit Tozluk",
+    "item.zapinators.meteorite_boots": "Meteorit Çizme",
+    "item.zapinators.meteorite_armor.save_percent_tooltip": "%%%s şansla mermi tasarrufu",
+
+    "item.zapinators.meteorite_ore": "Meteorit Cevheri",
+    "item.zapinators.raw_meteorite_block": "Ham Meteorit Bloğu",
+    "item.zapinators.meteorite_block": "Meteorit Bloğu",
+
+    "tag.item.zapinators.color_zapinators": "Renkli Zapinatörler",
+    "tag.item.zapinators.zapinator_cores": "Zapinatör Çekirdekleri"
+}
