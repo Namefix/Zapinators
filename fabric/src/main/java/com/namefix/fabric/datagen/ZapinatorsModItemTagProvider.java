@@ -20,6 +20,7 @@ public class ZapinatorsModItemTagProvider extends FabricTagProvider.ItemTagProvi
 
     public static TagKey<Item> COLOR_ZAPINATORS = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "color_zapinators"));
     public static TagKey<Item> ZAPINATOR_CORES = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "zapinator_cores"));
+    public static TagKey<Item> REPAIRS_METEORITE_ARMOR = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "repairs_meteorite_armor"));
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
@@ -27,6 +28,12 @@ public class ZapinatorsModItemTagProvider extends FabricTagProvider.ItemTagProvi
         getOrCreateTagBuilder(ItemTags.CHEST_ARMOR).add(ItemRegistry.METEORITE_CHESTPLATE.get());
         getOrCreateTagBuilder(ItemTags.LEG_ARMOR).add(ItemRegistry.METEORITE_LEGGINGS.get());
         getOrCreateTagBuilder(ItemTags.FOOT_ARMOR).add(ItemRegistry.METEORITE_BOOTS.get());
+        getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
+                .add(ItemRegistry.METEORITE_HELMET.get())
+                .add(ItemRegistry.METEORITE_CHESTPLATE.get())
+                .add(ItemRegistry.METEORITE_LEGGINGS.get())
+                .add(ItemRegistry.METEORITE_BOOTS.get());
+        getOrCreateTagBuilder(REPAIRS_METEORITE_ARMOR).add(ItemRegistry.METEORITE_INGOT.get());
 
         getOrCreateTagBuilder(COLOR_ZAPINATORS)
                 .add(ItemRegistry.GRAY_ZAPINATOR.get())

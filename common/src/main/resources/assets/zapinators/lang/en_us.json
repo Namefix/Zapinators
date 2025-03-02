@@ -22,6 +22,7 @@
     "item.zapinators.blue_core": "Blue Core",
     "item.zapinators.purple_core": "Purple Core",
     "item.zapinators.black_core": "Black Core",
+    "item.zapinators.core.description": "Used to forge a zapinator to the core's color",
 
     "item.zapinators.raw_meteorite": "Raw Meteorite",
     "item.zapinators.meteorite_ingot": "Meteorite Ingot",

@@ -1,6 +1,7 @@
 package com.namefix.fabric.datagen;
 
 import com.namefix.ZapinatorsMod;
+import com.namefix.item.ModArmorMaterials;
 import com.namefix.registry.BlockRegistry;
 import com.namefix.registry.ItemRegistry;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
@@ -41,9 +42,23 @@ public class ZapinatorsModModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(ItemRegistry.PURPLE_ZAPINATOR.get(), gunTemplate);
         itemModelGenerators.generateFlatItem(ItemRegistry.BLACK_ZAPINATOR.get(), gunTemplate);
 
+        itemModelGenerators.generateFlatItem(ItemRegistry.GRAY_CORE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ItemRegistry.ORANGE_CORE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ItemRegistry.RED_CORE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ItemRegistry.GREEN_CORE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ItemRegistry.BLUE_CORE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ItemRegistry.PURPLE_CORE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ItemRegistry.BLACK_CORE.get(), ModelTemplates.FLAT_ITEM);
+
         itemModelGenerators.generateFlatItem(ItemRegistry.RAW_METEORITE.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ItemRegistry.METEORITE_INGOT.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ItemRegistry.METEORITE_NUGGET.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ItemRegistry.ZAPINATOR_RESET_SMITHING_TEMPLATE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ItemRegistry.ENERGY_CELL.get(), ModelTemplates.FLAT_ITEM);
+
+        itemModelGenerators.generateTrimmableItem(ItemRegistry.METEORITE_HELMET.get(), ModArmorMaterials.METEORITE_ARMOR.assetId(), "helmet", false);
+        itemModelGenerators.generateTrimmableItem(ItemRegistry.METEORITE_CHESTPLATE.get(), ModArmorMaterials.METEORITE_ARMOR.assetId(), "chestplate", false);
+        itemModelGenerators.generateTrimmableItem(ItemRegistry.METEORITE_LEGGINGS.get(), ModArmorMaterials.METEORITE_ARMOR.assetId(), "leggings", false);
+        itemModelGenerators.generateTrimmableItem(ItemRegistry.METEORITE_BOOTS.get(), ModArmorMaterials.METEORITE_ARMOR.assetId(), "boots", false);
     }
 }
