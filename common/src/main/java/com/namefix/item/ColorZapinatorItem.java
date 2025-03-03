@@ -17,7 +17,7 @@ public class ColorZapinatorItem extends AbstractLaserGunItem {
         this.color = 0x5BBCEA;
         this.baseDamage = baseDamage;
         this.itemCooldown = 20;
-        this.laserLength = 3.5f;
+        this.laserLength = 2.5f;
         this.maxPiercing = 8;
         this.shootSound = SoundRegistry.COLOR_ZAPINATOR_SHOOT.getOrNull();
     }

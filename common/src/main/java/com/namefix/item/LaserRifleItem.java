@@ -6,10 +6,11 @@ public class LaserRifleItem extends AbstractLaserGunItem {
     public LaserRifleItem(Properties properties) {
         super(properties);
         this.color = 0x7771B7;
-        this.baseDamage = 2.0f;
-        this.projectileSpeed = 1.5f;
-        this.itemCooldown = 2;
-        this.laserLength = 3.0f;
+        this.baseDamage = 1.5f;
+        this.projectileSpeed = 1.0f;
+        this.itemCooldown = 4;
+        this.laserLength = 2.5f;
+        this.requiresEnergyCell = false;
         this.shootSound = SoundRegistry.LASER_RIFLE_SHOOT.getOrNull();
     }
 }

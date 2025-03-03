@@ -23,9 +23,9 @@ public class ItemRegistry {
     public static final RegistrySupplier<Item> SPACE_GUN = registerItem("space_gun", properties -> new SpaceGunItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB)));
     public static final RegistrySupplier<Item> LASER_RIFLE = registerItem("laser_rifle", properties -> new LaserRifleItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB)));
     public static final RegistrySupplier<Item> ZAPINATOR = registerItem("zapinator", properties -> new ZapinatorItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB)));
-    public static final RegistrySupplier<Item> GRAY_ZAPINATOR = registerItem("gray_zapinator", properties -> new ColorZapinatorItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB), ZapinatorType.GRAY, 2.0f));
+    public static final RegistrySupplier<Item> GRAY_ZAPINATOR = registerItem("gray_zapinator", properties -> new ColorZapinatorItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB), ZapinatorType.GRAY, 2.5f));
     public static final RegistrySupplier<Item> ORANGE_ZAPINATOR = registerItem("orange_zapinator", properties -> new ColorZapinatorItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB), ZapinatorType.ORANGE, 5.0f));
-    public static final RegistrySupplier<Item> RED_ZAPINATOR = registerItem("red_zapinator", properties -> new ColorZapinatorItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB), ZapinatorType.RED, 3.0f));
+    public static final RegistrySupplier<Item> RED_ZAPINATOR = registerItem("red_zapinator", properties -> new ColorZapinatorItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB), ZapinatorType.RED, 2.5f));
     public static final RegistrySupplier<Item> GREEN_ZAPINATOR = registerItem("green_zapinator", properties -> new ColorZapinatorItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB), ZapinatorType.GREEN, 3.0f));
     public static final RegistrySupplier<Item> BLUE_ZAPINATOR = registerItem("blue_zapinator", properties -> new ColorZapinatorItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB), ZapinatorType.BLUE, 4.0f));
     public static final RegistrySupplier<Item> PURPLE_ZAPINATOR = registerItem("purple_zapinator", properties -> new ColorZapinatorItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB), ZapinatorType.PURPLE, 4.5f));

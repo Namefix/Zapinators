@@ -90,13 +90,12 @@ public class LaserProjectile extends AbstractHurtingProjectile {
             }
 
             EntityHitResult entityHitResult = ProjectileUtil.getEntityHitResult(
-                    this.level(),
+                    level(),
                     this,
-                    this.position(),
-                    this.position().add(this.getDeltaMovement()),
-                    this.getBoundingBox().expandTowards(this.getDeltaMovement()).inflate(1.0),
-                    entity -> !entity.isSpectator() && entity.isAlive(),
-                    0.0f
+                    position(),
+                    position().add(getDeltaMovement()),
+                    getBoundingBox().expandTowards(getDeltaMovement()).inflate(0.2),
+                    entity -> !entity.isSpectator() && entity.isAlive()
             );
             if (entityHitResult != null) {
                 this.onHitEntity(entityHitResult);

@@ -21,7 +21,7 @@ import org.joml.Vector3f;
 public abstract class AbstractLaserGunItem extends Item {
     protected int color = 0xFFFFFF;
     protected float baseDamage = 1.0f;
-    protected float projectileSpeed = 1.0f;
+    protected float projectileSpeed = 0.5f;
     protected int itemCooldown = 20;
     protected float laserLength = 1.6f;
     protected float laserWidth = 0.15f;
