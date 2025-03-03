@@ -53,10 +53,10 @@ public class ItemRegistry {
     ));
     public static final RegistrySupplier<Item> ENERGY_CELL = registerItem("energy_cell", properties -> new Item(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
 
-    public static final RegistrySupplier<Item> METEORITE_HELMET = registerItem("meteorite_helmet", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, Type.HELMET, properties.arch$tab(TabRegistry.ZAPINATORS_TAB), 25));
-    public static final RegistrySupplier<Item> METEORITE_CHESTPLATE = registerItem("meteorite_chestplate", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, Type.CHESTPLATE, properties.arch$tab(TabRegistry.ZAPINATORS_TAB), 25));
-    public static final RegistrySupplier<Item> METEORITE_LEGGINGS = registerItem("meteorite_leggings", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, Type.LEGGINGS, properties.arch$tab(TabRegistry.ZAPINATORS_TAB), 25));
-    public static final RegistrySupplier<Item> METEORITE_BOOTS = registerItem("meteorite_boots", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, Type.BOOTS, properties.arch$tab(TabRegistry.ZAPINATORS_TAB), 25));
+    public static final RegistrySupplier<Item> METEORITE_HELMET = registerItem("meteorite_helmet", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, Type.HELMET, properties.arch$tab(TabRegistry.ZAPINATORS_TAB).durability(Type.HELMET.getDurability(15)), 25));
+    public static final RegistrySupplier<Item> METEORITE_CHESTPLATE = registerItem("meteorite_chestplate", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, Type.CHESTPLATE, properties.arch$tab(TabRegistry.ZAPINATORS_TAB).durability(Type.CHESTPLATE.getDurability(15)), 25));
+    public static final RegistrySupplier<Item> METEORITE_LEGGINGS = registerItem("meteorite_leggings", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, Type.LEGGINGS, properties.arch$tab(TabRegistry.ZAPINATORS_TAB).durability(Type.LEGGINGS.getDurability(15)), 25));
+    public static final RegistrySupplier<Item> METEORITE_BOOTS = registerItem("meteorite_boots", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, Type.BOOTS, properties.arch$tab(TabRegistry.ZAPINATORS_TAB).durability(Type.BOOTS.getDurability(15)), 25));
 
     public static void register() {
         ITEMS.register();
