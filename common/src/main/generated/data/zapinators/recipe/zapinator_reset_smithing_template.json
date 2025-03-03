@@ -2,9 +2,15 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "I": "zapinators:meteorite_ingot",
-    "N": "zapinators:meteorite_nugget",
-    "T": "zapinators:zapinator_reset_smithing_template"
+    "I": {
+      "item": "zapinators:meteorite_ingot"
+    },
+    "N": {
+      "item": "zapinators:meteorite_nugget"
+    },
+    "T": {
+      "item": "zapinators:zapinator_reset_smithing_template"
+    }
   },
   "pattern": [
     "ITI",

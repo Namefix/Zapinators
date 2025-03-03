@@ -16,21 +16,21 @@ logoFile = "assets/zapinators/icon.png"
 [[dependencies.zapinators]]
 modId = "neoforge"
 type = "required"
-versionRange = "[21.4,)"
+versionRange = "[21.1.84,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.zapinators]]
 modId = "minecraft"
 type = "required"
-versionRange = "[1.21.4,)"
+versionRange = "[1.21.1,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.zapinators]]
 modId = "architectury"
 type = "required"
-versionRange = "[15.0.1,)"
+versionRange = "[13.0.8,)"
 ordering = "AFTER"
 side = "BOTH"
 

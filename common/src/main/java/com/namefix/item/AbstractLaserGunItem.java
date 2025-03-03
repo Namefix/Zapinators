@@ -8,14 +8,13 @@ import com.namefix.utils.Utils;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ItemUseAnimation;
+import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import org.jetbrains.annotations.NotNull;
 import org.joml.Vector3f;
 
 public abstract class AbstractLaserGunItem extends Item {
@@ -38,9 +37,9 @@ public abstract class AbstractLaserGunItem extends Item {
     }
 
     @Override
-    public @NotNull InteractionResult use(Level level, Player player, InteractionHand interactionHand) {
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
         int saveChance = Utils.getPlayerAmmoSaveChance(player);
-        if(!player.isCreative() && requiresEnergyCell && saveChance < 100 && !player.getInventory().contains(ItemRegistry.ENERGY_CELL.get().getDefaultInstance())) return InteractionResult.FAIL;
+        if(!player.isCreative() && requiresEnergyCell && saveChance < 100 && !player.getInventory().contains(ItemRegistry.ENERGY_CELL.get().getDefaultInstance())) return InteractionResultHolder.fail(player.getItemInHand(interactionHand));
         if(!level.isClientSide) {
             LaserProjectile projectile = new LaserProjectile(EntityRegistry.LASER_PROJECTILE.get(), level);
 
@@ -78,13 +77,13 @@ public abstract class AbstractLaserGunItem extends Item {
                 if(saveChance < rand) Utils.removeOneItem(player, ItemRegistry.ENERGY_CELL.get());
             }
         }
-        player.getCooldowns().addCooldown(this.arch$registryName(), itemCooldown);
+        player.getCooldowns().addCooldown(this, itemCooldown);
         if(shootSound != null) player.level().playSound(null, player.getX(), player.getY(), player.getZ(), shootSound, SoundSource.PLAYERS);
-        return InteractionResult.CONSUME;
+        return InteractionResultHolder.consume(player.getItemInHand(interactionHand));
     }
 
     @Override
-    public ItemUseAnimation getUseAnimation(ItemStack itemStack) {
-        return ItemUseAnimation.NONE;
+    public UseAnim getUseAnimation(ItemStack itemStack) {
+        return UseAnim.NONE;
     }
 }

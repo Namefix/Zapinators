@@ -124,7 +124,7 @@ public class LaserProjectile extends AbstractHurtingProjectile {
             handleZapinatorChances(target);
         }
         else { // non zapinator
-            target.hurtServer((ServerLevel) target.level(), damageSources().playerAttack((Player) this.getOwner()), baseDamage);
+            target.hurt(damageSources().playerAttack((Player) this.getOwner()), baseDamage);
             target.invulnerableTime = 0;
         }
 
@@ -234,7 +234,7 @@ public class LaserProjectile extends AbstractHurtingProjectile {
             }
         }
 
-        target.hurtServer((ServerLevel) target.level(), damageSources().playerAttack((Player) this.getOwner()), damage);
+        target.hurt(damageSources().playerAttack((Player) this.getOwner()), damage);
         if(target instanceof LivingEntity livingTarget) Utils.applyKnockback(livingTarget, this, baseKnockback);
     }
 

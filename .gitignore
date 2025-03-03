@@ -7,5 +7,5 @@ neoforge/build
 fabric/.gradle/
 neoforge/.gradle/
 
-fabric/run/
-neoforge/run/
+fabric/run*
+neoforge/run*

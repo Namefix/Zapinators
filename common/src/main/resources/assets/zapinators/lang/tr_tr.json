@@ -48,9 +48,9 @@
     "item.zapinators.meteorite_boots": "Meteorit Çizme",
     "item.zapinators.meteorite_armor.save_percent_tooltip": "%%%s şansla mermi tasarrufu",
 
-    "item.zapinators.meteorite_ore": "Meteorit Cevheri",
-    "item.zapinators.raw_meteorite_block": "Ham Meteorit Bloğu",
-    "item.zapinators.meteorite_block": "Meteorit Bloğu",
+    "block.zapinators.meteorite_ore": "Meteorit Cevheri",
+    "block.zapinators.raw_meteorite_block": "Ham Meteorit Bloğu",
+    "block.zapinators.meteorite_block": "Meteorit Bloğu",
 
     "tag.item.zapinators.color_zapinators": "Renkli Zapinatörler",
     "tag.item.zapinators.zapinator_cores": "Zapinatör Çekirdekleri"

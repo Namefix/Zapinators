@@ -2,7 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": "zapinators:meteorite_nugget"
+    "#": {
+      "item": "zapinators:meteorite_nugget"
+    }
   },
   "pattern": [
     "###",

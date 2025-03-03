@@ -20,7 +20,7 @@ public class EntityRegistry {
                     .sized(0.5f, 0.5f)
                     .clientTrackingRange(64)
                     .updateInterval(10)
-                    .build(ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID,"laser_projectile")))
+                    .build(ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID,"laser_projectile")).toString())
     );
 
     public static void register() {

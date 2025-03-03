@@ -2,7 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "zapinators:raw_meteorite_block"
+    {
+      "item": "zapinators:raw_meteorite_block"
+    }
   ],
   "result": {
     "count": 9,

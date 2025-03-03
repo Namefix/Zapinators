@@ -1,17 +1,17 @@
 package com.namefix.fabric.datagen;
 
 import com.namefix.ZapinatorsMod;
-import com.namefix.item.ModArmorMaterials;
 import com.namefix.registry.BlockRegistry;
 import com.namefix.registry.ItemRegistry;
-import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.minecraft.client.data.models.BlockModelGenerators;
-import net.minecraft.client.data.models.ItemModelGenerators;
-import net.minecraft.client.data.models.model.ModelTemplate;
-import net.minecraft.client.data.models.model.ModelTemplates;
-import net.minecraft.client.data.models.model.TextureSlot;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.minecraft.data.models.BlockModelGenerators;
+import net.minecraft.data.models.ItemModelGenerators;
+import net.minecraft.data.models.model.ModelTemplate;
+import net.minecraft.data.models.model.ModelTemplates;
+import net.minecraft.data.models.model.TextureSlot;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ArmorItem;
 
 import java.util.Optional;
 
@@ -56,9 +56,9 @@ public class ZapinatorsModModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(ItemRegistry.ZAPINATOR_RESET_SMITHING_TEMPLATE.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ItemRegistry.ENERGY_CELL.get(), ModelTemplates.FLAT_ITEM);
 
-        itemModelGenerators.generateTrimmableItem(ItemRegistry.METEORITE_HELMET.get(), ModArmorMaterials.METEORITE_ARMOR.assetId(), "helmet", false);
-        itemModelGenerators.generateTrimmableItem(ItemRegistry.METEORITE_CHESTPLATE.get(), ModArmorMaterials.METEORITE_ARMOR.assetId(), "chestplate", false);
-        itemModelGenerators.generateTrimmableItem(ItemRegistry.METEORITE_LEGGINGS.get(), ModArmorMaterials.METEORITE_ARMOR.assetId(), "leggings", false);
-        itemModelGenerators.generateTrimmableItem(ItemRegistry.METEORITE_BOOTS.get(), ModArmorMaterials.METEORITE_ARMOR.assetId(), "boots", false);
+        itemModelGenerators.generateArmorTrims((ArmorItem) ItemRegistry.METEORITE_HELMET.get());
+        itemModelGenerators.generateArmorTrims((ArmorItem) ItemRegistry.METEORITE_CHESTPLATE.get());
+        itemModelGenerators.generateArmorTrims((ArmorItem) ItemRegistry.METEORITE_LEGGINGS.get());
+        itemModelGenerators.generateArmorTrims((ArmorItem) ItemRegistry.METEORITE_BOOTS.get());
     }
 }

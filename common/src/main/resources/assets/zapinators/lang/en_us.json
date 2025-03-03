@@ -48,9 +48,9 @@
     "item.zapinators.meteorite_boots": "Meteorite Boots",
     "item.zapinators.meteorite_armor.save_percent_tooltip": "%s%% chance to save ammo",
 
-    "item.zapinators.meteorite_ore": "Meteorite Ore",
-    "item.zapinators.raw_meteorite_block": "Block of Raw Meteorite",
-    "item.zapinators.meteorite_block": "Block of Meteorite",
+    "block.zapinators.meteorite_ore": "Meteorite Ore",
+    "block.zapinators.raw_meteorite_block": "Block of Raw Meteorite",
+    "block.zapinators.meteorite_block": "Block of Meteorite",
 
     "tag.item.zapinators.color_zapinators": "Color Zapinators",
     "tag.item.zapinators.zapinator_cores": "Zapinator Cores"

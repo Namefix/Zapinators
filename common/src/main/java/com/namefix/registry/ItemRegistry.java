@@ -10,10 +10,10 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ArmorItem.Type;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.SmithingTemplateItem;
-import net.minecraft.world.item.equipment.ArmorType;
 
 import java.util.Collections;
 
@@ -49,14 +49,14 @@ public class ItemRegistry {
             Component.translatable("item.zapinators.smithing_template.zapinator_reset.additions_slot_description"),
             null,
             null,
-            properties.arch$tab(TabRegistry.ZAPINATORS_TAB).rarity(Rarity.UNCOMMON)
+            null
     ));
     public static final RegistrySupplier<Item> ENERGY_CELL = registerItem("energy_cell", properties -> new Item(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
 
-    public static final RegistrySupplier<Item> METEORITE_HELMET = registerItem("meteorite_helmet", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, ArmorType.HELMET, properties.arch$tab(TabRegistry.ZAPINATORS_TAB), 25));
-    public static final RegistrySupplier<Item> METEORITE_CHESTPLATE = registerItem("meteorite_chestplate", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, ArmorType.CHESTPLATE, properties.arch$tab(TabRegistry.ZAPINATORS_TAB), 25));
-    public static final RegistrySupplier<Item> METEORITE_LEGGINGS = registerItem("meteorite_leggings", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, ArmorType.LEGGINGS, properties.arch$tab(TabRegistry.ZAPINATORS_TAB), 25));
-    public static final RegistrySupplier<Item> METEORITE_BOOTS = registerItem("meteorite_boots", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, ArmorType.BOOTS, properties.arch$tab(TabRegistry.ZAPINATORS_TAB), 25));
+    public static final RegistrySupplier<Item> METEORITE_HELMET = registerItem("meteorite_helmet", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, Type.HELMET, properties.arch$tab(TabRegistry.ZAPINATORS_TAB), 25));
+    public static final RegistrySupplier<Item> METEORITE_CHESTPLATE = registerItem("meteorite_chestplate", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, Type.CHESTPLATE, properties.arch$tab(TabRegistry.ZAPINATORS_TAB), 25));
+    public static final RegistrySupplier<Item> METEORITE_LEGGINGS = registerItem("meteorite_leggings", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, Type.LEGGINGS, properties.arch$tab(TabRegistry.ZAPINATORS_TAB), 25));
+    public static final RegistrySupplier<Item> METEORITE_BOOTS = registerItem("meteorite_boots", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, Type.BOOTS, properties.arch$tab(TabRegistry.ZAPINATORS_TAB), 25));
 
     public static void register() {
         ITEMS.register();
@@ -71,6 +71,6 @@ public class ItemRegistry {
     }
     public static <T extends Item> RegistrySupplier<T> registerItem(String name, ItemFactory<T> factory) {
         ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, name));
-        return ITEMS.register(name, () -> factory.create(new Item.Properties().setId(key)));
+        return ITEMS.register(name, () -> factory.create(new Item.Properties()));
     }
 }

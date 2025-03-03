@@ -2,7 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": "zapinators:raw_meteorite"
+    "#": {
+      "item": "zapinators:raw_meteorite"
+    }
   },
   "pattern": [
     "###",

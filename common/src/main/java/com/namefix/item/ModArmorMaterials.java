@@ -1,24 +1,24 @@
 package com.namefix.item;
 
 import com.namefix.ZapinatorsMod;
+import com.namefix.registry.ItemRegistry;
 import net.minecraft.Util;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.ItemTags;
-import net.minecraft.world.item.equipment.ArmorMaterial;
-import net.minecraft.world.item.equipment.ArmorType;
-import net.minecraft.world.item.equipment.EquipmentAssets;
+import net.minecraft.world.item.ArmorItem.Type;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.crafting.Ingredient;
 
 import java.util.EnumMap;
+import java.util.List;
 import java.util.Map;
 
 public class ModArmorMaterials {
-    public static final ArmorMaterial METEORITE_ARMOR = new ArmorMaterial(17, (Map) Util.make(new EnumMap(ArmorType.class), (enumMap) -> {
-        enumMap.put(ArmorType.BOOTS, 3);
-        enumMap.put(ArmorType.LEGGINGS, 5);
-        enumMap.put(ArmorType.CHESTPLATE, 5);
-        enumMap.put(ArmorType.HELMET, 3);
-        enumMap.put(ArmorType.BODY, 4);
-    }), 9, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.0F, ItemTags.REPAIRS_IRON_ARMOR, ResourceKey.create(EquipmentAssets.ROOT_ID, ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID,"meteorite")));
+    public static final ArmorMaterial METEORITE_ARMOR = new ArmorMaterial((Map) Util.make(new EnumMap(Type.class), (enumMap) -> {
+        enumMap.put(Type.BOOTS, 3);
+        enumMap.put(Type.LEGGINGS, 5);
+        enumMap.put(Type.CHESTPLATE, 5);
+        enumMap.put(Type.HELMET, 3);
+        enumMap.put(Type.BODY, 4);
+    }), 9, SoundEvents.ARMOR_EQUIP_IRON, () -> Ingredient.of(ItemRegistry.METEORITE_INGOT.get()), List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "meteorite"))), 0.0F, 0.0F);
 }

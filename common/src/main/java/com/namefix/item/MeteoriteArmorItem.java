@@ -1,20 +1,20 @@
 package com.namefix.item;
 
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.equipment.ArmorMaterial;
-import net.minecraft.world.item.equipment.ArmorType;
 
 import java.util.List;
 
 public class MeteoriteArmorItem extends ArmorItem {
     private int savePercent;
 
-    public MeteoriteArmorItem(ArmorMaterial armorMaterial, ArmorType armorType, Properties properties, int savePercent) {
-        super(armorMaterial, armorType, properties);
+    public MeteoriteArmorItem(ArmorMaterial armorMaterial, Type armorType, Properties properties, int savePercent) {
+        super(Holder.direct(armorMaterial), armorType, properties);
         this.savePercent = savePercent;
     }
 

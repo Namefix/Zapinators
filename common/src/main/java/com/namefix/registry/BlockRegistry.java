@@ -37,7 +37,7 @@ public class BlockRegistry {
     }
     public static <T extends Block> RegistrySupplier<T> registerBlock(String name, BlockFactory<T> factory, BlockBehaviour.Properties base) {
         ResourceKey<Block> key = ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, name));
-        return BLOCKS.register(name, () -> factory.create(base.setId(key)));
+        return BLOCKS.register(name, () -> factory.create(base));
     }
     public static Tuple<RegistrySupplier<Block>, RegistrySupplier<BlockItem>> registerBlockWithItem(String name) {
         return registerBlockWithItem(name, BlockBehaviour.Properties.of());

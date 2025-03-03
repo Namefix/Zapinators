@@ -11,43 +11,47 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.phys.Vec3;
-import org.jetbrains.annotations.NotNull;
 import org.joml.Matrix4f;
 
-public class LaserProjectileRenderer<T extends LaserProjectile, S extends LaserProjectileRenderState> extends EntityRenderer<T,S> {
+public class LaserProjectileRenderer<T extends LaserProjectile> extends EntityRenderer<T> {
     public LaserProjectileRenderer(EntityRendererProvider.Context context) {
         super(context);
     }
 
     @Override
-    public void render(S entityRenderState, PoseStack poseStack, MultiBufferSource multiBufferSource, int i) {
-        int color = entityRenderState.color;
+    public ResourceLocation getTextureLocation(T entity) {
+        return null;
+    }
+
+    @Override
+    public void render(T entity, float f, float gf, PoseStack poseStack, MultiBufferSource multiBufferSource, int i) {
+        int color = entity.getColor();
         float r = (color >> 16 & 255) / 255.0f;
         float g = (color >> 8 & 255) / 255.0f;
         float b = (color & 255) / 255.0f;
 
         poseStack.pushPose();
-        Vec3 vel = entityRenderState.velocity;
+        Vec3 vel = entity.getDeltaMovement();
         if (vel.lengthSqr() > 0) {
             float yaw = (float) (Math.toDegrees(Math.atan2(vel.z, vel.x)) - 90.0);
             float pitch = (float) Math.toDegrees(Math.atan2(vel.y, Math.sqrt(vel.x * vel.x + vel.z * vel.z)));
 
-            poseStack.translate(-entityRenderState.size.x / 2, entityRenderState.size.y / 2, 0);
+            poseStack.translate(-entity.getSize().x / 2, entity.getSize().y / 2, 0);
 
             poseStack.mulPose(Axis.YP.rotationDegrees(-yaw));
             poseStack.mulPose(Axis.XP.rotationDegrees(-pitch));
         }
-        renderLaser(entityRenderState, poseStack, multiBufferSource, r, g, b, 0.5f);
+        renderLaser(entity, poseStack, multiBufferSource, r, g, b, 0.5f);
         poseStack.popPose();
-        super.render(entityRenderState, poseStack, multiBufferSource, i);
+        super.render(entity, f, g, poseStack, multiBufferSource, i);
     }
 
-    private void renderLaser(S state, PoseStack poseStack, MultiBufferSource bufferSource, float r, float g, float b, float alpha) {
+    private void renderLaser(T entity, PoseStack poseStack, MultiBufferSource bufferSource, float r, float g, float b, float alpha) {
         VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityTranslucent(ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "textures/entity/laser_projectile.png")));
 
-        float width = state.size.x;
-        float height = state.size.y;
-        float length = state.size.z;
+        float width = entity.getSize().x;
+        float height = entity.getSize().y;
+        float length = entity.getSize().z;
 
         int light = 15728880;
         int blockLight = light & 0xFFFF;
@@ -266,19 +270,5 @@ public class LaserProjectileRenderer<T extends LaserProjectile, S extends LaserP
                 .setOverlay(OverlayTexture.NO_OVERLAY)
                 .setUv2(blockLight, skyLight)
                 .setNormal(entry, nx, ny, nz);
-    }
-
-    @Override
-    @SuppressWarnings("unchecked")
-    public @NotNull S createRenderState() {
-        return (S) new LaserProjectileRenderState();
-    }
-
-    @Override
-    public void extractRenderState(T entity, S entityRenderState, float f) {
-        super.extractRenderState(entity, entityRenderState, f);
-        entityRenderState.color = entity.getColor();
-        entityRenderState.velocity = entity.getDeltaMovement();
-        entityRenderState.size = entity.getSize();
     }
 }

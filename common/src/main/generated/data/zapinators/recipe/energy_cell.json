@@ -2,9 +2,15 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "G": "minecraft:glowstone_dust",
-    "M": "zapinators:meteorite_nugget",
-    "R": "minecraft:redstone"
+    "G": {
+      "item": "minecraft:glowstone_dust"
+    },
+    "M": {
+      "item": "zapinators:meteorite_nugget"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    }
   },
   "pattern": [
     "MRG"

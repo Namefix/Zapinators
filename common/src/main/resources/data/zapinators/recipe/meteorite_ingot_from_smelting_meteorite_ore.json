@@ -4,7 +4,9 @@
   "cookingtime": 200,
   "experience": 0.7,
   "group": "meteorite_ingot",
-  "ingredient": "zapinators:meteorite_ore",
+  "ingredient": {
+    "item": "zapinators:meteorite_ore"
+  },
   "result": {
     "id": "zapinators:meteorite_ingot"
   }
