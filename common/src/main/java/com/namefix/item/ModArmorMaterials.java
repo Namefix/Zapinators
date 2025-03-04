@@ -2,10 +2,12 @@ package com.namefix.item;
 
 import com.namefix.ZapinatorsMod;
 import net.minecraft.Util;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.world.item.equipment.EquipmentAssets;
@@ -20,5 +22,5 @@ public class ModArmorMaterials {
         enumMap.put(ArmorType.CHESTPLATE, 5);
         enumMap.put(ArmorType.HELMET, 3);
         enumMap.put(ArmorType.BODY, 4);
-    }), 9, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.0F, ItemTags.REPAIRS_IRON_ARMOR, ResourceKey.create(EquipmentAssets.ROOT_ID, ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID,"meteorite")));
+    }), 9, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.0F, TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "repairs_meteorite_armor")), ResourceKey.create(EquipmentAssets.ROOT_ID, ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID,"meteorite")));
 }
