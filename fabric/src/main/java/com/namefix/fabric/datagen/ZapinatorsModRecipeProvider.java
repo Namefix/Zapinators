@@ -66,7 +66,37 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(ItemRegistry.ZAPINATOR_RESET_SMITHING_TEMPLATE.get()), this.has(ItemRegistry.ZAPINATOR_RESET_SMITHING_TEMPLATE.get()))
                 .save(recipeOutput);
 
-        // zapinator cores
+        // meteorite armor
+        shaped(RecipeCategory.COMBAT, ItemRegistry.METEORITE_HELMET.get())
+                .pattern("MMM")
+                .pattern("M M")
+                .define('M', ItemRegistry.METEORITE_INGOT.get())
+                .unlockedBy(RecipeProvider.getHasName(ItemRegistry.METEORITE_INGOT.get()), this.has(ItemRegistry.METEORITE_INGOT.get()))
+                .save(recipeOutput);
+
+        shaped(RecipeCategory.COMBAT, ItemRegistry.METEORITE_CHESTPLATE.get())
+                .pattern("M M")
+                .pattern("MMM")
+                .pattern("MMM")
+                .define('M', ItemRegistry.METEORITE_INGOT.get())
+                .unlockedBy(RecipeProvider.getHasName(ItemRegistry.METEORITE_INGOT.get()), this.has(ItemRegistry.METEORITE_INGOT.get()))
+                .save(recipeOutput);
+
+        shaped(RecipeCategory.COMBAT, ItemRegistry.METEORITE_LEGGINGS.get())
+                .pattern("MMM")
+                .pattern("M M")
+                .pattern("M M")
+                .define('M', ItemRegistry.METEORITE_INGOT.get())
+                .unlockedBy(RecipeProvider.getHasName(ItemRegistry.METEORITE_INGOT.get()), this.has(ItemRegistry.METEORITE_INGOT.get()))
+                .save(recipeOutput);
+
+        shaped(RecipeCategory.COMBAT, ItemRegistry.METEORITE_BOOTS.get())
+                .pattern("M M")
+                .pattern("M M")
+                .define('M', ItemRegistry.METEORITE_INGOT.get())
+                .unlockedBy(RecipeProvider.getHasName(ItemRegistry.METEORITE_INGOT.get()), this.has(ItemRegistry.METEORITE_INGOT.get()))
+                .save(recipeOutput);
+
         for(ZapinatorType zap1 : ZapinatorType.values()) {
             if(zap1.equals(ZapinatorType.NONE)) continue;
             for (ZapinatorType zap2 : ZapinatorType.values()) {
