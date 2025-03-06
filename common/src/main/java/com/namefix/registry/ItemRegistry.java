@@ -45,9 +45,9 @@ public class ItemRegistry {
     public static final RegistrySupplier<Item> ZAPINATOR_RESET_SMITHING_TEMPLATE = registerItem("zapinator_reset_smithing_template", properties -> new SmithingTemplateItem(
             Component.translatable("item.zapinators.smithing_template.zapinator_reset.applies_to").withStyle(ChatFormatting.BLUE),
             Component.translatable("item.zapinators.smithing_template.zapinator_reset.ingredients").withStyle(ChatFormatting.BLUE),
+            Component.translatable("upgrade.zapinators.zapinator_reset").withStyle(ChatFormatting.GRAY),
             Component.translatable("item.zapinators.smithing_template.zapinator_reset.base_slot_description"),
             Component.translatable("item.zapinators.smithing_template.zapinator_reset.additions_slot_description"),
-            null,
             null,
             null
     ));

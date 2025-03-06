@@ -27,7 +27,7 @@
     "item.zapinators.raw_meteorite": "Raw Meteorite",
     "item.zapinators.meteorite_ingot": "Meteorite Ingot",
     "item.zapinators.meteorite_nugget": "Meteorite Nugget",
-    "item.zapinators.zapinator_reset_smithing_template": "Zapinator Reset",
+    "item.zapinators.zapinator_reset_smithing_template": "Smithing Template",
     "item.zapinators.energy_cell": "Energy Cell",
 
     "item.zapinators.color_zapinator.description": "'It might be broken'",
@@ -53,5 +53,7 @@
     "block.zapinators.meteorite_block": "Block of Meteorite",
 
     "tag.item.zapinators.color_zapinators": "Color Zapinators",
-    "tag.item.zapinators.zapinator_cores": "Zapinator Cores"
+    "tag.item.zapinators.zapinator_cores": "Zapinator Cores",
+
+    "upgrade.zapinators.zapinator_reset": "Zapinator Reset"
 }
