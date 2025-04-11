@@ -8,5 +8,7 @@ public enum ZapinatorType {
     GREEN,
     BLUE,
     PURPLE,
-    BLACK
+    BLACK,
+    YELLOW,
+    WHITE
 }

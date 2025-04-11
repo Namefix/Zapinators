@@ -7,7 +7,6 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -229,6 +228,14 @@ public class LaserProjectile extends AbstractHurtingProjectile {
                 }
                 case PURPLE: {
                     Utils.applyKnockback(livingTarget, this, baseKnockback*10);
+                    break;
+                }
+                case YELLOW: {
+                    Utils.spawnLightning(livingTarget.position(), livingTarget.level());
+                    break;
+                }
+                case WHITE: {
+                    livingTarget.addEffect(new MobEffectInstance(MobEffects.LEVITATION, random.nextInt(20, 70)));
                     break;
                 }
             }

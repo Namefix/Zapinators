@@ -44,6 +44,12 @@ public class ColorZapinatorItem extends AbstractLaserGunItem {
                 list.add(Component.literal("One shot, one kill").withStyle(ChatFormatting.DARK_GRAY));
                 list.add(Component.translatable("item.zapinators.black_zapinator.description").withStyle(ChatFormatting.GOLD));
                 break;
+            case YELLOW:
+                list.add(Component.translatable("item.zapinators.yellow_zapinator.description").withStyle(ChatFormatting.GRAY));
+                break;
+            case WHITE:
+                list.add(Component.translatable("item.zapinators.white_zapinator.description").withStyle(ChatFormatting.GRAY));
+                break;
         }
         super.appendHoverText(itemStack, tooltipContext, list, tooltipFlag);
     }
