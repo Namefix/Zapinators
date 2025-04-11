@@ -35,10 +35,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Fabric
-          path: build/libs/*fabric*.jar
+          path: common/build/libs/*fabric*.jar
 
       - name: Upload NeoForge
         uses: actions/upload-artifact@v4
         with:
           name: NeoForge
-          path: build/libs/*neoforge*.jar
+          path: common/build/libs/*neoforge*.jar
