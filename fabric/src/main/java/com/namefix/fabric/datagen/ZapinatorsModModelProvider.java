@@ -41,6 +41,10 @@ public class ZapinatorsModModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(ItemRegistry.BLUE_ZAPINATOR.get(), gunTemplate);
         itemModelGenerators.generateFlatItem(ItemRegistry.PURPLE_ZAPINATOR.get(), gunTemplate);
         itemModelGenerators.generateFlatItem(ItemRegistry.BLACK_ZAPINATOR.get(), gunTemplate);
+        itemModelGenerators.generateFlatItem(ItemRegistry.YELLOW_ZAPINATOR.get(), gunTemplate);
+        itemModelGenerators.generateFlatItem(ItemRegistry.WHITE_ZAPINATOR.get(), gunTemplate);
+
+        itemModelGenerators.generateFlatItem(ItemRegistry.ENDER_ZAPINATOR.get(), gunTemplate);
 
         itemModelGenerators.generateFlatItem(ItemRegistry.GRAY_CORE.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ItemRegistry.ORANGE_CORE.get(), ModelTemplates.FLAT_ITEM);
@@ -49,6 +53,8 @@ public class ZapinatorsModModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(ItemRegistry.BLUE_CORE.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ItemRegistry.PURPLE_CORE.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ItemRegistry.BLACK_CORE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ItemRegistry.YELLOW_CORE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ItemRegistry.WHITE_CORE.get(), ModelTemplates.FLAT_ITEM);
 
         itemModelGenerators.generateFlatItem(ItemRegistry.RAW_METEORITE.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ItemRegistry.METEORITE_INGOT.get(), ModelTemplates.FLAT_ITEM);

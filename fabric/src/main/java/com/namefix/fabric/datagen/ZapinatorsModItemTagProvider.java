@@ -42,7 +42,9 @@ public class ZapinatorsModItemTagProvider extends FabricTagProvider.ItemTagProvi
                 .add(ItemRegistry.GREEN_ZAPINATOR.get())
                 .add(ItemRegistry.BLUE_ZAPINATOR.get())
                 .add(ItemRegistry.PURPLE_ZAPINATOR.get())
-                .add(ItemRegistry.BLACK_ZAPINATOR.get());
+                .add(ItemRegistry.BLACK_ZAPINATOR.get())
+                .add(ItemRegistry.YELLOW_ZAPINATOR.get())
+                .add(ItemRegistry.WHITE_ZAPINATOR.get());
 
         getOrCreateTagBuilder(ZAPINATOR_CORES)
                 .add(ItemRegistry.GRAY_CORE.get())
@@ -51,6 +53,8 @@ public class ZapinatorsModItemTagProvider extends FabricTagProvider.ItemTagProvi
                 .add(ItemRegistry.GREEN_CORE.get())
                 .add(ItemRegistry.BLUE_CORE.get())
                 .add(ItemRegistry.PURPLE_CORE.get())
-                .add(ItemRegistry.BLACK_CORE.get());
+                .add(ItemRegistry.BLACK_CORE.get())
+                .add(ItemRegistry.YELLOW_CORE.get())
+                .add(ItemRegistry.WHITE_CORE.get());
     }
 }

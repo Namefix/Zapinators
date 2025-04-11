@@ -6,6 +6,8 @@
     "zapinators:green_core",
     "zapinators:blue_core",
     "zapinators:purple_core",
-    "zapinators:black_core"
+    "zapinators:black_core",
+    "zapinators:yellow_core",
+    "zapinators:white_core"
   ]
 }

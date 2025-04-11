@@ -14,7 +14,12 @@
     "item.zapinators.blue_zapinator": "Mavi Zapinatör",
     "item.zapinators.purple_zapinator": "Mor Zapinatör",
     "item.zapinators.black_zapinator": "Siyah Zapinatör",
+    "item.zapinators.yellow_zapinator": "Sarı Zapinatör",
+    "item.zapinators.white_zapinator": "Beyaz Zapinatör",
 
+    "item.zapinators.ender_zapinator": "Ender Zapinatör",
+
+    "item.zapinators.core.description": "Bir zapinatörü bu renge işlemek için kullanılır",
     "item.zapinators.gray_core": "Gri Çekirdek",
     "item.zapinators.orange_core": "Turuncu Çekirdek",
     "item.zapinators.red_core": "Kırmızı Çekirdek",
@@ -22,7 +27,8 @@
     "item.zapinators.blue_core": "Mavi Çekirdek",
     "item.zapinators.purple_core": "Mor Çekirdek",
     "item.zapinators.black_core": "Siyah Çekirdek",
-    "item.zapinators.core.description": "Zapinatörleri bu çekirdeğin rengine işlemek için kullanılır",
+    "item.zapinators.yellow_core": "Sarı Çekirdek",
+    "item.zapinators.white_core": "Beyaz Çekirdek",
 
     "item.zapinators.raw_meteorite": "Ham Meteorit",
     "item.zapinators.meteorite_ingot": "Meteorit Külçesi",
@@ -31,16 +37,21 @@
     "item.zapinators.energy_cell": "Enerji Hücresi",
 
     "item.zapinators.color_zapinator.description": "'Bozuk olabilir'",
-    "item.zapinators.red_zapinator.description": "Yüksek şansla hedefi tutuşturur",
-    "item.zapinators.green_zapinator.description": "Yüksek şansla hedefi zehirler",
-    "item.zapinators.blue_zapinator.description": "Yüksek şansla hedefe yavaşlık uygular",
-    "item.zapinators.purple_zapinator.description": "Yüksek şansla hedefe ekstra savurma uygular",
-    "item.zapinators.black_zapinator.description": "Hayatta kalmada edinilemez",
+    "item.zapinators.red_zapinator.description": "Yarım şansla hedefi tutuşturur",
+    "item.zapinators.green_zapinator.description": "Yarım şansla hedefi zehirler",
+    "item.zapinators.blue_zapinator.description": "Yarım şansla hedefe yavaşlık uygular",
+    "item.zapinators.purple_zapinator.description": "Yarım şansla hedefe ekstra savurma uygular",
+    "item.zapinators.black_zapinator.description": "Hayatta kalma'da edinilemez",
+    "item.zapinators.yellow_zapinator.description": "Yarım şansla hedefe yıldırım çarpar",
+    "item.zapinators.white_zapinator.description": "Yarım şansla hedefi uçurur",
+
+    "item.zapinators.ender_zapinator.description": "Bir ejderhanın çevikliğini taşır",
+    "item.zapinators.ender_zapinator.description2": "Yüksek mermi hızı",
 
     "item.zapinators.smithing_template.zapinator_reset.applies_to": "Renkli Zapinatörler",
     "item.zapinators.smithing_template.zapinator_reset.base_slot_description": "Bir renkli zapinatör ekle",
-    "item.zapinators.smithing_template.zapinator_reset.ingredients": "Zapinatör Çekirdekleri",
-    "item.zapinators.smithing_template.zapinator_reset.additions_slot_description": "Bir zapinatör çekirdeği ekle",
+    "item.zapinators.smithing_template.zapinator_reset.ingredients": "Renk Çekirdekleri",
+    "item.zapinators.smithing_template.zapinator_reset.additions_slot_description": "Bir renkli çekirdek ekle",
 
     "item.zapinators.meteorite_helmet": "Meteorit Miğfer",
     "item.zapinators.meteorite_chestplate": "Meteorit Göğüslük",

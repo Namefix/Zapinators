@@ -1,0 +1,6 @@
+{
+  "parent": "zapinators:item/gun",
+  "textures": {
+    "layer0": "zapinators:item/white_zapinator"
+  }
+}
