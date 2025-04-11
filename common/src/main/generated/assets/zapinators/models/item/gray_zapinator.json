@@ -1,6 +1,0 @@
-{
-  "parent": "zapinators:item/gun",
-  "textures": {
-    "layer0": "zapinators:item/gray_zapinator"
-  }
-}
