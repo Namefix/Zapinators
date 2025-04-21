@@ -1,5 +1,6 @@
 package com.namefix.entity;
 
+import com.namefix.config.ZapinatorsConfig;
 import com.namefix.enums.ZapinatorType;
 import com.namefix.utils.Utils;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -241,7 +242,7 @@ public class LaserProjectile extends AbstractHurtingProjectile {
             }
         }
 
-        target.hurt(damageSources().playerAttack((Player) this.getOwner()), damage);
+        target.hurt(damageSources().playerAttack((Player) this.getOwner()), damage*ZapinatorsConfig.zapinatorDamageMultiplier);
         if(target instanceof LivingEntity livingTarget) Utils.applyKnockback(livingTarget, this, baseKnockback);
     }
 
