@@ -34,5 +34,12 @@ versionRange = "[15.0.1,)"
 ordering = "AFTER"
 side = "BOTH"
 
+[[dependencies.zapinators]]
+modId = "resourcefulconfig"
+type = "required"
+versionRange = "[3.4.3,)"
+ordering = "NONE"
+side = "BOTH"
+
 [[mixins]]
 config = "zapinators.mixins.json"
