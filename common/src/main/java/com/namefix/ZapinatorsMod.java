@@ -1,14 +1,14 @@
 package com.namefix;
 
+import com.namefix.client.ManaRenderer;
 import com.namefix.config.ZapinatorsConfig;
 import com.namefix.loot.ModLootTables;
 import com.namefix.registry.*;
 import com.namefix.trade.ModVillagerTrades;
 import com.teamresourceful.resourcefulconfig.api.loader.Configurator;
+import dev.architectury.event.events.client.ClientGuiEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import javax.swing.text.html.parser.Entity;
 
 public final class ZapinatorsMod {
     public static final String MOD_ID = "zapinators";
@@ -32,5 +32,7 @@ public final class ZapinatorsMod {
 
     public static void initClient() {
         EntityRegistry.registerRenderers();
+
+        ClientGuiEvent.RENDER_HUD.register(ManaRenderer::render);
     }
 }
