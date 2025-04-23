@@ -41,7 +41,7 @@ public class StateSaver extends SavedData {
 		ServerLevel world = server.getLevel(Level.OVERWORLD);
 		assert world != null;
 
-		StateSaver state = world.getDataStorage().get(type, ZapinatorsMod.MOD_ID);
+		StateSaver state = world.getDataStorage().computeIfAbsent(type, ZapinatorsMod.MOD_ID);
 
 		state.setDirty();
 		return state;

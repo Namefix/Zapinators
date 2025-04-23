@@ -97,8 +97,6 @@ public class ModLootTables {
 						.add(LootItem.lootTableItem(ItemRegistry.PURPLE_CORE.get()));
 				context.addPool(builder);
 			}
-
-			ZapinatorsMod.LOGGER.info(key.location().toString());
 		}
 	}
 }
