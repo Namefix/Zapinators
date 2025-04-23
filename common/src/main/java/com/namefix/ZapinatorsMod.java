@@ -3,10 +3,13 @@ package com.namefix;
 import com.namefix.client.ManaRenderer;
 import com.namefix.config.ZapinatorsConfig;
 import com.namefix.loot.ModLootTables;
+import com.namefix.network.ZapinatorsNetwork;
 import com.namefix.registry.*;
+import com.namefix.server.ZapinatorsServer;
 import com.namefix.trade.ModVillagerTrades;
 import com.teamresourceful.resourcefulconfig.api.loader.Configurator;
 import dev.architectury.event.events.client.ClientGuiEvent;
+import dev.architectury.event.events.common.PlayerEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,6 +29,10 @@ public final class ZapinatorsMod {
 
         ModVillagerTrades.register();
         ModLootTables.register();
+
+        ZapinatorsNetwork.initialize();
+
+        PlayerEvent.PLAYER_JOIN.register(ZapinatorsServer::sendInitialSync);
 
         LOGGER.info("--- Zapinators --- Mod --- initialized. ---");
     }
