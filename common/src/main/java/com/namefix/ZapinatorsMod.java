@@ -1,6 +1,7 @@
 package com.namefix;
 
 import com.namefix.client.ManaRenderer;
+import com.namefix.client.ZapinatorsClient;
 import com.namefix.config.ZapinatorsConfig;
 import com.namefix.loot.ModLootTables;
 import com.namefix.network.ZapinatorsNetwork;
@@ -9,7 +10,12 @@ import com.namefix.server.ZapinatorsServer;
 import com.namefix.trade.ModVillagerTrades;
 import com.teamresourceful.resourcefulconfig.api.loader.Configurator;
 import dev.architectury.event.events.client.ClientGuiEvent;
+import dev.architectury.event.events.client.ClientTickEvent;
 import dev.architectury.event.events.common.PlayerEvent;
+import dev.architectury.event.events.common.TickEvent;
+import dev.architectury.registry.level.entity.EntityAttributeRegistry;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.player.Player;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,6 +32,7 @@ public final class ZapinatorsMod {
         TabRegistry.register();
         BlockRegistry.register();
         ItemRegistry.register();
+        AttributeRegistry.register();
 
         ModVillagerTrades.register();
         ModLootTables.register();
@@ -33,6 +40,7 @@ public final class ZapinatorsMod {
         ZapinatorsNetwork.initialize();
 
         PlayerEvent.PLAYER_JOIN.register(ZapinatorsServer::sendInitialSync);
+        TickEvent.SERVER_LEVEL_POST.register(ZapinatorsServer::tick);
 
         LOGGER.info("--- Zapinators --- Mod --- initialized. ---");
     }
@@ -41,5 +49,6 @@ public final class ZapinatorsMod {
         EntityRegistry.registerRenderers();
 
         ClientGuiEvent.RENDER_HUD.register(ManaRenderer::render);
+        ClientTickEvent.CLIENT_LEVEL_POST.register(ZapinatorsClient::tick);
     }
 }

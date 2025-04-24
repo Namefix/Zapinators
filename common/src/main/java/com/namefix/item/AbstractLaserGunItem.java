@@ -1,10 +1,16 @@
 package com.namefix.item;
 
+import com.namefix.client.ZapinatorsClient;
+import com.namefix.data.PlayerData;
 import com.namefix.entity.LaserProjectile;
 import com.namefix.enums.ZapinatorType;
 import com.namefix.registry.EntityRegistry;
 import com.namefix.registry.ItemRegistry;
+import com.namefix.server.ZapinatorsServer;
 import com.namefix.utils.Utils;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -13,10 +19,13 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUseAnimation;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 import org.joml.Vector3f;
+
+import java.util.List;
 
 public abstract class AbstractLaserGunItem extends Item {
     protected int color = 0xFFFFFF;
@@ -29,7 +38,7 @@ public abstract class AbstractLaserGunItem extends Item {
     protected boolean blockPiercing = false;
     protected boolean entityPiercing = true;
     protected int maxPiercing = 3;
-    protected boolean requiresEnergyCell = true;
+    protected float manaCost = 1f;
     protected ZapinatorType zapinatorType = ZapinatorType.NONE;
     protected SoundEvent shootSound;
 
@@ -40,7 +49,16 @@ public abstract class AbstractLaserGunItem extends Item {
     @Override
     public @NotNull InteractionResult use(Level level, Player player, InteractionHand interactionHand) {
         int saveChance = Utils.getPlayerAmmoSaveChance(player);
-        if(!player.isCreative() && requiresEnergyCell && saveChance < 100 && !player.getInventory().contains(ItemRegistry.ENERGY_CELL.get().getDefaultInstance())) return InteractionResult.FAIL;
+
+        if(!player.isCreative() && saveChance < 100 && manaCost > 0.0f) {
+            if (level.isClientSide()) {
+                if (ZapinatorsClient.mana < manaCost) return InteractionResult.FAIL;
+            } else {
+                PlayerData data = ZapinatorsServer.getPlayerData((ServerPlayer) player);
+                if(data.mana < manaCost) return InteractionResult.FAIL;
+            }
+        }
+
         if(!level.isClientSide) {
             LaserProjectile projectile = new LaserProjectile(EntityRegistry.LASER_PROJECTILE.get(), level);
 
@@ -72,12 +90,16 @@ public abstract class AbstractLaserGunItem extends Item {
             projectile.setMaxPiercing(maxPiercing);
             projectile.setZapinatorType(zapinatorType);
             level.addFreshEntity(projectile);
+        }
 
-            if(!player.isCreative() && requiresEnergyCell) {
-                int rand = level.getRandom().nextInt(0, 100);
-                if(saveChance < rand) Utils.removeOneItem(player, ItemRegistry.ENERGY_CELL.get());
+        if(!player.isCreative() && manaCost > 0 && saveChance < 100) {
+            if(level.isClientSide()) {
+                ZapinatorsClient.decreaseMana(manaCost, true);
+            } else {
+                ZapinatorsServer.decreaseMana((ServerPlayer) player, manaCost, true);
             }
         }
+
         player.getCooldowns().addCooldown(this.arch$registryName(), itemCooldown);
         if(shootSound != null) player.level().playSound(null, player.getX(), player.getY(), player.getZ(), shootSound, SoundSource.PLAYERS);
         return InteractionResult.CONSUME;
@@ -86,5 +108,12 @@ public abstract class AbstractLaserGunItem extends Item {
     @Override
     public ItemUseAnimation getUseAnimation(ItemStack itemStack) {
         return ItemUseAnimation.NONE;
+    }
+
+    @Override
+    public void appendHoverText(ItemStack itemStack, TooltipContext tooltipContext, List<Component> list, TooltipFlag tooltipFlag) {
+        if(manaCost > 0.0f) list.add(Component.translatable("item.zapinators.description.mana_usage", manaCost).withStyle(ChatFormatting.BLUE));
+
+        super.appendHoverText(itemStack, tooltipContext, list, tooltipFlag);
     }
 }

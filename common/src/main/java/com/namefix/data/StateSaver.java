@@ -23,7 +23,6 @@ public class StateSaver extends SavedData {
 			CompoundTag playerTag = new CompoundTag();
 
 			playerTag.putFloat("mana", playerData.mana);
-			playerTag.putFloat("maxMana", playerData.maxMana);
 			playerTag.putInt("manaRegenCooldown", playerData.manaRegenCooldown);
 
 			playersTag.put(uuid.toString(), playerTag);
@@ -39,7 +38,6 @@ public class StateSaver extends SavedData {
 			PlayerData playerData = new PlayerData();
 
 			playerData.mana = playersTag.getFloat(key);
-			playerData.maxMana = playersTag.getFloat(key);
 			playerData.manaRegenCooldown = playersTag.getInt(key);
 
 			UUID uuid = UUID.fromString(key);

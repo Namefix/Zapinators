@@ -18,6 +18,7 @@ public class EnderZapinatorItem extends AbstractLaserGunItem {
 		this.laserLength = 2.5f;
 		this.maxPiercing = 12;
 		this.projectileSpeed = 1.0f;
+		this.manaCost = 2f;
 		this.shootSound = SoundRegistry.COLOR_ZAPINATOR_SHOOT.getOrNull();
 	}
 

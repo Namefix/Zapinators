@@ -7,6 +7,8 @@
     "sound.zapinators.zapinator_shot": "Zapinatör vuruldu",
     "sound.zapinators.color_zapinator_shot": "Renkli Zapinatör vuruldu",
 
+    "item.zapinators.description.mana_usage": "%f mana kullanır",
+
     "item.zapinators.space_gun": "Uzay Silahı",
     "item.zapinators.laser_rifle": "Lazer Tüfeği",
     "item.zapinators.zapinator": "Zapinatör",
@@ -68,6 +70,9 @@
 
     "tag.item.zapinators.color_zapinators": "Renkli Zapinatörler",
     "tag.item.zapinators.zapinator_cores": "Zapinatör Çekirdekleri",
+
+    "attribute.name.mana_regeneration": "Mana Rejenerasyon",
+    "attribute.name.max_mana": "Maksimum Mana",
 
     "config.zapinators.zapinatorDamageMultiplier": "Zapinatör Hasar Çarpanı"
 }
