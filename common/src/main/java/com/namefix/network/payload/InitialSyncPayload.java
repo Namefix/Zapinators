@@ -6,8 +6,8 @@ import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 
-public record InitialSyncPayload(float mana, float maxMana) implements CustomPacketPayload {
-	public static final StreamCodec<RegistryFriendlyByteBuf, InitialSyncPayload> CODEC = StreamCodec.composite(ByteBufCodecs.FLOAT, InitialSyncPayload::mana, ByteBufCodecs.FLOAT, InitialSyncPayload::maxMana, InitialSyncPayload::new);
+public record InitialSyncPayload(float mana, float maxMana, int manaRegenCooldown) implements CustomPacketPayload {
+	public static final StreamCodec<RegistryFriendlyByteBuf, InitialSyncPayload> CODEC = StreamCodec.composite(ByteBufCodecs.FLOAT, InitialSyncPayload::mana, ByteBufCodecs.FLOAT, InitialSyncPayload::maxMana, ByteBufCodecs.INT, InitialSyncPayload::manaRegenCooldown, InitialSyncPayload::new);
 
 	@Override
 	public Type<? extends CustomPacketPayload> type() {
