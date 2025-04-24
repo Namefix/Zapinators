@@ -9,6 +9,7 @@ public class ZapinatorItem extends AbstractLaserGunItem {
         this.baseDamage = 2.5f;
         this.itemCooldown = 5;
         this.laserLength = 1.0f;
+        this.manaCost = 5f;
         this.shootSound = SoundRegistry.ZAPINATOR_SHOOT.getOrNull();
     }
 }

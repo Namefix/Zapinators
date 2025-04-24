@@ -7,6 +7,8 @@
     "sound.zapinators.zapinator_shot": "Zapinator shot",
     "sound.zapinators.color_zapinator_shot": "Color Zapinator shot",
 
+    "item.zapinators.description.mana_usage": "Uses %f mana",
+
     "item.zapinators.space_gun": "Space Gun",
     "item.zapinators.laser_rifle": "Laser Rifle",
     "item.zapinators.zapinator": "Zapinator",
@@ -70,5 +72,9 @@
     "tag.item.zapinators.zapinator_cores": "Zapinator Cores",
 
     "upgrade.zapinators.zapinator_reset": "Zapinator Reset",
+
+    "attribute.name.mana_regeneration": "Mana Regeneration",
+    "attribute.name.max_mana": "Max Mana",
+
     "config.zapinators.zapinatorDamageMultiplier": "Zapinator Damage Multiplier"
 }

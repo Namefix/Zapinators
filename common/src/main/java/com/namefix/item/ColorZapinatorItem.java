@@ -11,7 +11,7 @@ import java.util.List;
 
 public class ColorZapinatorItem extends AbstractLaserGunItem {
 
-    public ColorZapinatorItem(Properties properties, ZapinatorType zapinatorType, float baseDamage) {
+    public ColorZapinatorItem(Properties properties, ZapinatorType zapinatorType, float baseDamage, float manaCost) {
         super(properties);
         this.zapinatorType = zapinatorType;
         this.color = 0x5BBCEA;
@@ -19,6 +19,7 @@ public class ColorZapinatorItem extends AbstractLaserGunItem {
         this.itemCooldown = 20;
         this.laserLength = 2.5f;
         this.maxPiercing = 8;
+        this.manaCost = manaCost;
         this.shootSound = SoundRegistry.COLOR_ZAPINATOR_SHOOT.getOrNull();
     }
 
