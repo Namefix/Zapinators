@@ -18,11 +18,33 @@ public class StateSaver extends SavedData {
 
 	@Override
 	public CompoundTag save(CompoundTag compoundTag, HolderLookup.Provider provider) {
+		CompoundTag playersTag = new CompoundTag();
+		players.forEach((uuid, playerData) -> {
+			CompoundTag playerTag = new CompoundTag();
+
+			playerTag.putFloat("mana", playerData.mana);
+			playerTag.putFloat("maxMana", playerData.maxMana);
+			playerTag.putInt("manaRegenCooldown", playerData.manaRegenCooldown);
+
+			playersTag.put(uuid.toString(), playerTag);
+		});
+		compoundTag.put("players", playersTag);
 		return compoundTag;
 	}
 
 	public static StateSaver createFromNbt(CompoundTag compoundTag, HolderLookup.Provider provider) {
 		StateSaver state = new StateSaver();
+		CompoundTag playersTag = compoundTag.getCompound("players");
+		playersTag.getAllKeys().forEach(key -> {
+			PlayerData playerData = new PlayerData();
+
+			playerData.mana = playersTag.getFloat(key);
+			playerData.maxMana = playersTag.getFloat(key);
+			playerData.manaRegenCooldown = playersTag.getInt(key);
+
+			UUID uuid = UUID.fromString(key);
+			state.players.put(uuid, playerData);
+		});
 		return state;
 	}
 
