@@ -9,6 +9,7 @@ public class SpaceGunItem extends AbstractLaserGunItem {
         this.baseDamage = 2.0f;
         this.itemCooldown = 6;
         this.manaCost = 2f;
+        this.meteoriteArmorSavesMana = true;
         this.shootSound = SoundRegistry.SPACE_GUN_SHOOT.getOrNull();
     }
 }

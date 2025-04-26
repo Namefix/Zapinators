@@ -15,6 +15,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Utils {
@@ -73,17 +74,15 @@ public class Utils {
         }
     }
 
-    public static int getPlayerAmmoSaveChance(Player player) {
-        AtomicInteger total = new AtomicInteger();
+    public static boolean getPlayerMeteoriteSetBonus(Player player) {
+        AtomicBoolean fullset = new AtomicBoolean(true);
 
         var playerArmor = player.getArmorSlots();
-        playerArmor.forEach((piece) -> {
-            if(piece.getItem() instanceof MeteoriteArmorItem armor) {
-                total.addAndGet(armor.getSavePercent());
-            }
+        playerArmor.forEach(piece -> {
+            if(!(piece.getItem() instanceof MeteoriteArmorItem)) fullset.set(false);
         });
 
-        return total.get();
+        return fullset.get();
     }
 
     public static Item getZapinatorFromEnum(ZapinatorType type) {
