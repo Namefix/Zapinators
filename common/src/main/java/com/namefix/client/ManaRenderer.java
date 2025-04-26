@@ -19,13 +19,16 @@ public class ManaRenderer {
 
 	public static void render(GuiGraphics guiGraphics, DeltaTracker deltaTracker) {
 		Minecraft mc = Minecraft.getInstance();
-		if(mc.options.hideGui || mc.player.isCreative()) return;
+		if(mc.options.hideGui || mc.player.isCreative() || mc.player.isSpectator()) return;
 
 		double maxMana = mc.player.getAttributeValue(AttributeRegistry.getHolder(AttributeRegistry.MAX_MANA));
 		if(maxMana == 0) return;
 
 		int baseManaX = guiGraphics.guiWidth() - 24;
 		int baseManaY = 10;
+
+		if(!mc.player.getActiveEffects().isEmpty())
+			baseManaY += 48;
 
 		int manaX = baseManaX*2;
 		int manaY = baseManaY*2;

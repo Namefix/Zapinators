@@ -39,6 +39,7 @@ public abstract class AbstractLaserGunItem extends Item {
     protected boolean entityPiercing = true;
     protected int maxPiercing = 3;
     protected float manaCost = 1f;
+    protected boolean meteoriteArmorSavesMana = false;
     protected ZapinatorType zapinatorType = ZapinatorType.NONE;
     protected SoundEvent shootSound;
 
@@ -48,9 +49,10 @@ public abstract class AbstractLaserGunItem extends Item {
 
     @Override
     public @NotNull InteractionResult use(Level level, Player player, InteractionHand interactionHand) {
-        int saveChance = Utils.getPlayerAmmoSaveChance(player);
+        boolean meteoriteSetBonus = Utils.getPlayerMeteoriteSetBonus(player);
+        if(!meteoriteArmorSavesMana) meteoriteSetBonus = false;
 
-        if(!player.isCreative() && saveChance < 100 && manaCost > 0.0f) {
+        if(!player.isCreative() && !meteoriteSetBonus && manaCost > 0.0f) {
             if (level.isClientSide()) {
                 if (ZapinatorsClient.mana < manaCost) return InteractionResult.FAIL;
             } else {
@@ -92,7 +94,7 @@ public abstract class AbstractLaserGunItem extends Item {
             level.addFreshEntity(projectile);
         }
 
-        if(!player.isCreative() && manaCost > 0 && saveChance < 100) {
+        if(!player.isCreative() && manaCost > 0.0f && !meteoriteSetBonus) {
             if(level.isClientSide()) {
                 ZapinatorsClient.decreaseMana(manaCost, true);
             } else {
@@ -112,7 +114,12 @@ public abstract class AbstractLaserGunItem extends Item {
 
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext tooltipContext, List<Component> list, TooltipFlag tooltipFlag) {
-        if(manaCost > 0.0f) list.add(Component.translatable("item.zapinators.description.mana_usage", manaCost).withStyle(ChatFormatting.BLUE));
+        if (manaCost > 0.0f) {
+            String manaFormatted = (manaCost == (int) manaCost)
+                ? String.valueOf((int) manaCost)
+                : String.format("%.1f", manaCost);
+            list.add(Component.translatable("item.zapinators.description.mana_usage", manaFormatted).withStyle(ChatFormatting.BLUE));
+        }
 
         super.appendHoverText(itemStack, tooltipContext, list, tooltipFlag);
     }
