@@ -35,10 +35,11 @@ public class StateSaver extends SavedData {
 		StateSaver state = new StateSaver();
 		CompoundTag playersTag = compoundTag.getCompound("players");
 		playersTag.getAllKeys().forEach(key -> {
+			CompoundTag playerTag = playersTag.getCompound(key);
 			PlayerData playerData = new PlayerData();
 
-			playerData.mana = playersTag.getFloat(key);
-			playerData.manaRegenCooldown = playersTag.getInt(key);
+			playerData.mana = playerTag.getFloat("mana");
+			playerData.manaRegenCooldown = playerTag.getInt("manaRegenCooldown");
 
 			UUID uuid = UUID.fromString(key);
 			state.players.put(uuid, playerData);

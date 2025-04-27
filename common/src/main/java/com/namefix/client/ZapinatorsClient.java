@@ -1,15 +1,11 @@
 package com.namefix.client;
 
-import com.namefix.data.PlayerData;
-import com.namefix.data.StateSaver;
 import com.namefix.network.payload.InitialSyncPayload;
 import com.namefix.registry.AttributeRegistry;
 import dev.architectury.networking.NetworkManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.player.Player;
 
 public class ZapinatorsClient {
 	public static float mana = 0f;
