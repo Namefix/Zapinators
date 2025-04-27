@@ -1,6 +1,7 @@
 package com.namefix.registry;
 
 import com.namefix.ZapinatorsMod;
+import dev.architectury.platform.Platform;
 import dev.architectury.registry.level.entity.EntityAttributeRegistry;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
@@ -20,10 +21,12 @@ public class AttributeRegistry {
 	public static void register() {
 		ATTRIBUTES.register();
 
-		EntityAttributeRegistry.register(
-				() -> EntityType.PLAYER,
-				() -> Player.createAttributes().add(getHolder(MANA_REGENERATION)).add(getHolder(MAX_MANA))
-		);
+		if(Platform.isFabric()) {
+			EntityAttributeRegistry.register(
+					() -> EntityType.PLAYER,
+					() -> Player.createAttributes().add(getHolder(MANA_REGENERATION)).add(getHolder(MAX_MANA))
+			);
+		}
 	}
 
 	public static Holder<Attribute> getHolder(RegistrySupplier<Attribute> registry) {
