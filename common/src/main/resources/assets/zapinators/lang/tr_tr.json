@@ -76,5 +76,11 @@
     "attribute.name.mana_regeneration": "Mana Rejenerasyon",
     "attribute.name.max_mana": "Maksimum Mana",
 
-    "config.zapinators.zapinatorDamageMultiplier": "Zapinatör Hasar Çarpanı"
+    "config.zapinators.zapinatorDamageMultiplier": "Zapinatör Hasar Çarpanı",
+    "config.zapinators.manaHudStyle": "Mana Arayüz Stili",
+    "config.zapinators.manaHudHideAuto": "Mana Arayüzünü Otomatik Gizle",
+    "config.zapinators.manaHudHideAuto.description": "Gerekmediği sürece mana arayüzünü gizler",
+    "config.zapinators.customManaHudX": "Özel Mana Arayüzü X",
+    "config.zapinators.customManaHudY": "Özel Mana Arayüzü Y",
+    "config.zapinators.customManaHudScale": "Özel Mana Arayüzü Ölçeği"
 }

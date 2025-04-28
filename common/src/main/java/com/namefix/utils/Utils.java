@@ -2,6 +2,7 @@ package com.namefix.utils;
 
 import com.namefix.ZapinatorsMod;
 import com.namefix.enums.ZapinatorType;
+import com.namefix.item.AbstractLaserGunItem;
 import com.namefix.item.MeteoriteArmorItem;
 import com.namefix.registry.ItemRegistry;
 import net.minecraft.resources.ResourceLocation;
@@ -83,6 +84,11 @@ public class Utils {
         });
 
         return fullset.get();
+    }
+
+    public static boolean doesPlayerHoldManaWeapon(Player player) {
+        if(player.getMainHandItem().getItem() instanceof AbstractLaserGunItem || player.getOffhandItem().getItem() instanceof AbstractLaserGunItem) return true;
+        return false;
     }
 
     public static Item getZapinatorFromEnum(ZapinatorType type) {
