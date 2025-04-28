@@ -22,5 +22,11 @@
     "sounds": [
       "zapinators:color_zapinator_shoot"
     ]
+  },
+  "mana_fill": {
+    "subtitle": "sound.zapinators.mana_fill",
+    "sounds": [
+      "zapinators:mana_fill"
+    ]
   }
 }

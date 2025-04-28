@@ -6,6 +6,7 @@
     "sound.zapinators.laser_rifle_shot": "Laser Rifle shot",
     "sound.zapinators.zapinator_shot": "Zapinator shot",
     "sound.zapinators.color_zapinator_shot": "Color Zapinator shot",
+    "sound.zapinators.mana_fill": "Mana replenished",
 
     "item.zapinators.description.mana_usage": "Uses %f mana",
 

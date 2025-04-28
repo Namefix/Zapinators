@@ -83,10 +83,16 @@ public class ManaRenderer {
 				float fillFraction = manaRemainder / 20f;
 				int fullStarWidth = 22;
 				int fullStarHeight = 24;
+				float scaleTime = 1f;
+
+				if (ZapinatorsClient.manaRegenCooldown > 0) {
+					float time = (float) (System.currentTimeMillis() % 1000L) / 1000f;
+					scaleTime = 1f + 0.1f * Mth.sin(time * 2 * (float)Math.PI);
+				}
 
 				guiGraphics.pose().pushPose();
 				guiGraphics.pose().translate(manaX + 4 + fullStarWidth / 2.0f, manaY + 4 + (fullStars * 22) + fullStarHeight / 2.0f, 0);
-				guiGraphics.pose().scale(fillFraction, fillFraction, 1);
+				guiGraphics.pose().scale(fillFraction * scaleTime, fillFraction * scaleTime, 1);
 				guiGraphics.blit(RenderType::guiTextured, MANA_STAR_FULL, -fullStarWidth / 2, -fullStarHeight / 2, 0.0f, 0.0f, fullStarWidth, fullStarHeight, fullStarWidth, fullStarHeight, fullStarWidth, fullStarHeight, -1);
 				guiGraphics.pose().popPose();
 			}

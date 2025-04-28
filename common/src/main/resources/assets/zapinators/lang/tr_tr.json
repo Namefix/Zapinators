@@ -6,6 +6,7 @@
     "sound.zapinators.laser_rifle_shot": "Lazer Tüfeği vuruldu",
     "sound.zapinators.zapinator_shot": "Zapinatör vuruldu",
     "sound.zapinators.color_zapinator_shot": "Renkli Zapinatör vuruldu",
+    "sound.zapinators.mana_fill": "Mana yenilendi",
 
     "item.zapinators.description.mana_usage": "%f mana kullanır",
 

@@ -3,6 +3,7 @@ package com.namefix.client;
 import com.namefix.network.payload.InitialSyncPayload;
 import com.namefix.network.payload.ManaStatusPayload;
 import com.namefix.registry.AttributeRegistry;
+import com.namefix.registry.SoundRegistry;
 import dev.architectury.networking.NetworkManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -11,6 +12,7 @@ import net.minecraft.util.Mth;
 public class ZapinatorsClient {
 	public static float mana = 0f;
 	public static int manaRegenCooldown = 0;
+	public static boolean manaFull = false;
 
 	public static void handleInitialSync(InitialSyncPayload payload, NetworkManager.PacketContext context) {
 		mana = payload.mana();
@@ -31,8 +33,12 @@ public class ZapinatorsClient {
 
 		if(manaRegenCooldown > 0)
 			manaRegenCooldown--;
-		else
-			mana = (float) Mth.clamp(mana+manaRegen, 0.0, maxMana);
+		else {
+			mana = (float) Mth.clamp(mana + manaRegen, 0.0, maxMana);
+
+			if(mana == maxMana && !manaFull) mc.player.playSound(SoundRegistry.MANA_FILL.get());
+			manaFull = mana == maxMana;
+		}
 	}
 
 	public static void decreaseMana(float amount, boolean cooldown) {
