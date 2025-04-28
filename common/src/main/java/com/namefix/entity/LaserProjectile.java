@@ -242,7 +242,7 @@ public class LaserProjectile extends AbstractHurtingProjectile {
             }
         }
 
-        target.hurtServer((ServerLevel) target.level(), damageSources().playerAttack((Player) this.getOwner()), damage* ZapinatorsConfig.zapinatorDamageMultiplier);
+        target.hurtServer((ServerLevel) target.level(), damageSources().playerAttack((Player) this.getOwner()), damage* ZapinatorsConfig.Server.zapinatorDamageMultiplier);
         if(target instanceof LivingEntity livingTarget) Utils.applyKnockback(livingTarget, this, baseKnockback);
     }
 

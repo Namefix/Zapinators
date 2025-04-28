@@ -3,6 +3,7 @@ package com.namefix.server;
 import com.namefix.data.PlayerData;
 import com.namefix.data.StateSaver;
 import com.namefix.network.payload.InitialSyncPayload;
+import com.namefix.network.payload.ManaStatusPayload;
 import com.namefix.registry.AttributeRegistry;
 import dev.architectury.networking.NetworkManager;
 import net.minecraft.server.level.ServerLevel;
@@ -39,5 +40,7 @@ public class ZapinatorsServer {
 		float maxMana = (float) player.getAttributeValue(AttributeRegistry.getHolder(AttributeRegistry.MAX_MANA));
 		data.mana = Mth.clamp(data.mana-amount, 0.0f, maxMana);
 		if(cooldown) data.manaRegenCooldown = 60;
+
+		NetworkManager.sendToPlayer(player, new ManaStatusPayload(data.mana, data.manaRegenCooldown));
 	}
 }

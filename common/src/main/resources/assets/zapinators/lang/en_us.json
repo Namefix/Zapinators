@@ -74,5 +74,11 @@
     "attribute.name.mana_regeneration": "Mana Regeneration",
     "attribute.name.max_mana": "Max Mana",
 
-    "config.zapinators.zapinatorDamageMultiplier": "Zapinator Damage Multiplier"
+    "config.zapinators.zapinatorDamageMultiplier": "Zapinator Damage Multiplier",
+    "config.zapinators.manaHudStyle": "Mana HUD Style",
+    "config.zapinators.manaHudHideAuto": "Auto Hide Mana HUD",
+    "config.zapinators.manaHudHideAuto.description": "Hides the mana HUD if not needed",
+    "config.zapinators.customManaHudX": "Custom Mana HUD X",
+    "config.zapinators.customManaHudY": "Custom Mana HUD Y",
+    "config.zapinators.customManaHudScale": "Custom Mana HUD Scale"
 }

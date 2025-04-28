@@ -1,6 +1,7 @@
 package com.namefix.client;
 
 import com.namefix.network.payload.InitialSyncPayload;
+import com.namefix.network.payload.ManaStatusPayload;
 import com.namefix.registry.AttributeRegistry;
 import dev.architectury.networking.NetworkManager;
 import net.minecraft.client.Minecraft;
@@ -12,6 +13,11 @@ public class ZapinatorsClient {
 	public static int manaRegenCooldown = 0;
 
 	public static void handleInitialSync(InitialSyncPayload payload, NetworkManager.PacketContext context) {
+		mana = payload.mana();
+		manaRegenCooldown = payload.manaRegenCooldown();
+	}
+
+	public static void handleManaStatus(ManaStatusPayload payload, NetworkManager.PacketContext context) {
 		mana = payload.mana();
 		manaRegenCooldown = payload.manaRegenCooldown();
 	}

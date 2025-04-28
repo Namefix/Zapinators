@@ -1,20 +1,59 @@
 package com.namefix.config;
 
 import com.namefix.ZapinatorsMod;
-import com.teamresourceful.resourcefulconfig.api.annotations.Config;
-import com.teamresourceful.resourcefulconfig.api.annotations.ConfigEntry;
-import com.teamresourceful.resourcefulconfig.api.annotations.ConfigInfo;
-import com.teamresourceful.resourcefulconfig.api.annotations.ConfigOption;
+import com.teamresourceful.resourcefulconfig.api.annotations.*;
 
-@Config(value = ZapinatorsMod.MOD_ID)
+@Config(value = ZapinatorsMod.MOD_ID, categories = {ZapinatorsConfig.Server.class, ZapinatorsConfig.Client.class})
 @ConfigInfo.Provider(ZapinatorsConfigInfoProvider.class)
 public class ZapinatorsConfig {
+	public enum ManaHudStyle {
+		DISABLED,
+		STAR1,
+		CUSTOM
+	}
 
-	@ConfigOption.Slider
-	@ConfigOption.Range(min=0f, max=10f)
-	@ConfigEntry(
-			id = "zapinatorDamageMultiplier",
-			translation = "config.zapinators.zapinatorDamageMultiplier"
-	)
-	public static float zapinatorDamageMultiplier = 1.0f;
+	@Category(value = "Server")
+	public static class Server {
+		@ConfigOption.Slider
+		@ConfigOption.Range(min=0f, max=10f)
+		@ConfigEntry(
+				id = "zapinatorDamageMultiplier",
+				translation = "config.zapinators.zapinatorDamageMultiplier"
+		)
+		public static float zapinatorDamageMultiplier = 1.0f;
+	}
+
+	@Category(value = "Client")
+	public static class Client {
+		@ConfigEntry(
+				id = "manaHudStyle",
+				translation = "config.zapinators.manaHudStyle"
+		)
+		public static ManaHudStyle manaHudStyle = ManaHudStyle.STAR1;
+
+		@Comment(value = "manaHudHideAutoDesc", translation = "config.zapinators.manaHudHideAuto.description")
+		@ConfigEntry(
+				id = "manaHudHideAuto",
+				translation = "config.zapinators.manaHudHideAuto"
+		)
+		public static boolean manaHudHideAuto = false;
+
+		@ConfigEntry(
+				id = "customManaHudX",
+				translation = "config.zapinators.customManaHudX"
+		)
+		public static int manaHudX = 0;
+
+		@ConfigEntry(
+				id = "customManaHudY",
+				translation = "config.zapinators.customManaHudY"
+		)
+		public static int manaHudY = 0;
+
+		@ConfigEntry(
+				id = "customManaHudScale",
+				translation = "config.zapinators.customManaHudScale"
+		)
+		public static float manaHudScale = 0.5f;
+	}
 }
