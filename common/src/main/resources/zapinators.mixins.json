@@ -6,6 +6,7 @@
   "client": [
   ],
   "mixins": [
+    "ItemEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

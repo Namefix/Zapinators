@@ -6,6 +6,7 @@ import com.namefix.item.*;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.components.tabs.Tab;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
@@ -56,6 +57,7 @@ public class ItemRegistry {
             null
     ));
     public static final RegistrySupplier<Item> ENERGY_CELL = registerItem("energy_cell", properties -> new Item(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
+    public static final RegistrySupplier<Item> FALLEN_STAR = registerItem("fallen_star", properties -> new Item(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
 
     public static final RegistrySupplier<Item> METEORITE_HELMET = registerItem("meteorite_helmet", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, Type.HELMET, properties.arch$tab(TabRegistry.ZAPINATORS_TAB).durability(Type.HELMET.getDurability(15)), 25));
     public static final RegistrySupplier<Item> METEORITE_CHESTPLATE = registerItem("meteorite_chestplate", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, Type.CHESTPLATE, properties.arch$tab(TabRegistry.ZAPINATORS_TAB).durability(Type.CHESTPLATE.getDurability(15)), 25));

@@ -1,6 +1,8 @@
 package com.namefix.registry;
 
 import com.namefix.ZapinatorsMod;
+import com.namefix.entity.FallenStar;
+import com.namefix.entity.FallenStarRenderer;
 import com.namefix.entity.LaserProjectile;
 import com.namefix.entity.LaserProjectileRenderer;
 import dev.architectury.registry.client.level.entity.EntityRendererRegistry;
@@ -23,11 +25,18 @@ public class EntityRegistry {
                     .build(ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID,"laser_projectile")).toString())
     );
 
+    public static final RegistrySupplier<EntityType<FallenStar>> FALLEN_STAR = ENTITY_TYPES.register("fallen_star", () ->
+            EntityType.Builder.of(FallenStar::new, MobCategory.MISC)
+                    .sized(0.5f, 0.5f)
+                    .build(ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID,"fallen_star")).toString())
+    );
+
     public static void register() {
         ENTITY_TYPES.register();
     }
 
     public static void registerRenderers() {
         EntityRendererRegistry.register(LASER_PROJECTILE, LaserProjectileRenderer::new);
+        EntityRendererRegistry.register(FALLEN_STAR, FallenStarRenderer::new);
     }
 }

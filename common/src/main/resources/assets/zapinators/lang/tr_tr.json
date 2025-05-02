@@ -7,6 +7,11 @@
     "sound.zapinators.zapinator_shot": "Zapinatör vuruldu",
     "sound.zapinators.color_zapinator_shot": "Renkli Zapinatör vuruldu",
     "sound.zapinators.mana_fill": "Mana yenilendi",
+    "sound.zapinators.fallen_star_fall": "Yıldız düşüyor",
+    "sound.zapinators.fallen_star_hit": "Yıldız yere düştü",
+
+    "entity.zapinators.fallen_star": "Düşen Yıldız",
+    "entity.zapinators.laser_projectile": "Lazer",
 
     "item.zapinators.description.mana_usage": "%f mana kullanır",
 
@@ -41,6 +46,7 @@
     "item.zapinators.meteorite_nugget": "Meteorit Parçası",
     "item.zapinators.zapinator_reset_smithing_template": "Demirci Şablonu",
     "item.zapinators.energy_cell": "Enerji Hücresi",
+    "item.zapinators.fallen_star": "Düşmüş Yıldız",
 
     "item.zapinators.color_zapinator.description": "'Bozuk olabilir'",
     "item.zapinators.red_zapinator.description": "Yarım şansla hedefi tutuşturur",
@@ -78,6 +84,8 @@
     "attribute.name.max_mana": "Maksimum Mana",
 
     "config.zapinators.zapinatorDamageMultiplier": "Zapinatör Hasar Çarpanı",
+    "config.zapinators.fallenStarEntityDamage": "Düşen Yıldız Canlı Hasarı",
+    "config.zapinators.fallenStarEntityDamage.description": "Yıldız, canlının üstüne düştüğünde verilecek hasar",
     "config.zapinators.manaHudStyle": "Mana Arayüz Stili",
     "config.zapinators.manaHudHideAuto": "Mana Arayüzünü Otomatik Gizle",
     "config.zapinators.manaHudHideAuto.description": "Gerekmediği sürece mana arayüzünü gizler",

@@ -14,13 +14,19 @@ public class ZapinatorsConfig {
 
 	@Category(value = "Server")
 	public static class Server {
-		@ConfigOption.Slider
 		@ConfigOption.Range(min=0f, max=10f)
 		@ConfigEntry(
 				id = "zapinatorDamageMultiplier",
 				translation = "config.zapinators.zapinatorDamageMultiplier"
 		)
 		public static float zapinatorDamageMultiplier = 1.0f;
+
+		@Comment(value = "fallenStarEntityDamageDesc", translation = "config.zapinators.fallenStarEntityDamage.description")
+		@ConfigEntry(
+				id = "fallenStarEntityDamage",
+				translation = "config.zapinators.fallenStarEntityDamage"
+		)
+		public static float fallenStarEntityDamage = 0.0f;
 	}
 
 	@Category(value = "Client")
