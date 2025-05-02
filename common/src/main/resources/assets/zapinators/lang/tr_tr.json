@@ -94,5 +94,6 @@
     "config.zapinators.manaHudHideAuto.description": "Gerekmediği sürece mana arayüzünü gizler",
     "config.zapinators.customManaHudX": "Özel Mana Arayüzü X",
     "config.zapinators.customManaHudY": "Özel Mana Arayüzü Y",
-    "config.zapinators.customManaHudScale": "Özel Mana Arayüzü Ölçeği"
+    "config.zapinators.customManaHudScale": "Özel Mana Arayüzü Ölçeği",
+    "config.zapinators.laserRenderStyle": "Lazer Çizim Stili"
 }

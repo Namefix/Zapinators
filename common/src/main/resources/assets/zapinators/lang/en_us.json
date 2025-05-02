@@ -94,5 +94,6 @@
     "config.zapinators.manaHudHideAuto.description": "Hides the mana HUD when not needed",
     "config.zapinators.customManaHudX": "Custom Mana HUD X",
     "config.zapinators.customManaHudY": "Custom Mana HUD Y",
-    "config.zapinators.customManaHudScale": "Custom Mana HUD Scale"
+    "config.zapinators.customManaHudScale": "Custom Mana HUD Scale",
+    "config.zapinators.laserRenderStyle": "Laser Render Style"
 }
