@@ -102,6 +102,12 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(RecipeProvider.getHasName(ItemRegistry.METEORITE_INGOT.get()), this.has(ItemRegistry.METEORITE_INGOT.get()))
                         .save(recipeOutput);
 
+                // mana crystal
+                this.shapeless(RecipeCategory.MISC, ItemRegistry.MANA_CRYSTAL.get())
+                        .requires(ItemRegistry.FALLEN_STAR.get(), 5)
+                        .unlockedBy(RecipeProvider.getHasName(ItemRegistry.FALLEN_STAR.get()), this.has(ItemRegistry.FALLEN_STAR.get()))
+                        .save(recipeOutput);
+
                 // zapinator cores
                 for(ZapinatorType zap1 : ZapinatorType.values()) {
                     if(zap1.equals(ZapinatorType.NONE)) continue;

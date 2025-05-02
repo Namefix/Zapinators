@@ -46,5 +46,17 @@
         "attenuation_distance": 64
       }
     ]
+  },
+  "fallen_star_use": {
+    "subtitle": "sound.zapinators.fallen_star_use",
+    "sounds": [
+      "zapinators:fallen_star_use"
+    ]
+  },
+  "mana_crystal_use": {
+    "subtitle": "sound.zapinators.mana_crystal_use",
+    "sounds": [
+      "zapinators:mana_crystal_use"
+    ]
   }
 }

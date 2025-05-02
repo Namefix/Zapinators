@@ -17,6 +17,8 @@ public class SoundRegistry {
     public static final RegistrySupplier<SoundEvent> MANA_FILL = SOUNDS.register("mana_fill", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "mana_fill")));
     public static final RegistrySupplier<SoundEvent> FALLEN_STAR_FALL = SOUNDS.register("fallen_star_fall", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "fallen_star_fall")));
     public static final RegistrySupplier<SoundEvent> FALLEN_STAR_HIT = SOUNDS.register("fallen_star_hit", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "fallen_star_hit")));
+    public static final RegistrySupplier<SoundEvent> FALLEN_STAR_USE = SOUNDS.register("fallen_star_use", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "fallen_star_use")));
+    public static final RegistrySupplier<SoundEvent> MANA_CRYSTAL_USE = SOUNDS.register("mana_crystal_use", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "mana_crystal_use")));
 
     public static void register() {
         SOUNDS.register();

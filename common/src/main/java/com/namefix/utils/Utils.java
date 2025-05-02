@@ -88,6 +88,7 @@ public class Utils {
 
     public static boolean doesPlayerHoldManaWeapon(Player player) {
         if(player.getMainHandItem().getItem() instanceof AbstractLaserGunItem || player.getOffhandItem().getItem() instanceof AbstractLaserGunItem) return true;
+        if(player.getMainHandItem().getItem().equals(ItemRegistry.MANA_CRYSTAL.get()) || player.getOffhandItem().getItem().equals(ItemRegistry.MANA_CRYSTAL.get())) return true;
         return false;
     }
 
