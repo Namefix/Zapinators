@@ -28,5 +28,23 @@
     "sounds": [
       "zapinators:mana_fill"
     ]
+  },
+  "fallen_star_fall": {
+    "subtitle": "sound.zapinators.fallen_star_fall",
+    "sounds": [
+      {
+        "name": "zapinators:fallen_star_fall",
+        "attenuation_distance": 64
+      }
+    ]
+  },
+  "fallen_star_hit": {
+    "subtitle": "sound.zapinators.fallen_star_hit",
+    "sounds": [
+      {
+        "name": "zapinators:fallen_star_hit",
+        "attenuation_distance": 64
+      }
+    ]
   }
 }

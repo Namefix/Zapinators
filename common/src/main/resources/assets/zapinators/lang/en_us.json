@@ -7,6 +7,11 @@
     "sound.zapinators.zapinator_shot": "Zapinator shot",
     "sound.zapinators.color_zapinator_shot": "Color Zapinator shot",
     "sound.zapinators.mana_fill": "Mana replenished",
+    "sound.zapinators.fallen_star_fall": "Star falls",
+    "sound.zapinators.fallen_star_hit": "Star hits the ground",
+
+    "entity.zapinators.fallen_star": "Fallen Star",
+    "entity.zapinators.laser_projectile": "Laser",
 
     "item.zapinators.description.mana_usage": "Uses %f mana",
 
@@ -41,6 +46,7 @@
     "item.zapinators.meteorite_nugget": "Meteorite Nugget",
     "item.zapinators.zapinator_reset_smithing_template": "Zapinator Reset",
     "item.zapinators.energy_cell": "Energy Cell",
+    "item.zapinators.fallen_star": "Fallen Star",
 
     "item.zapinators.color_zapinator.description": "'It might be broken'",
     "item.zapinators.red_zapinator.description": "Half chance to lit the target on fire",
@@ -76,9 +82,11 @@
     "attribute.name.max_mana": "Max Mana",
 
     "config.zapinators.zapinatorDamageMultiplier": "Zapinator Damage Multiplier",
+    "config.zapinators.fallenStarEntityDamage": "Fallen Star Damage to Entities",
+    "config.zapinators.fallenStarEntityDamage.description": "Damage dealt when a fallen star lands on an enemy",
     "config.zapinators.manaHudStyle": "Mana HUD Style",
     "config.zapinators.manaHudHideAuto": "Auto Hide Mana HUD",
-    "config.zapinators.manaHudHideAuto.description": "Hides the mana HUD if not needed",
+    "config.zapinators.manaHudHideAuto.description": "Hides the mana HUD when not needed",
     "config.zapinators.customManaHudX": "Custom Mana HUD X",
     "config.zapinators.customManaHudY": "Custom Mana HUD Y",
     "config.zapinators.customManaHudScale": "Custom Mana HUD Scale"
