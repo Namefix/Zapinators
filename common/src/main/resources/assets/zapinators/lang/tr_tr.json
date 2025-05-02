@@ -9,6 +9,8 @@
     "sound.zapinators.mana_fill": "Mana yenilendi",
     "sound.zapinators.fallen_star_fall": "Yıldız düşüyor",
     "sound.zapinators.fallen_star_hit": "Yıldız yere düştü",
+    "sound.zapinators.fallen_star_use": "Düşen Yıldız kullanıldı",
+    "sound.zapinators.mana_crystal_use": "Mana Kristali kullanıldı",
 
     "entity.zapinators.fallen_star": "Düşen Yıldız",
     "entity.zapinators.laser_projectile": "Lazer",
@@ -47,6 +49,7 @@
     "item.zapinators.zapinator_reset_smithing_template": "Demirci Şablonu",
     "item.zapinators.energy_cell": "Enerji Hücresi",
     "item.zapinators.fallen_star": "Düşmüş Yıldız",
+    "item.zapinators.mana_crystal": "Mana Kristali",
 
     "item.zapinators.color_zapinator.description": "'Bozuk olabilir'",
     "item.zapinators.red_zapinator.description": "Yarım şansla hedefi tutuşturur",

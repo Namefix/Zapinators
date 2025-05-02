@@ -9,6 +9,8 @@
     "sound.zapinators.mana_fill": "Mana replenished",
     "sound.zapinators.fallen_star_fall": "Star falls",
     "sound.zapinators.fallen_star_hit": "Star hits the ground",
+    "sound.zapinators.fallen_star_use": "Fallen Star used",
+    "sound.zapinators.mana_crystal_use": "Mana Crystal used",
 
     "entity.zapinators.fallen_star": "Fallen Star",
     "entity.zapinators.laser_projectile": "Laser",
@@ -47,6 +49,7 @@
     "item.zapinators.zapinator_reset_smithing_template": "Smithing Template",
     "item.zapinators.energy_cell": "Energy Cell",
     "item.zapinators.fallen_star": "Fallen Star",
+    "item.zapinators.mana_crystal": "Mana Crystal",
 
     "item.zapinators.color_zapinator.description": "'It might be broken'",
     "item.zapinators.red_zapinator.description": "Half chance to lit the target on fire",

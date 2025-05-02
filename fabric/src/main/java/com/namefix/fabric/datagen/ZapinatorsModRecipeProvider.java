@@ -21,6 +21,7 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 import static net.minecraft.data.recipes.ShapedRecipeBuilder.shaped;
+import static net.minecraft.data.recipes.ShapelessRecipeBuilder.shapeless;
 
 public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
     public ZapinatorsModRecipeProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
@@ -95,6 +96,12 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
                 .pattern("M M")
                 .define('M', ItemRegistry.METEORITE_INGOT.get())
                 .unlockedBy(RecipeProvider.getHasName(ItemRegistry.METEORITE_INGOT.get()), this.has(ItemRegistry.METEORITE_INGOT.get()))
+                .save(recipeOutput);
+
+        // mana crystal
+        shapeless(RecipeCategory.MISC, ItemRegistry.MANA_CRYSTAL.get())
+                .requires(ItemRegistry.FALLEN_STAR.get(), 5)
+                .unlockedBy(RecipeProvider.getHasName(ItemRegistry.FALLEN_STAR.get()), this.has(ItemRegistry.FALLEN_STAR.get()))
                 .save(recipeOutput);
 
         for(ZapinatorType zap1 : ZapinatorType.values()) {
