@@ -12,6 +12,11 @@ public class ZapinatorsConfig {
 		CUSTOM
 	}
 
+	public enum LaserRenderStyle {
+		FANCY,
+		FAST
+	}
+
 	@Category(value = "Server")
 	public static class Server {
 		@ConfigOption.Range(min=0f, max=10f)
@@ -61,5 +66,11 @@ public class ZapinatorsConfig {
 				translation = "config.zapinators.customManaHudScale"
 		)
 		public static float manaHudScale = 0.5f;
+
+		@ConfigEntry(
+				id = "laserRenderStyle",
+				translation = "config.zapinators.laserRenderStyle"
+		)
+		public static LaserRenderStyle laserRenderStyle = LaserRenderStyle.FANCY;
 	}
 }
