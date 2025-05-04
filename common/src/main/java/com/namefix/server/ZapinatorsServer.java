@@ -1,5 +1,6 @@
 package com.namefix.server;
 
+import com.namefix.config.ZapinatorsConfig;
 import com.namefix.data.PlayerData;
 import com.namefix.data.StateSaver;
 import com.namefix.entity.FallenStar;
@@ -7,6 +8,7 @@ import com.namefix.network.payload.InitialSyncPayload;
 import com.namefix.network.payload.ManaStatusPayload;
 import com.namefix.registry.AttributeRegistry;
 import com.namefix.registry.EntityRegistry;
+import com.namefix.utils.Utils;
 import dev.architectury.networking.NetworkManager;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.server.level.ServerLevel;
@@ -18,6 +20,8 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.Vec3;
 
 public class ZapinatorsServer {
+	static int baseFallingStarDropRate = 6000;
+
 	public static void sendInitialSync(ServerPlayer player) {
 		PlayerData data = StateSaver.getPlayerState(player);
 		NetworkManager.sendToPlayer(player, new InitialSyncPayload(data.mana, data.manaRegenCooldown));
@@ -39,7 +43,8 @@ public class ZapinatorsServer {
 
 		ServerLevel overworld = serverLevel.getServer().getLevel(ServerLevel.OVERWORLD);
 
-		if(overworld.isNight() && overworld.random.nextIntBetweenInclusive(0, 5000) == 0) {
+		int dropRate = ZapinatorsConfig.Server.fallenStarMoonPhase ? (int) (baseFallingStarDropRate / Utils.getMoonMultiplier(serverLevel)) : baseFallingStarDropRate;
+		if(overworld.isNight() && overworld.random.nextIntBetweenInclusive(0, dropRate) == 0) {
 			Player randomPlayer = overworld.getRandomPlayer();
 			if(randomPlayer == null) return;
 			spawnFallenStar(randomPlayer);

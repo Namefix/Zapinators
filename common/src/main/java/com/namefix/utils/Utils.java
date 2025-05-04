@@ -5,6 +5,7 @@ import com.namefix.enums.ZapinatorType;
 import com.namefix.item.AbstractLaserGunItem;
 import com.namefix.item.MeteoriteArmorItem;
 import com.namefix.registry.ItemRegistry;
+import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -17,7 +18,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class Utils {
     public static void rotateMotionXZ(Entity projectile, float degrees) {
@@ -104,5 +104,31 @@ public class Utils {
         Entity lightning = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
         lightning.setPos(pos);
         level.addFreshEntity(lightning);
+    }
+
+    public static boolean entityFallenStarCheck(Entity ent) {
+            if (ent.level().isDay() && !ent.level().isClientSide && ent.tickCount > 100) {
+                BlockPos blockPos = BlockPos.containing(ent.getX(), ent.getEyeY(), ent.getZ());
+                if (ent.level().canSeeSky(blockPos)) {
+                    return true;
+                }
+            }
+            return false;
+    }
+
+    public static int getMoonPhase(Level world) {
+        long dayTime = world.getDayTime();
+        return (int)((dayTime / 24000L) % 8L);
+    }
+
+    public static double getMoonMultiplier(Level world) {
+        int phase = getMoonPhase(world);
+		return switch (phase) {
+			case 0 -> 2.0;
+			case 1, 7 -> 1.5;
+			case 2, 6 -> 1.0;
+			case 3, 5 -> 0.5;
+			default -> 0.2;
+		};
     }
 }

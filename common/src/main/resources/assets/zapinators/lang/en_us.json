@@ -89,6 +89,8 @@
     "config.zapinators.zapinatorDamageMultiplier": "Zapinator Damage Multiplier",
     "config.zapinators.fallenStarEntityDamage": "Fallen Star Damage to Entities",
     "config.zapinators.fallenStarEntityDamage.description": "Damage dealt when a fallen star lands on an enemy",
+    "config.zapinators.fallenStarMoonPhase": "Falling Star Moon Phase",
+    "config.zapinators.fallenStarMoonPhase.description": "Controls if moon phase affect falling star rate",
     "config.zapinators.manaHudStyle": "Mana HUD Style",
     "config.zapinators.manaHudHideAuto": "Auto Hide Mana HUD",
     "config.zapinators.manaHudHideAuto.description": "Hides the mana HUD when not needed",
