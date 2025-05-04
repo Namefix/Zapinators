@@ -32,6 +32,13 @@ public class ZapinatorsConfig {
 				translation = "config.zapinators.fallenStarEntityDamage"
 		)
 		public static float fallenStarEntityDamage = 0.0f;
+
+		@Comment(value = "fallenStarMoonPhaseDesc", translation = "config.zapinators.fallenStarMoonPhase.description")
+		@ConfigEntry(
+				id = "fallenStarMoonPhase",
+				translation = "config.zapinators.fallenStarMoonPhase"
+		)
+		public static boolean fallenStarMoonPhase = true;
 	}
 
 	@Category(value = "Client")

@@ -1,6 +1,7 @@
 package com.namefix.mixin;
 
 import com.namefix.registry.ItemRegistry;
+import com.namefix.utils.Utils;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
@@ -18,7 +19,7 @@ public abstract class ItemEntityMixin {
 	@Inject(method = "tick", at = @At("HEAD"))
 	private void zapinators$onTick(CallbackInfo ci) {
 		ItemEntity ent = ((ItemEntity)(Object)this);
-		if(!ent.level().isNight() && this.getItem().getItem().equals(ItemRegistry.FALLEN_STAR.get()) && age > 100) {
+		if(this.getItem().getItem().equals(ItemRegistry.FALLEN_STAR.get()) && Utils.entityFallenStarCheck(ent)) {
 			ent.discard();
 		}
 	}

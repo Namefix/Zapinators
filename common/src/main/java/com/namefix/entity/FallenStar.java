@@ -3,6 +3,7 @@ package com.namefix.entity;
 import com.namefix.config.ZapinatorsConfig;
 import com.namefix.registry.ItemRegistry;
 import com.namefix.registry.SoundRegistry;
+import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
@@ -64,6 +65,8 @@ public class FallenStar extends Entity {
 		if (this.onGround() || this.horizontalCollision) {
 			drop();
 		}
+
+		this.level().addParticle(new DustParticleOptions(15656731, 1.0f), this.getX(), this.getY(), this.getZ(), 0.0D, 0.0D, 0.0D);
 	}
 
 	public void drop() {
