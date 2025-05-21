@@ -11,6 +11,7 @@
     "sound.zapinators.fallen_star_hit": "Yıldız yere düştü",
     "sound.zapinators.fallen_star_use": "Düşen Yıldız kullanıldı",
     "sound.zapinators.mana_crystal_use": "Mana Kristali kullanıldı",
+    "sound.zapinators.bee_gun_shot": "Arı Silahı vuruldu",
 
     "entity.zapinators.fallen_star": "Düşen Yıldız",
     "entity.zapinators.laser_projectile": "Lazer",
@@ -42,6 +43,8 @@
     "item.zapinators.black_core": "Siyah Çekirdek",
     "item.zapinators.yellow_core": "Sarı Çekirdek",
     "item.zapinators.white_core": "Beyaz Çekirdek",
+
+    "item.zapinators.bee_gun": "Arı Silahı",
 
     "item.zapinators.raw_meteorite": "Ham Meteorit",
     "item.zapinators.meteorite_ingot": "Meteorit Külçesi",

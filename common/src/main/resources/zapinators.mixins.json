@@ -5,7 +5,8 @@
   "minVersion": "0.8",
   "client": [
     "ItemEntityRendererMixin",
-    "ItemEntityRenderStateMixin"
+    "ItemEntityRenderStateMixin",
+    "ItemRendererMixin"
   ],
   "mixins": [
     "ItemEntityMixin"

@@ -44,6 +44,8 @@ public class ItemRegistry {
     public static final RegistrySupplier<Item> YELLOW_CORE = registerItem("yellow_core", properties -> new CoreItem(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
     public static final RegistrySupplier<Item> WHITE_CORE = registerItem("white_core", properties -> new CoreItem(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
 
+    public static final RegistrySupplier<Item> BEE_GUN = registerItem("bee_gun", properties -> new BeeGunItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB)));
+
     public static final RegistrySupplier<Item> RAW_METEORITE = registerItem("raw_meteorite", properties -> new Item(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
     public static final RegistrySupplier<Item> METEORITE_INGOT = registerItem("meteorite_ingot", properties -> new Item(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
     public static final RegistrySupplier<Item> METEORITE_NUGGET = registerItem("meteorite_nugget", properties -> new Item(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));

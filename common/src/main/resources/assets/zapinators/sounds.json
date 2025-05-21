@@ -58,5 +58,11 @@
     "sounds": [
       "zapinators:mana_crystal_use"
     ]
+  },
+  "bee_gun_shoot": {
+    "subtitle": "sound.zapinators.bee_gun_shot",
+    "sounds": [
+      "zapinators:bee_gun_shoot"
+    ]
   }
 }
