@@ -11,6 +11,7 @@
     "sound.zapinators.fallen_star_hit": "Star hits the ground",
     "sound.zapinators.fallen_star_use": "Fallen Star used",
     "sound.zapinators.mana_crystal_use": "Mana Crystal used",
+    "sound.zapinators.bee_gun_shot": "Bee Gun shot",
 
     "entity.zapinators.fallen_star": "Fallen Star",
     "entity.zapinators.laser_projectile": "Laser",
@@ -42,6 +43,8 @@
     "item.zapinators.black_core": "Black Core",
     "item.zapinators.yellow_core": "Yellow Core",
     "item.zapinators.white_core": "White Core",
+
+    "item.zapinators.bee_gun": "Bee Gun",
 
     "item.zapinators.raw_meteorite": "Raw Meteorite",
     "item.zapinators.meteorite_ingot": "Meteorite Ingot",
