@@ -3,6 +3,7 @@ package com.namefix.utils;
 import com.namefix.ZapinatorsMod;
 import com.namefix.enums.ZapinatorType;
 import com.namefix.item.AbstractLaserGunItem;
+import com.namefix.item.AbstractManaItem;
 import com.namefix.item.MeteoriteArmorItem;
 import com.namefix.registry.ItemRegistry;
 import net.minecraft.core.BlockPos;
@@ -87,7 +88,7 @@ public class Utils {
     }
 
     public static boolean doesPlayerHoldManaWeapon(Player player) {
-        if(player.getMainHandItem().getItem() instanceof AbstractLaserGunItem || player.getOffhandItem().getItem() instanceof AbstractLaserGunItem) return true;
+        if(player.getMainHandItem().getItem() instanceof AbstractManaItem || player.getOffhandItem().getItem() instanceof AbstractManaItem) return true;
         if(player.getMainHandItem().getItem().equals(ItemRegistry.MANA_CRYSTAL.get()) || player.getOffhandItem().getItem().equals(ItemRegistry.MANA_CRYSTAL.get())) return true;
         return false;
     }
