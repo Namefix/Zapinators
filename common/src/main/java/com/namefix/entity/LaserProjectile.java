@@ -13,6 +13,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractHurtingProjectile;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
@@ -103,7 +104,7 @@ public class LaserProjectile extends AbstractHurtingProjectile {
         }
 
         Vec3 motion = this.getDeltaMovement();
-        this.setPos(this.getX() + motion.x, this.getY() + motion.y, this.getZ() + motion.z);
+        this.move(MoverType.SELF, motion);
         updateHitbox();
     }
 
@@ -244,6 +245,11 @@ public class LaserProjectile extends AbstractHurtingProjectile {
 
         target.hurtServer((ServerLevel) target.level(), damageSources().playerAttack((Player) this.getOwner()), damage* ZapinatorsConfig.Server.zapinatorDamageMultiplier);
         if(target instanceof LivingEntity livingTarget) Utils.applyKnockback(livingTarget, this, baseKnockback);
+    }
+
+    @Override
+    protected boolean shouldBurn() {
+        return false;
     }
 
     @Override
