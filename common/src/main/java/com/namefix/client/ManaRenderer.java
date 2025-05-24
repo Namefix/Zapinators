@@ -11,6 +11,7 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
+import net.minecraft.world.effect.MobEffectInstance;
 
 public class ManaRenderer {
 	private static final ResourceLocation MANA_STAR_TOP = ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "textures/gui/mana/mana_top.png");
@@ -42,10 +43,9 @@ public class ManaRenderer {
 			baseManaX = ZapinatorsConfig.Client.manaHudX;
 			baseManaY = ZapinatorsConfig.Client.manaHudY;
 			manaSize = ZapinatorsConfig.Client.manaHudScale;
-		}
-
-		if(!mc.player.getActiveEffects().isEmpty() && !isCustom)
+		} else if(mc.player.getActiveEffects().stream().anyMatch(MobEffectInstance::showIcon)) {
 			baseManaY += 48;
+		}
 
 		int manaX = Math.round(baseManaX/manaSize);
 		int manaY = Math.round(baseManaY/manaSize);
