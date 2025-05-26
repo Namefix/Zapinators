@@ -75,7 +75,7 @@ public abstract class AbstractLaserGunItem extends AbstractManaItem {
             level.addFreshEntity(projectile);
         }
 
-        useManaItem(level, player);
+        useManaItem(level, player, meteoriteArmorSavesMana);
 
         player.getCooldowns().addCooldown(this, itemCooldown);
         if(shootSound != null) player.level().playSound(null, player.getX(), player.getY(), player.getZ(), shootSound, SoundSource.PLAYERS);

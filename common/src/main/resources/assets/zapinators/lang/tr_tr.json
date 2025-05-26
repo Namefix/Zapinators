@@ -2,20 +2,23 @@
     "modmenu.descriptionTranslation.zapinators": "Zapinators, mevcut olanların yanı sıra yepyeni Zapinators ve diğer lazer silahlarının da yer aldığı, ateş, zehir ve yavaşlatma gibi özel efektlere sahip benzersiz renk varyasyonlarıyla dikkat çeken heyecan verici bir koleksiyon ekler.",
     "modmenu.summaryTranslation.zapinators": "Terraria'nın lazer silahlarını Minecraft'ta deneyimle!",
 
-    "sound.zapinators.space_gun_shot": "Uzay Silahı vuruldu",
-    "sound.zapinators.laser_rifle_shot": "Lazer Tüfeği vuruldu",
-    "sound.zapinators.zapinator_shot": "Zapinatör vuruldu",
-    "sound.zapinators.color_zapinator_shot": "Renkli Zapinatör vuruldu",
+    "sound.zapinators.space_gun_shot": "Uzay Silahı ateşlendi",
+    "sound.zapinators.laser_rifle_shot": "Lazer Tüfeği ateşlendi",
+    "sound.zapinators.zapinator_shot": "Zapinatör ateşlendi",
+    "sound.zapinators.color_zapinator_shot": "Renkli Zapinatör ateşlendi",
     "sound.zapinators.mana_fill": "Mana yenilendi",
     "sound.zapinators.fallen_star_fall": "Yıldız düşüyor",
-    "sound.zapinators.fallen_star_hit": "Yıldız yere düştü",
+    "sound.zapinators.fallen_star_hit": "Yıldız çarptı",
     "sound.zapinators.fallen_star_use": "Düşen Yıldız kullanıldı",
     "sound.zapinators.mana_crystal_use": "Mana Kristali kullanıldı",
-    "sound.zapinators.bee_gun_shot": "Arı Silahı vuruldu",
+    "sound.zapinators.bee_gun_shot": "Arı Silahı ateşlendi",
+    "sound.zapinators.gem_staff_shot": "Mücevher Asa kullanıldı",
+    "sound.zapinators.wand_of_sparking_shot": "Kıvılcım Değneği kullanıldı",
 
     "entity.zapinators.fallen_star": "Düşen Yıldız",
     "entity.zapinators.laser_projectile": "Lazer",
     "entity.zapinators.angry_bee": "Öfkeli Arı",
+    "entity.zapinators.orb": "Küre",
 
     "item.zapinators.description.mana_usage": "%f mana kullanır",
 
@@ -46,6 +49,14 @@
     "item.zapinators.white_core": "Beyaz Çekirdek",
 
     "item.zapinators.bee_gun": "Arı Silahı",
+    "item.zapinators.wand_of_sparking": "Kıvılcım Değneği",
+
+    "item.zapinators.echo_staff": "Yankı Asası",
+    "item.zapinators.diamond_staff": "Elmas Asa",
+    "item.zapinators.emerald_staff": "Zümrüt Asa",
+    "item.zapinators.amethyst_staff": "Ametist Asa",
+    "item.zapinators.lapis_staff": "Lapis Asa",
+    "item.zapinators.redstone_staff": "Kızıltaş Asa",
 
     "item.zapinators.raw_meteorite": "Ham Meteorit",
     "item.zapinators.meteorite_ingot": "Meteorit Külçesi",

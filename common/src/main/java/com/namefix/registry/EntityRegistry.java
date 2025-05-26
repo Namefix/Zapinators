@@ -34,6 +34,13 @@ public class EntityRegistry {
                     .build(ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "angry_bee")).toString())
             );
 
+    public static final RegistrySupplier<EntityType<Orb>> ORB = ENTITY_TYPES.register("orb", () ->
+            EntityType.Builder.of(Orb::new, MobCategory.MISC)
+                    .sized(0.4f, 0.4f)
+                    .updateInterval(1)
+                    .build(ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "orb")).toString())
+            );
+
     public static void register() {
         ENTITY_TYPES.register();
     }
@@ -42,5 +49,6 @@ public class EntityRegistry {
         EntityRendererRegistry.register(LASER_PROJECTILE, LaserProjectileRenderer::new);
         EntityRendererRegistry.register(FALLEN_STAR, FallenStarRenderer::new);
         EntityRendererRegistry.register(ANGRY_BEE, AngryBeeRenderer::new);
+        EntityRendererRegistry.register(ORB, OrbRenderer::new);
     }
 }
