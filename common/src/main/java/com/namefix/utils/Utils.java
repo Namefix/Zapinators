@@ -17,6 +17,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import org.joml.Vector3f;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -132,4 +133,11 @@ public class Utils {
 			default -> 0.2;
 		};
     }
+    public static Vector3f intToColorVector(int color) {
+        float r = ((color >> 16) & 0xFF) / 255.0f;
+        float g = ((color >> 8) & 0xFF) / 255.0f;
+        float b = (color & 0xFF) / 255.0f;
+        return new Vector3f(r, g, b);
+    }
+
 }

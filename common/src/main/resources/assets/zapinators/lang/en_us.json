@@ -12,10 +12,13 @@
     "sound.zapinators.fallen_star_use": "Fallen Star used",
     "sound.zapinators.mana_crystal_use": "Mana Crystal used",
     "sound.zapinators.bee_gun_shot": "Bee Gun shot",
+    "sound.zapinators.gem_staff_shot": "Gem Staff shot",
+    "sound.zapinators.wand_of_sparking_shot": "Wand of Sparking shot",
 
     "entity.zapinators.fallen_star": "Fallen Star",
     "entity.zapinators.laser_projectile": "Laser",
     "entity.zapinators.angry_bee": "Angry Bee",
+    "entity.zapinators.orb": "Orb",
 
     "item.zapinators.description.mana_usage": "Uses %f mana",
 
@@ -46,6 +49,14 @@
     "item.zapinators.white_core": "White Core",
 
     "item.zapinators.bee_gun": "Bee Gun",
+    "item.zapinators.wand_of_sparking": "Wand of Sparking",
+
+    "item.zapinators.echo_staff": "Echo Staff",
+    "item.zapinators.diamond_staff": "Diamond Staff",
+    "item.zapinators.emerald_staff": "Emerald Staff",
+    "item.zapinators.amethyst_staff": "Amethyst Staff",
+    "item.zapinators.lapis_staff": "Lapis Staff",
+    "item.zapinators.redstone_staff": "Redstone Staff",
 
     "item.zapinators.raw_meteorite": "Raw Meteorite",
     "item.zapinators.meteorite_ingot": "Meteorite Ingot",

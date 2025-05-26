@@ -64,5 +64,17 @@
     "sounds": [
       "zapinators:bee_gun_shoot"
     ]
+  },
+  "gem_staff_shoot": {
+    "subtitle": "sound.zapinators.gem_staff_shot",
+    "sounds": [
+      "zapinators:gem_staff_shoot"
+    ]
+  },
+  "wand_of_sparking_shoot": {
+    "subtitle": "sound.zapinators.wand_of_sparking_shot",
+    "sounds": [
+      "zapinators:wand_of_sparking_shoot"
+    ]
   }
 }

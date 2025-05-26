@@ -51,7 +51,7 @@ public class BeeGunItem extends AbstractManaItem {
 			}
 		}
 
-		useManaItem(level, player);
+		useManaItem(level, player, meteoriteArmorSavesMana);
 
 		player.getCooldowns().addCooldown(this.arch$registryName(), itemCooldown);
 		if(shootSound != null) player.level().playSound(null, player.getX(), player.getY(), player.getZ(), shootSound, SoundSource.PLAYERS);
