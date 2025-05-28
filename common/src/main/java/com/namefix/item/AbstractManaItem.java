@@ -15,7 +15,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 
-public class AbstractManaItem extends Item {
+public abstract class AbstractManaItem extends Item {
 	boolean meteoriteArmorSavesMana = false;
 	float manaCost = 1.0f;
 

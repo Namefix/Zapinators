@@ -58,6 +58,16 @@
     "item.zapinators.lapis_staff": "Lapis Asa",
     "item.zapinators.redstone_staff": "Kızıltaş Asa",
 
+    "item.zapinators.rune.description": "Mücevher Rünü elde etmek için kullanılır",
+    "item.zapinators.gem_rune.description": "Mücevher Asası elde etmek için kullanılır",
+    "item.zapinators.rune": "Rün",
+    "item.zapinators.echo_rune": "Yankı Rün",
+    "item.zapinators.diamond_rune": "Elmas Rün",
+    "item.zapinators.emerald_rune": "Zümrüt Rün",
+    "item.zapinators.amethyst_rune": "Ametist Rün",
+    "item.zapinators.lapis_rune": "Lapis Rün",
+    "item.zapinators.redstone_rune": "Redstone Rün",
+
     "item.zapinators.raw_meteorite": "Ham Meteorit",
     "item.zapinators.meteorite_ingot": "Meteorit Külçesi",
     "item.zapinators.meteorite_nugget": "Meteorit Parçası",

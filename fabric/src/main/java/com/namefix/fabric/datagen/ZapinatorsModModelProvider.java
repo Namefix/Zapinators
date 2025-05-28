@@ -67,6 +67,14 @@ public class ZapinatorsModModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(ItemRegistry.LAPIS_STAFF.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModelGenerators.generateFlatItem(ItemRegistry.REDSTONE_STAFF.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
 
+        itemModelGenerators.generateFlatItem(ItemRegistry.RUNE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ItemRegistry.ECHO_RUNE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ItemRegistry.DIAMOND_RUNE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ItemRegistry.EMERALD_RUNE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ItemRegistry.AMETHYST_RUNE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ItemRegistry.LAPIS_RUNE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ItemRegistry.REDSTONE_RUNE.get(), ModelTemplates.FLAT_ITEM);
+
         itemModelGenerators.generateFlatItem(ItemRegistry.RAW_METEORITE.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ItemRegistry.METEORITE_INGOT.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ItemRegistry.METEORITE_NUGGET.get(), ModelTemplates.FLAT_ITEM);
