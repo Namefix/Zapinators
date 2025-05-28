@@ -10,7 +10,7 @@ public class LaserRifleItem extends AbstractLaserGunItem {
         this.projectileSpeed = 1.0f;
         this.itemCooldown = 4;
         this.laserLength = 2.5f;
-        this.manaCost = 2f;
+        this.manaCost = 10f;
         this.shootSound = SoundRegistry.LASER_RIFLE_SHOOT.getOrNull();
     }
 }

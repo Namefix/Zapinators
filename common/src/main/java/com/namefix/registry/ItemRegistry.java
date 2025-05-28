@@ -32,8 +32,6 @@ public class ItemRegistry {
     public static final RegistrySupplier<Item> YELLOW_ZAPINATOR = registerItem("yellow_zapinator", properties -> new ColorZapinatorItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB), ZapinatorType.YELLOW, 3.0f, 6.0f, false));
     public static final RegistrySupplier<Item> WHITE_ZAPINATOR = registerItem("white_zapinator", properties -> new ColorZapinatorItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB), ZapinatorType.WHITE, 3.5f, 4.0f, false));
 
-    public static final RegistrySupplier<Item> ENDER_ZAPINATOR = registerItem("ender_zapinator", properties -> new EnderZapinatorItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB).rarity(Rarity.RARE)));
-
     public static final RegistrySupplier<Item> GRAY_CORE = registerItem("gray_core", properties -> new CoreItem(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
     public static final RegistrySupplier<Item> ORANGE_CORE = registerItem("orange_core", properties -> new CoreItem(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
     public static final RegistrySupplier<Item> RED_CORE = registerItem("red_core", properties -> new CoreItem(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
@@ -62,6 +60,10 @@ public class ItemRegistry {
     public static final RegistrySupplier<Item> LAPIS_RUNE = registerItem("lapis_rune", properties -> new RuneItem(properties.arch$tab(TabRegistry.ZAPINATORS_TAB).rarity(Rarity.UNCOMMON), GemStaffType.LAPIS));
     public static final RegistrySupplier<Item> REDSTONE_RUNE = registerItem("redstone_rune", properties -> new RuneItem(properties.arch$tab(TabRegistry.ZAPINATORS_TAB).rarity(Rarity.UNCOMMON), GemStaffType.REDSTONE));
 
+    public static final RegistrySupplier<Item> ENERGY_CELL = registerItem("energy_cell", properties -> new Item(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
+    public static final RegistrySupplier<Item> FALLEN_STAR = registerItem("fallen_star", properties -> new FallenStarItem(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
+    public static final RegistrySupplier<Item> MANA_CRYSTAL = registerItem("mana_crystal", properties -> new ManaCrystalItem(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
+
     public static final RegistrySupplier<Item> RAW_METEORITE = registerItem("raw_meteorite", properties -> new Item(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
     public static final RegistrySupplier<Item> METEORITE_INGOT = registerItem("meteorite_ingot", properties -> new Item(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
     public static final RegistrySupplier<Item> METEORITE_NUGGET = registerItem("meteorite_nugget", properties -> new Item(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
@@ -74,10 +76,6 @@ public class ItemRegistry {
             null,
             properties.arch$tab(TabRegistry.ZAPINATORS_TAB).rarity(Rarity.UNCOMMON)
     ));
-    public static final RegistrySupplier<Item> ENERGY_CELL = registerItem("energy_cell", properties -> new Item(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
-    public static final RegistrySupplier<Item> FALLEN_STAR = registerItem("fallen_star", properties -> new FallenStarItem(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
-    public static final RegistrySupplier<Item> MANA_CRYSTAL = registerItem("mana_crystal", properties -> new ManaCrystalItem(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
-
     public static final RegistrySupplier<Item> METEORITE_HELMET = registerItem("meteorite_helmet", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, ArmorType.HELMET, properties.arch$tab(TabRegistry.ZAPINATORS_TAB), 25));
     public static final RegistrySupplier<Item> METEORITE_CHESTPLATE = registerItem("meteorite_chestplate", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, ArmorType.CHESTPLATE, properties.arch$tab(TabRegistry.ZAPINATORS_TAB), 25));
     public static final RegistrySupplier<Item> METEORITE_LEGGINGS = registerItem("meteorite_leggings", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, ArmorType.LEGGINGS, properties.arch$tab(TabRegistry.ZAPINATORS_TAB), 25));

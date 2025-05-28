@@ -15,12 +15,22 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.Vec3;
 
 public class ZapinatorsServer {
 	static int baseFallingStarDropRate = 8000;
+
+	public static void onPlayerRespawn(ServerPlayer player, boolean b, Entity.RemovalReason removalReason) {
+		if(removalReason == Entity.RemovalReason.KILLED) {
+			PlayerData data = StateSaver.getPlayerState(player);
+			float maxMana = (float) player.getAttributeValue(AttributeRegistry.getHolder(AttributeRegistry.MAX_MANA));
+			data.mana = maxMana;
+			NetworkManager.sendToPlayer(player, new ManaStatusPayload(data.mana, data.manaRegenCooldown));
+		}
+	}
 
 	public static void sendInitialSync(ServerPlayer player) {
 		PlayerData data = StateSaver.getPlayerState(player);

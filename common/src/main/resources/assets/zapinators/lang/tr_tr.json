@@ -68,10 +68,6 @@
     "item.zapinators.lapis_rune": "Lapis Rün",
     "item.zapinators.redstone_rune": "Redstone Rün",
 
-    "item.zapinators.raw_meteorite": "Ham Meteorit",
-    "item.zapinators.meteorite_ingot": "Meteorit Külçesi",
-    "item.zapinators.meteorite_nugget": "Meteorit Parçası",
-    "item.zapinators.zapinator_reset_smithing_template": "Zapinatör Sıfırlama",
     "item.zapinators.energy_cell": "Enerji Hücresi",
     "item.zapinators.fallen_star": "Düşmüş Yıldız",
     "item.zapinators.mana_crystal": "Mana Kristali",
@@ -85,9 +81,10 @@
     "item.zapinators.yellow_zapinator.description": "Yarım şansla hedefe yıldırım çarpar",
     "item.zapinators.white_zapinator.description": "Yarım şansla hedefi uçurur",
 
-    "item.zapinators.ender_zapinator.description": "Bir ejderhanın çevikliğini taşır",
-    "item.zapinators.ender_zapinator.description2": "Yüksek mermi hızı",
-
+    "item.zapinators.raw_meteorite": "Ham Meteorit",
+    "item.zapinators.meteorite_ingot": "Meteorit Külçesi",
+    "item.zapinators.meteorite_nugget": "Meteorit Parçası",
+    "item.zapinators.zapinator_reset_smithing_template": "Zapinatör Sıfırlama",
     "item.zapinators.smithing_template.zapinator_reset.applies_to": "Renkli Zapinatörler",
     "item.zapinators.smithing_template.zapinator_reset.base_slot_description": "Bir renkli zapinatör ekle",
     "item.zapinators.smithing_template.zapinator_reset.ingredients": "Renk Çekirdekleri",

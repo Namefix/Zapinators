@@ -68,10 +68,6 @@
     "item.zapinators.lapis_rune": "Lapis Rune",
     "item.zapinators.redstone_rune": "Redstone Rune",
 
-    "item.zapinators.raw_meteorite": "Raw Meteorite",
-    "item.zapinators.meteorite_ingot": "Meteorite Ingot",
-    "item.zapinators.meteorite_nugget": "Meteorite Nugget",
-    "item.zapinators.zapinator_reset_smithing_template": "Zapinator Reset",
     "item.zapinators.energy_cell": "Energy Cell",
     "item.zapinators.fallen_star": "Fallen Star",
     "item.zapinators.mana_crystal": "Mana Crystal",
@@ -85,9 +81,10 @@
     "item.zapinators.yellow_zapinator.description": "Half chance to lightning strike the target",
     "item.zapinators.white_zapinator.description": "Half chance to apply levitation to the target",
 
-    "item.zapinators.ender_zapinator.description": "Carries the swift of a dragon",
-    "item.zapinators.ender_zapinator.description2": "Increased projectile speed",
-
+    "item.zapinators.raw_meteorite": "Raw Meteorite",
+    "item.zapinators.meteorite_ingot": "Meteorite Ingot",
+    "item.zapinators.meteorite_nugget": "Meteorite Nugget",
+    "item.zapinators.zapinator_reset_smithing_template": "Zapinator Reset",
     "item.zapinators.smithing_template.zapinator_reset.applies_to": "Any Colored Zapinator",
     "item.zapinators.smithing_template.zapinator_reset.base_slot_description": "Add a colored zapinator",
     "item.zapinators.smithing_template.zapinator_reset.ingredients": "Any Color Core",
