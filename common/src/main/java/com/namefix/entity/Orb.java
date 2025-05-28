@@ -6,7 +6,7 @@ import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -24,6 +24,8 @@ public class Orb extends AbstractHurtingProjectile {
 	float baseDamage;
 	int despawnTicks = 200;
 	boolean hasGravity = false;
+	int piercingLeft = 0;
+	boolean fireChance = false;
 
 	public Orb(EntityType<? extends AbstractHurtingProjectile> entityType, Level level) {
 		super(entityType, level);
@@ -50,9 +52,19 @@ public class Orb extends AbstractHurtingProjectile {
 			List<Entity> collidingEntities = this.level().getEntities(this, this.getBoundingBox().inflate(0.1), e -> e != this && e != this.getOwner() && e.isAlive());
 			for (Entity entity : collidingEntities) {
 				if (entity instanceof LivingEntity living && !living.isInvulnerableTo(damageSources().mobAttack(living))) {
+					if(entity.invulnerableTime > 0) continue;
 					entity.hurt(damageSources().mobAttack((LivingEntity) this.getOwner()), baseDamage);
-					entity.invulnerableTime = 0;
-					this.discard();
+					entity.invulnerableTime = 5;
+
+					if(fireChance) {
+						RandomSource rand = this.level().random;
+						int roll1 = rand.nextFloat() < 0.83 ? rand.nextInt(1, 3) : 0;
+						int roll2 = rand.nextFloat() < 0.17 ? rand.nextInt(1, 3) : 0;
+						entity.setRemainingFireTicks((roll1+roll2)*20);
+					}
+
+					if(piercingLeft <= 0) this.discard();
+					piercingLeft--;
 					return;
 				}
 			}
@@ -104,5 +116,11 @@ public class Orb extends AbstractHurtingProjectile {
 	}
 	public void setDespawnTicks(int despawnTicks) {
 		this.despawnTicks = despawnTicks;
+	}
+	public void setPiercingLeft(int piercingLeft) {
+		this.piercingLeft = piercingLeft;
+	}
+	public void setFireChance(boolean fireChance) {
+		this.fireChance = fireChance;
 	}
 }

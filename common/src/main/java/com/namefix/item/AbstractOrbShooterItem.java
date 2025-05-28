@@ -21,6 +21,8 @@ public abstract class AbstractOrbShooterItem extends AbstractManaItem {
 	float orbSpeed = 0.5f;
 	boolean gravity = false;
 	int orbDespawnTick = 200;
+	int piercingAmount = 0;
+	boolean fireChance = false;
 	SoundEvent shootSound;
 
 	public AbstractOrbShooterItem(Properties properties, float manaCost, float baseDamage, int itemCooldown, int color) {
@@ -63,6 +65,8 @@ public abstract class AbstractOrbShooterItem extends AbstractManaItem {
 			orb.setHasGravity(this.gravity);
 			orb.setBaseDamage(baseDamage);
 			orb.setDespawnTicks(orbDespawnTick);
+			orb.setPiercingLeft(piercingAmount);
+			orb.setFireChance(fireChance);
 			level.addFreshEntity(orb);
 		}
 
