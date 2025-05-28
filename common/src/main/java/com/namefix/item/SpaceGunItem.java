@@ -8,7 +8,7 @@ public class SpaceGunItem extends AbstractLaserGunItem {
         this.color = 0x00FF00;
         this.baseDamage = 2.0f;
         this.itemCooldown = 6;
-        this.manaCost = 2f;
+        this.manaCost = 4f;
         this.meteoriteArmorSavesMana = true;
         this.shootSound = SoundRegistry.SPACE_GUN_SHOOT.getOrNull();
     }

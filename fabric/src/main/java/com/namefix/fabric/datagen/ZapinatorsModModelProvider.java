@@ -44,8 +44,6 @@ public class ZapinatorsModModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(ItemRegistry.YELLOW_ZAPINATOR.get(), gunTemplate);
         itemModelGenerators.generateFlatItem(ItemRegistry.WHITE_ZAPINATOR.get(), gunTemplate);
 
-        itemModelGenerators.generateFlatItem(ItemRegistry.ENDER_ZAPINATOR.get(), gunTemplate);
-
         itemModelGenerators.generateFlatItem(ItemRegistry.GRAY_CORE.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ItemRegistry.ORANGE_CORE.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ItemRegistry.RED_CORE.get(), ModelTemplates.FLAT_ITEM);
@@ -74,14 +72,14 @@ public class ZapinatorsModModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(ItemRegistry.LAPIS_RUNE.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ItemRegistry.REDSTONE_RUNE.get(), ModelTemplates.FLAT_ITEM);
 
-        itemModelGenerators.generateFlatItem(ItemRegistry.RAW_METEORITE.get(), ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ItemRegistry.METEORITE_INGOT.get(), ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ItemRegistry.METEORITE_NUGGET.get(), ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ItemRegistry.ZAPINATOR_RESET_SMITHING_TEMPLATE.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ItemRegistry.ENERGY_CELL.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ItemRegistry.FALLEN_STAR.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ItemRegistry.MANA_CRYSTAL.get(), ModelTemplates.FLAT_ITEM);
 
+        itemModelGenerators.generateFlatItem(ItemRegistry.RAW_METEORITE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ItemRegistry.METEORITE_INGOT.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ItemRegistry.METEORITE_NUGGET.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ItemRegistry.ZAPINATOR_RESET_SMITHING_TEMPLATE.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateArmorTrims((ArmorItem) ItemRegistry.METEORITE_HELMET.get());
         itemModelGenerators.generateArmorTrims((ArmorItem) ItemRegistry.METEORITE_CHESTPLATE.get());
         itemModelGenerators.generateArmorTrims((ArmorItem) ItemRegistry.METEORITE_LEGGINGS.get());

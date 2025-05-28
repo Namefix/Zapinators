@@ -37,6 +37,7 @@ public final class ZapinatorsMod {
         ZapinatorsNetwork.initialize();
 
         PlayerEvent.PLAYER_JOIN.register(ZapinatorsServer::sendInitialSync);
+        PlayerEvent.PLAYER_RESPAWN.register(ZapinatorsServer::onPlayerRespawn);
         TickEvent.SERVER_LEVEL_POST.register(ZapinatorsServer::tick);
 
         LOGGER.info("--- Zapinators --- Mod --- initialized. ---");
