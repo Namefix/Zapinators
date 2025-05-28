@@ -69,6 +69,7 @@ public abstract class AbstractOrbShooterItem extends AbstractManaItem {
 		useManaItem(level, player, meteoriteArmorSavesMana);
 		player.getCooldowns().addCooldown(player.getItemInHand(interactionHand).getItem(), itemCooldown);
 		if(shootSound != null) player.level().playSound(null, player.getX(), player.getY(), player.getZ(), shootSound, SoundSource.PLAYERS);
+		player.swing(interactionHand);
 		return InteractionResultHolder.pass(player.getItemInHand(interactionHand));
 	}
 

@@ -1,6 +1,5 @@
 package com.namefix.loot;
 
-import com.namefix.ZapinatorsMod;
 import com.namefix.registry.ItemRegistry;
 import dev.architectury.event.events.common.LootEvent;
 import net.minecraft.resources.ResourceKey;
@@ -95,6 +94,36 @@ public class ModLootTables {
 						.setRolls(ConstantValue.exactly(1))
 						.when(LootItemRandomChanceCondition.randomChance(0.3f))
 						.add(LootItem.lootTableItem(ItemRegistry.PURPLE_CORE.get()));
+				context.addPool(builder);
+			}
+
+			// rune
+			if(key.location().toString().equals("minecraft:chests/bastion_treasure")) {
+				LootPool.Builder builder = LootPool.lootPool()
+						.setRolls(ConstantValue.exactly(1))
+						.when(LootItemRandomChanceCondition.randomChance(0.5f))
+						.add(LootItem.lootTableItem(ItemRegistry.RUNE.get()));
+				context.addPool(builder);
+			}
+			if(key.location().toString().equals("minecraft:chests/trial_chambers/reward_ominous_unique")) {
+				LootPool.Builder builder = LootPool.lootPool()
+						.setRolls(ConstantValue.exactly(1))
+						.when(LootItemRandomChanceCondition.randomChance(0.5f))
+						.add(LootItem.lootTableItem(ItemRegistry.RUNE.get()));
+				context.addPool(builder);
+			}
+			if(key.location().toString().equals("minecraft:chests/trial_chambers/reward_unique")) {
+				LootPool.Builder builder = LootPool.lootPool()
+						.setRolls(ConstantValue.exactly(1))
+						.when(LootItemRandomChanceCondition.randomChance(0.2f))
+						.add(LootItem.lootTableItem(ItemRegistry.RUNE.get()));
+				context.addPool(builder);
+			}
+			if(key.location().toString().equals("minecraft:chests/ruined_portal")) {
+				LootPool.Builder builder = LootPool.lootPool()
+						.setRolls(ConstantValue.exactly(1))
+						.when(LootItemRandomChanceCondition.randomChance(0.1f))
+						.add(LootItem.lootTableItem(ItemRegistry.RUNE.get()));
 				context.addPool(builder);
 			}
 		}

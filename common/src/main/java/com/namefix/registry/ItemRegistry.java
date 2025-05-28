@@ -47,12 +47,20 @@ public class ItemRegistry {
     public static final RegistrySupplier<Item> BEE_GUN = registerItem("bee_gun", properties -> new BeeGunItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB)));
     public static final RegistrySupplier<Item> WAND_OF_SPARKING = registerItem("wand_of_sparking", properties -> new WandOfSparkingItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB), 4f, 2f, 12, 0xff591c));
 
-    public static final RegistrySupplier<Item> ECHO_STAFF = registerItem("echo_staff", properties -> new GemStaffItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB).rarity(Rarity.UNCOMMON), 10f, 10f, 5, 0x0b4075, GemStaffType.ECHO));
-    public static final RegistrySupplier<Item> DIAMOND_STAFF = registerItem("diamond_staff", properties -> new GemStaffItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB), 6f, 6f, 5, 0xd1e3ff, GemStaffType.DIAMOND));
-    public static final RegistrySupplier<Item> EMERALD_STAFF = registerItem("emerald_staff", properties -> new GemStaffItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB), 6f, 5f, 7, 0x94ff99, GemStaffType.EMERALD));
-    public static final RegistrySupplier<Item> AMETHYST_STAFF = registerItem("amethyst_staff", properties -> new GemStaffItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB), 6f, 4f, 7, 0xf678ff, GemStaffType.AMETHYST));
-    public static final RegistrySupplier<Item> LAPIS_STAFF = registerItem("lapis_staff", properties -> new GemStaffItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB), 5f, 3f, 10, 0x5993ff, GemStaffType.LAPIS));
-    public static final RegistrySupplier<Item> REDSTONE_STAFF = registerItem("redstone_staff", properties -> new GemStaffItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB), 4f, 1f, 10, 0xff615e, GemStaffType.REDSTONE));
+    public static final RegistrySupplier<Item> ECHO_STAFF = registerItem("echo_staff", properties -> new GemStaffItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB).rarity(Rarity.RARE), 10f, 10f, 5, 0x0b4075, GemStaffType.ECHO));
+    public static final RegistrySupplier<Item> DIAMOND_STAFF = registerItem("diamond_staff", properties -> new GemStaffItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB).rarity(Rarity.UNCOMMON), 6f, 6f, 5, 0xd1e3ff, GemStaffType.DIAMOND));
+    public static final RegistrySupplier<Item> EMERALD_STAFF = registerItem("emerald_staff", properties -> new GemStaffItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB).rarity(Rarity.UNCOMMON), 6f, 5f, 7, 0x94ff99, GemStaffType.EMERALD));
+    public static final RegistrySupplier<Item> AMETHYST_STAFF = registerItem("amethyst_staff", properties -> new GemStaffItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB).rarity(Rarity.UNCOMMON), 6f, 4f, 7, 0xf678ff, GemStaffType.AMETHYST));
+    public static final RegistrySupplier<Item> LAPIS_STAFF = registerItem("lapis_staff", properties -> new GemStaffItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB).rarity(Rarity.UNCOMMON), 5f, 3f, 10, 0x5993ff, GemStaffType.LAPIS));
+    public static final RegistrySupplier<Item> REDSTONE_STAFF = registerItem("redstone_staff", properties -> new GemStaffItem(properties.stacksTo(1).arch$tab(TabRegistry.ZAPINATORS_TAB).rarity(Rarity.UNCOMMON), 4f, 1f, 10, 0xff615e, GemStaffType.REDSTONE));
+
+    public static final RegistrySupplier<Item> RUNE = registerItem("rune", properties -> new RuneItem(properties.arch$tab(TabRegistry.ZAPINATORS_TAB).rarity(Rarity.UNCOMMON), null));
+    public static final RegistrySupplier<Item> ECHO_RUNE = registerItem("echo_rune", properties -> new RuneItem(properties.arch$tab(TabRegistry.ZAPINATORS_TAB).rarity(Rarity.RARE), GemStaffType.ECHO));
+    public static final RegistrySupplier<Item> DIAMOND_RUNE = registerItem("diamond_rune", properties -> new RuneItem(properties.arch$tab(TabRegistry.ZAPINATORS_TAB).rarity(Rarity.UNCOMMON), GemStaffType.DIAMOND));
+    public static final RegistrySupplier<Item> EMERALD_RUNE = registerItem("emerald_rune", properties -> new RuneItem(properties.arch$tab(TabRegistry.ZAPINATORS_TAB).rarity(Rarity.UNCOMMON), GemStaffType.EMERALD));
+    public static final RegistrySupplier<Item> AMETHYST_RUNE = registerItem("amethyst_rune", properties -> new RuneItem(properties.arch$tab(TabRegistry.ZAPINATORS_TAB).rarity(Rarity.UNCOMMON), GemStaffType.AMETHYST));
+    public static final RegistrySupplier<Item> LAPIS_RUNE = registerItem("lapis_rune", properties -> new RuneItem(properties.arch$tab(TabRegistry.ZAPINATORS_TAB).rarity(Rarity.UNCOMMON), GemStaffType.LAPIS));
+    public static final RegistrySupplier<Item> REDSTONE_RUNE = registerItem("redstone_rune", properties -> new RuneItem(properties.arch$tab(TabRegistry.ZAPINATORS_TAB).rarity(Rarity.UNCOMMON), GemStaffType.REDSTONE));
 
     public static final RegistrySupplier<Item> RAW_METEORITE = registerItem("raw_meteorite", properties -> new Item(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));
     public static final RegistrySupplier<Item> METEORITE_INGOT = registerItem("meteorite_ingot", properties -> new Item(properties.arch$tab(TabRegistry.ZAPINATORS_TAB)));

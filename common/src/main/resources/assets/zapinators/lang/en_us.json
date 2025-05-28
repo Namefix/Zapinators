@@ -58,6 +58,16 @@
     "item.zapinators.lapis_staff": "Lapis Staff",
     "item.zapinators.redstone_staff": "Redstone Staff",
 
+    "item.zapinators.rune.description": "Used to craft a Gem Rune",
+    "item.zapinators.gem_rune.description": "Used to craft a Gem Staff",
+    "item.zapinators.rune": "Rune",
+    "item.zapinators.echo_rune": "Echo Rune",
+    "item.zapinators.diamond_rune": "Diamond Rune",
+    "item.zapinators.emerald_rune": "Emerald Rune",
+    "item.zapinators.amethyst_rune": "Amethyst Rune",
+    "item.zapinators.lapis_rune": "Lapis Rune",
+    "item.zapinators.redstone_rune": "Redstone Rune",
+
     "item.zapinators.raw_meteorite": "Raw Meteorite",
     "item.zapinators.meteorite_ingot": "Meteorite Ingot",
     "item.zapinators.meteorite_nugget": "Meteorite Nugget",

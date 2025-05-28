@@ -104,13 +104,127 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(ItemRegistry.FALLEN_STAR.get()), this.has(ItemRegistry.FALLEN_STAR.get()))
                 .save(recipeOutput);
 
+        // bee gun
+        shaped(RecipeCategory.COMBAT, ItemRegistry.BEE_GUN.get())
+                .pattern("H  ")
+                .pattern("HHH")
+                .pattern("H  ")
+                .define('H', Items.HONEYCOMB)
+                .unlockedBy(RecipeProvider.getHasName(Items.HONEYCOMB), this.has(Items.HONEYCOMB))
+                .save(recipeOutput);
+        
         for(ZapinatorType zap1 : ZapinatorType.values()) {
-            if(zap1.equals(ZapinatorType.NONE)) continue;
+            if (zap1.equals(ZapinatorType.NONE)) continue;
             for (ZapinatorType zap2 : ZapinatorType.values()) {
-                if(zap2.equals(ZapinatorType.NONE) || zap1.equals(zap2)) continue;
+                if (zap2.equals(ZapinatorType.NONE) || zap1.equals(zap2)) continue;
                 zapinatorReset(Utils.getZapinatorFromEnum(zap1), Utils.getCoreFromEnum(zap2), Utils.getZapinatorFromEnum(zap2), recipeOutput, this);
             }
         }
+
+        // runes
+        shapeless(RecipeCategory.MISC, ItemRegistry.ECHO_RUNE.get())
+                .requires(ItemRegistry.RUNE.get())
+                .requires(Items.ECHO_SHARD, 8)
+                .unlockedBy(RecipeProvider.getHasName(ItemRegistry.RUNE.get()), this.has(ItemRegistry.RUNE.get()))
+                .unlockedBy(RecipeProvider.getHasName(Items.ECHO_SHARD), this.has(Items.ECHO_SHARD))
+                .save(recipeOutput);
+
+        shapeless(RecipeCategory.MISC, ItemRegistry.DIAMOND_RUNE.get())
+                .requires(ItemRegistry.RUNE.get())
+                .requires(Items.DIAMOND, 8)
+                .unlockedBy(RecipeProvider.getHasName(ItemRegistry.RUNE.get()), this.has(ItemRegistry.RUNE.get()))
+                .unlockedBy(RecipeProvider.getHasName(Items.DIAMOND), this.has(Items.DIAMOND))
+                .save(recipeOutput);
+
+        shapeless(RecipeCategory.MISC, ItemRegistry.EMERALD_RUNE.get())
+                .requires(ItemRegistry.RUNE.get())
+                .requires(Items.EMERALD, 8)
+                .unlockedBy(RecipeProvider.getHasName(ItemRegistry.RUNE.get()), this.has(ItemRegistry.RUNE.get()))
+                .unlockedBy(RecipeProvider.getHasName(Items.EMERALD), this.has(Items.EMERALD))
+                .save(recipeOutput);
+
+        shapeless(RecipeCategory.MISC, ItemRegistry.AMETHYST_RUNE.get())
+                .requires(ItemRegistry.RUNE.get())
+                .requires(Items.AMETHYST_SHARD, 8)
+                .unlockedBy(RecipeProvider.getHasName(ItemRegistry.RUNE.get()), this.has(ItemRegistry.RUNE.get()))
+                .unlockedBy(RecipeProvider.getHasName(Items.AMETHYST_SHARD), this.has(Items.AMETHYST_SHARD))
+                .save(recipeOutput);
+
+        shapeless(RecipeCategory.MISC, ItemRegistry.LAPIS_RUNE.get())
+                .requires(ItemRegistry.RUNE.get())
+                .requires(Items.LAPIS_LAZULI, 8)
+                .unlockedBy(RecipeProvider.getHasName(ItemRegistry.RUNE.get()), this.has(ItemRegistry.RUNE.get()))
+                .unlockedBy(RecipeProvider.getHasName(Items.LAPIS_LAZULI), this.has(Items.LAPIS_LAZULI))
+                .save(recipeOutput);
+
+        shapeless(RecipeCategory.MISC, ItemRegistry.REDSTONE_RUNE.get())
+                .requires(ItemRegistry.RUNE.get())
+                .requires(Items.REDSTONE, 8)
+                .unlockedBy(RecipeProvider.getHasName(ItemRegistry.RUNE.get()), this.has(ItemRegistry.RUNE.get()))
+                .unlockedBy(RecipeProvider.getHasName(Items.REDSTONE), this.has(Items.REDSTONE))
+                .save(recipeOutput);
+
+        // gem staffs
+        shaped(RecipeCategory.COMBAT, ItemRegistry.ECHO_STAFF.get())
+                .pattern("  R")
+                .pattern(" S ")
+                .pattern("S  ")
+                .define('R', ItemRegistry.ECHO_RUNE.get())
+                .define('S', Items.STICK)
+                .unlockedBy(RecipeProvider.getHasName(ItemRegistry.RUNE.get()), this.has(ItemRegistry.RUNE.get()))
+                .unlockedBy(RecipeProvider.getHasName(ItemRegistry.ECHO_RUNE.get()), this.has(ItemRegistry.ECHO_RUNE.get()))
+                .save(recipeOutput);
+
+        shaped(RecipeCategory.COMBAT, ItemRegistry.DIAMOND_STAFF.get())
+                .pattern("  R")
+                .pattern(" S ")
+                .pattern("S  ")
+                .define('R', ItemRegistry.DIAMOND_RUNE.get())
+                .define('S', Items.STICK)
+                .unlockedBy(RecipeProvider.getHasName(ItemRegistry.RUNE.get()), this.has(ItemRegistry.RUNE.get()))
+                .unlockedBy(RecipeProvider.getHasName(ItemRegistry.DIAMOND_RUNE.get()), this.has(ItemRegistry.DIAMOND_RUNE.get()))
+                .save(recipeOutput);
+
+        shaped(RecipeCategory.COMBAT, ItemRegistry.EMERALD_STAFF.get())
+                .pattern("  R")
+                .pattern(" S ")
+                .pattern("S  ")
+                .define('R', ItemRegistry.EMERALD_RUNE.get())
+                .define('S', Items.STICK)
+                .unlockedBy(RecipeProvider.getHasName(ItemRegistry.RUNE.get()), this.has(ItemRegistry.RUNE.get()))
+                .unlockedBy(RecipeProvider.getHasName(ItemRegistry.EMERALD_RUNE.get()), this.has(ItemRegistry.EMERALD_RUNE.get()))
+                .save(recipeOutput);
+
+        shaped(RecipeCategory.COMBAT, ItemRegistry.AMETHYST_STAFF.get())
+                .pattern("  R")
+                .pattern(" S ")
+                .pattern("S  ")
+                .define('R', ItemRegistry.AMETHYST_RUNE.get())
+                .define('S', Items.STICK)
+                .unlockedBy(RecipeProvider.getHasName(ItemRegistry.RUNE.get()), this.has(ItemRegistry.RUNE.get()))
+                .unlockedBy(RecipeProvider.getHasName(ItemRegistry.AMETHYST_RUNE.get()), this.has(ItemRegistry.AMETHYST_RUNE.get()))
+                .save(recipeOutput);
+
+        shaped(RecipeCategory.COMBAT, ItemRegistry.LAPIS_STAFF.get())
+                .pattern("  R")
+                .pattern(" S ")
+                .pattern("S  ")
+                .define('R', ItemRegistry.LAPIS_RUNE.get())
+                .define('S', Items.STICK)
+                .unlockedBy(RecipeProvider.getHasName(ItemRegistry.RUNE.get()), this.has(ItemRegistry.RUNE.get()))
+                .unlockedBy(RecipeProvider.getHasName(ItemRegistry.LAPIS_RUNE.get()), this.has(ItemRegistry.LAPIS_RUNE.get()))
+                .save(recipeOutput);
+
+        shaped(RecipeCategory.COMBAT, ItemRegistry.REDSTONE_STAFF.get())
+                .pattern("  R")
+                .pattern(" S ")
+                .pattern("S  ")
+                .define('R', ItemRegistry.REDSTONE_RUNE.get())
+                .define('S', Items.STICK)
+                .unlockedBy(RecipeProvider.getHasName(ItemRegistry.RUNE.get()), this.has(ItemRegistry.RUNE.get()))
+                .unlockedBy(RecipeProvider.getHasName(ItemRegistry.REDSTONE_RUNE.get()), this.has(ItemRegistry.REDSTONE_RUNE.get()))
+                .save(recipeOutput);
+
     }
 
     private void zapinatorReset(Item zapinator, Item core, Item result, RecipeOutput output, RecipeProvider provider) {
