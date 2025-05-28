@@ -20,7 +20,7 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.Vec3;
 
 public class ZapinatorsServer {
-	static int baseFallingStarDropRate = 6000;
+	static int baseFallingStarDropRate = 8000;
 
 	public static void sendInitialSync(ServerPlayer player) {
 		PlayerData data = StateSaver.getPlayerState(player);

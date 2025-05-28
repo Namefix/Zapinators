@@ -8,5 +8,7 @@ public class WandOfSparkingItem extends AbstractOrbShooterItem {
 		this.gravity = true;
 		this.shootSound = SoundRegistry.WAND_OF_SPARKING_SHOOT.getOrNull();
 		this.orbDespawnTick = 40;
+		this.piercingAmount = 1;
+		this.fireChance = true;
 	}
 }
