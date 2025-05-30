@@ -3,9 +3,11 @@ package com.namefix.entity;
 import com.namefix.config.ZapinatorsConfig;
 import com.namefix.registry.ItemRegistry;
 import com.namefix.registry.SoundRegistry;
+import com.namefix.utils.Utils;
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -74,6 +76,22 @@ public class FallenStar extends Entity {
 		ItemStack dropStack = new ItemStack(ItemRegistry.FALLEN_STAR.get());
 		ItemEntity drop = new ItemEntity(this.level(), this.getX(), this.getY(), this.getZ(), dropStack);
 		this.level().addFreshEntity(drop);
+
+		if (!this.level().isClientSide()) {
+			int particleCount = 20;
+			for (int i = 0; i < particleCount; i++) {
+				double theta = this.random.nextDouble() * 2 * Math.PI;
+				double phi = this.random.nextDouble() * (Math.PI / 2);
+				double speed = 0.3 + this.random.nextDouble() * 0.2;
+
+				double dx = speed * Math.cos(theta) * Math.sin(phi);
+				double dy = speed * Math.cos(phi);
+				double dz = speed * Math.sin(theta) * Math.sin(phi);
+
+				((ServerLevel)this.level()).sendParticles(new DustParticleOptions(Utils.intToColorVector(15656731), 1.0f), this.getX(), this.getY(), this.getZ(), 1, dx, dy, dz, 0.0);
+			}
+		}
+
 		this.discard();
 	}
 
