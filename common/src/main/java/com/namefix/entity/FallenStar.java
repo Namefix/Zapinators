@@ -68,7 +68,7 @@ public class FallenStar extends Entity {
 			drop();
 		}
 
-		this.level().addParticle(new DustParticleOptions(Vec3.fromRGB24(15656731).toVector3f(), 1.0f), this.getX(), this.getY(), this.getZ(), 0.0D, 0.0D, 0.0D);
+		this.level().addParticle(new DustParticleOptions(Vec3.fromRGB24(15656731).toVector3f(), 1.069f), this.getX(), this.getY()+0.2, this.getZ(), 0.0D, 0.0D, 0.0D);
 	}
 
 	public void drop() {
