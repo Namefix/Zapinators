@@ -62,11 +62,11 @@ public class FallenStar extends Entity {
 			}
 		}
 
-		if (this.onGround() || this.horizontalCollision) {
+		if (this.onGround() || this.horizontalCollision || this.verticalCollision) {
 			drop();
 		}
 
-		this.level().addParticle(new DustParticleOptions(15656731, 1.0f), this.getX(), this.getY(), this.getZ(), 0.0D, 0.0D, 0.0D);
+		this.level().addParticle(new DustParticleOptions(15656731, 1.069f), this.getX(), this.getY()+0.2, this.getZ(), 0.0D, 0.0D, 0.0D);
 	}
 
 	public void drop() {

@@ -6,7 +6,9 @@
   "client": [
     "ItemEntityRendererMixin",
     "ItemEntityRenderStateMixin",
-    "ItemRendererMixin"
+    "ItemRendererMixin",
+    "particle.DustParticleMixin",
+    "particle.ParticleMixin"
   ],
   "mixins": [
     "EntityInvoker",
