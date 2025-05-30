@@ -63,7 +63,7 @@ public class LaserProjectileRenderer<T extends LaserProjectile> extends EntityRe
 
         PoseStack.Pose entry = poseStack.last();
         Matrix4f matrix = poseStack.last().pose();
-        poseStack.translate(0, 0, 1.2);
+        poseStack.translate(0, 0.18, 0);
         // uv1 - front left, uv2 - front right, uv3 - back-right, uv4 - back-left
         // LASER CORE
         // RENDER LASER CORE IF LASER RENDERING IS SET TO FANCY

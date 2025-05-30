@@ -7,7 +7,7 @@ public class LaserRifleItem extends AbstractLaserGunItem {
         super(properties);
         this.color = 0x7771B7;
         this.baseDamage = 1.5f;
-        this.projectileSpeed = 1.0f;
+        this.projectileSpeed = 1.2f;
         this.itemCooldown = 4;
         this.laserLength = 2.5f;
         this.manaCost = 10f;

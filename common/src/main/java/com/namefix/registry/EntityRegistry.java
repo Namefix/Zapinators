@@ -17,7 +17,7 @@ public class EntityRegistry {
     public static final RegistrySupplier<EntityType<LaserProjectile>> LASER_PROJECTILE = ENTITY_TYPES.register("laser_projectile", () ->
             EntityType.Builder.of(LaserProjectile::new, MobCategory.MISC)
                     .sized(0.5f, 0.5f)
-                    .updateInterval(10)
+                    .updateInterval(1)
                     .build(ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID,"laser_projectile")).toString())
     );
 

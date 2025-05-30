@@ -2,11 +2,14 @@ package com.namefix.entity;
 
 import com.namefix.config.ZapinatorsConfig;
 import com.namefix.enums.ZapinatorType;
+import com.namefix.mixin.EntityInvoker;
 import com.namefix.utils.Utils;
+import net.fabricmc.loader.impl.lib.sat4j.core.Vec;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -16,11 +19,12 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractHurtingProjectile;
-import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.*;
 import org.joml.Vector3f;
+
+import java.util.List;
 
 public class LaserProjectile extends AbstractHurtingProjectile {
     private static final EntityDataAccessor<Integer> COLOR = SynchedEntityData.defineId(LaserProjectile.class, EntityDataSerializers.INT);
@@ -40,35 +44,9 @@ public class LaserProjectile extends AbstractHurtingProjectile {
         super(entityType, level);
     }
 
-    private void updateHitbox() {
-        Vec3 direction = this.getDeltaMovement().normalize();
-        var data = getEntityData().get(SIZE);
-
-        double endX = direction.x * data.z;
-        double endY = direction.y * data.z;
-        double endZ = direction.z * data.z;
-
-        double minX = Math.min(0, endX) - (data.x / 2);
-        double minY = Math.min(0, endY) - (data.y / 2);
-        double minZ = Math.min(0, endZ) - (data.x / 2);
-        double maxX = Math.max(0, endX) + (data.x / 2);
-        double maxY = Math.max(0, endY) + (data.y / 2);
-        double maxZ = Math.max(0, endZ) + (data.x / 2);
-
-        this.setBoundingBox(new AABB(
-                this.getX() + minX,
-                this.getY() + minY,
-                this.getZ() + minZ,
-                this.getX() + maxX,
-                this.getY() + maxY,
-                this.getZ() + maxZ
-        ));
-    }
-
     @Override
     public void tick() {
-        super.tick();
-
+        noPhysics = true;
         if(this.tickCount > 200) {
             this.discard();
             return;
@@ -78,67 +56,56 @@ public class LaserProjectile extends AbstractHurtingProjectile {
             this.extinguishFire();
         }
 
-        if (!this.level().isClientSide) {
-            BlockHitResult blockHitResult = this.level().clip(new ClipContext(
-                    this.position(),
-                    this.position().add(this.getDeltaMovement()),
-                    ClipContext.Block.COLLIDER,
-                    ClipContext.Fluid.NONE,
-                    this
-            ));
-            if (blockHitResult.getType() == HitResult.Type.BLOCK) {
-                this.onHitBlock(blockHitResult);
-            }
-
-            EntityHitResult entityHitResult = ProjectileUtil.getEntityHitResult(
-                    level(),
-                    this,
-                    position(),
-                    position().add(getDeltaMovement()),
-                    getBoundingBox().expandTowards(getDeltaMovement()).inflate(0.2),
-                    entity -> !entity.isSpectator() && entity.isAlive()
-            );
-            if (entityHitResult != null) {
-                this.onHitEntity(entityHitResult);
-            }
-        }
-
         Vec3 motion = this.getDeltaMovement();
+
+        Vec3 start = this.position();
+        Vec3 end = start.add(motion);
+        BlockHitResult hitResult = this.level().clip(new ClipContext(
+                start, end,
+                ClipContext.Block.COLLIDER,
+                ClipContext.Fluid.NONE,
+                this
+        ));
+
+        if (hitResult.getType() == HitResult.Type.BLOCK && !this.blockPiercing) {
+            this.setPos(hitResult.getLocation());
+            this.discard();
+            return;
+        }
+
+        this.updateCollisionStates(motion, ((EntityInvoker)this).zapinators$invokeCollide(motion));
         this.move(MoverType.SELF, motion);
-        updateHitbox();
+
+        if(!this.level().isClientSide) {
+            List<Entity> collidingEntities = this.level().getEntities(this, this.getBoundingBox().inflate(0.2), e -> e != this && e != this.getOwner() && e.isAlive());
+            for (Entity entity : collidingEntities) {
+                if (entity instanceof LivingEntity living && !living.isInvulnerableTo(damageSources().mobAttack(living))) {
+                    if(!zapinatorType.equals(ZapinatorType.NONE) && entity.invulnerableTime == 0) {
+                        handleZapinatorEntityCollision(entity);
+                    }
+                    else { // non zapinator
+                        entity.hurt(damageSources().playerAttack((Player) this.getOwner()), baseDamage);
+                        entity.invulnerableTime = 0;
+                    }
+
+                    if(canPierceEntities()) {
+                        piercedEntities++;
+                    } else {
+                        this.discard();
+                    }
+                    if(maxPiercing != -1 && piercedEntities >= maxPiercing)
+                        this.discard();
+                    return;
+                }
+            }
+            if(!blockPiercing && (this.horizontalCollision || this.verticalCollision)) {
+                this.discard();
+            }
+        }
+
     }
 
-    protected void onHitBlock(BlockHitResult hitResult) {
-        if(level().isClientSide) return;
-        if(!canPierceBlocks()) {
-            this.setDeltaMovement(Vec3.ZERO);
-            this.setPos(hitResult.getBlockPos().getX(), hitResult.getBlockPos().getY(), hitResult.getBlockPos().getZ());
-            this.discard();
-        }
-    }
-
-    protected void onHitEntity(EntityHitResult hitResult) {
-        if(level().isClientSide) return;
-        Entity target = hitResult.getEntity();
-        if(this.getOwner() != null && target.getUUID().equals(this.getOwner().getUUID())) return;
-        if(!zapinatorType.equals(ZapinatorType.NONE) && target.invulnerableTime == 0) {
-            handleZapinatorChances(target);
-        }
-        else { // non zapinator
-            target.hurt(damageSources().playerAttack((Player) this.getOwner()), baseDamage);
-            target.invulnerableTime = 0;
-        }
-
-        if(canPierceEntities()) {
-            piercedEntities++;
-        } else {
-            this.discard();
-        }
-        if(maxPiercing != -1 && piercedEntities >= maxPiercing)
-            this.discard();
-    }
-
-    protected void handleZapinatorChances(Entity target) {
+    protected void handleZapinatorEntityCollision(Entity target) {
         if(this.level().isClientSide) return;
 
         RandomSource random = this.random;
@@ -245,6 +212,17 @@ public class LaserProjectile extends AbstractHurtingProjectile {
 
         target.hurt(damageSources().playerAttack((Player) this.getOwner()), damage*ZapinatorsConfig.Server.zapinatorDamageMultiplier);
         if(target instanceof LivingEntity livingTarget) Utils.applyKnockback(livingTarget, this, baseKnockback);
+    }
+
+    protected void updateCollisionStates(Vec3 vec3, Vec3 vec32) {
+        boolean horizontalDiffX = !Mth.equal(vec3.x, vec32.x);
+        boolean horizontalDiffZ = !Mth.equal(vec3.z, vec32.z);
+        this.horizontalCollision = horizontalDiffX || horizontalDiffZ;
+        if (Math.abs(vec3.y) > 0.0 || this.isControlledByLocalInstance()) {
+            this.verticalCollision = vec3.y != vec32.y;
+            this.verticalCollisionBelow = this.verticalCollision && vec3.y < 0.0;
+            this.setOnGroundWithMovement(this.verticalCollisionBelow, vec32);
+        }
     }
 
     @Override
