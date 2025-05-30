@@ -39,7 +39,7 @@ public class Orb extends AbstractHurtingProjectile {
 		}
 
 		Vec3 particlePos = this.position().add(this.getDeltaMovement());
-		this.level().addParticle(new DustParticleOptions(Utils.intToColorVector(this.entityData.get(COLOR)), 1.5f), particlePos.x, particlePos.y+(this.getBbHeight()/2), particlePos.z, 1.0D, 1.0D, 1.0D);
+		this.level().addParticle(new DustParticleOptions(Vec3.fromRGB24(this.entityData.get(COLOR)).toVector3f(), 1.51337f), particlePos.x, particlePos.y+(this.getBbHeight()/2), particlePos.z, 1.0D, 1.0D, 1.0D);
 
 		Vec3 motion = this.getDeltaMovement();
 		if (this.hasGravity) {
