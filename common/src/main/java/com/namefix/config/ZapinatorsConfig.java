@@ -54,7 +54,7 @@ public class ZapinatorsConfig {
 				id = "manaHudHideAuto",
 				translation = "config.zapinators.manaHudHideAuto"
 		)
-		public static boolean manaHudHideAuto = false;
+		public static boolean manaHudHideAuto = true;
 
 		@ConfigEntry(
 				id = "customManaHudX",
