@@ -15,7 +15,7 @@ public class CoreItem extends Item {
 
 	@Override
 	public void appendHoverText(ItemStack itemStack, TooltipContext tooltipContext, List<Component> list, TooltipFlag tooltipFlag) {
-		String fullName = this.getName().getString();
+		String fullName = this.getName(itemStack).getString();
 		String firstWord = fullName.split(" ")[0];
 		list.add(Component.translatable("item.zapinators.core.description", firstWord).withStyle(ChatFormatting.GRAY));
 
