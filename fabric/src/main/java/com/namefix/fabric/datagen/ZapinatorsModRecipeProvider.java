@@ -225,6 +225,14 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(ItemRegistry.REDSTONE_RUNE.get()), this.has(ItemRegistry.REDSTONE_RUNE.get()))
                 .save(recipeOutput);
 
+        // Wand of Sparking
+        shaped(RecipeCategory.COMBAT, ItemRegistry.WAND_OF_SPARKING.get())
+                .pattern(" R")
+                .pattern("S ")
+                .define('R', ItemRegistry.RUNE.get())
+                .define('S', Items.STICK)
+                .unlockedBy(RecipeProvider.getHasName(ItemRegistry.RUNE.get()), this.has(ItemRegistry.RUNE.get()))
+                .save(recipeOutput);
     }
 
     private void zapinatorReset(Item zapinator, Item core, Item result, RecipeOutput output, RecipeProvider provider) {

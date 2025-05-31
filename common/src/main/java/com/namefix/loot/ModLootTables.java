@@ -126,6 +126,15 @@ public class ModLootTables {
 						.add(LootItem.lootTableItem(ItemRegistry.RUNE.get()));
 				context.addPool(builder);
 			}
+
+			// Wand of Sparking
+			if(key.location().toString().equals("minecraft:chests/spawn_bonus_chest")) {
+				LootPool.Builder builder = LootPool.lootPool()
+						.setRolls(ConstantValue.exactly(1))
+						.when(LootItemRandomChanceCondition.randomChance(1.0f))
+						.add(LootItem.lootTableItem(ItemRegistry.WAND_OF_SPARKING.get()));
+				context.addPool(builder);
+			}
 		}
 	}
 }

@@ -88,7 +88,7 @@ public class FallenStar extends Entity {
 				double dy = speed * Math.cos(phi);
 				double dz = speed * Math.sin(theta) * Math.sin(phi);
 
-				((ServerLevel)this.level()).sendParticles(new DustParticleOptions(Utils.intToColorVector(15656731), 1.0f), this.getX(), this.getY(), this.getZ(), 1, dx, dy, dz, 0.0);
+				((ServerLevel)this.level()).sendParticles(new DustParticleOptions(Vec3.fromRGB24(15656731).toVector3f(), 1.0f), this.getX(), this.getY(), this.getZ(), 1, dx, dy, dz, 0.0);
 			}
 		}
 

@@ -37,7 +37,7 @@ public class AngryBee extends AbstractHurtingProjectile {
 	@Override
 	public void tick() {
 		if(!this.level().isClientSide && (this.tickCount > 200 || this.isInLiquid())) {
-			((ServerLevel)this.level()).sendParticles(new DustParticleOptions(Utils.intToColorVector(0xbfbfbf), 1.0f), this.getX(), this.getY(), this.getZ(), 1, 0.0D, 0.0D, 0.0D, 0.0);
+			((ServerLevel)this.level()).sendParticles(new DustParticleOptions(Vec3.fromRGB24(0xbfbfbf).toVector3f(), 1.0f), this.getX(), this.getY(), this.getZ(), 1, 0.0D, 0.0D, 0.0D, 0.0);
 			this.discard();
 			return;
 		}

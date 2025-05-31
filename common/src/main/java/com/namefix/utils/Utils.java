@@ -2,7 +2,6 @@ package com.namefix.utils;
 
 import com.namefix.ZapinatorsMod;
 import com.namefix.enums.ZapinatorType;
-import com.namefix.item.AbstractLaserGunItem;
 import com.namefix.item.AbstractManaItem;
 import com.namefix.item.MeteoriteArmorItem;
 import com.namefix.registry.ItemRegistry;
@@ -132,12 +131,5 @@ public class Utils {
 			case 3, 5 -> 0.5;
 			default -> 0.2;
 		};
-    }
-
-    public static Vector3f intToColorVector(int color) {
-        float r = ((color >> 16) & 0xFF) / 255.0f;
-        float g = ((color >> 8) & 0xFF) / 255.0f;
-        float b = (color & 0xFF) / 255.0f;
-        return new Vector3f(r, g, b);
     }
 }
