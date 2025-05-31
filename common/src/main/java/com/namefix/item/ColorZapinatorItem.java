@@ -28,7 +28,8 @@ public class ColorZapinatorItem extends AbstractLaserGunItem {
     public void appendHoverText(ItemStack itemStack, TooltipContext tooltipContext, List<Component> list, TooltipFlag tooltipFlag) {
         switch(this.zapinatorType) {
             case GRAY, ORANGE:
-                list.add(Component.translatable("item.zapinators.color_zapinator.description").withStyle(ChatFormatting.GRAY));
+                list.add(Component.literal("'It might be broken'").withStyle(ChatFormatting.GRAY));
+                list.add(Component.translatable("item.zapinators.color_zapinator.description").withStyle(ChatFormatting.DARK_GRAY));
                 break;
             case RED:
                 list.add(Component.translatable("item.zapinators.red_zapinator.description").withStyle(ChatFormatting.GRAY));

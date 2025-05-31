@@ -21,6 +21,7 @@
     "entity.zapinators.orb": "Küre",
 
     "item.zapinators.description.mana_usage": "%f mana kullanır",
+    "item.zapinators.description.armor_full_set_bonus": "Full Set Bonusu:",
 
     "item.zapinators.space_gun": "Uzay Silahı",
     "item.zapinators.laser_rifle": "Lazer Tüfeği",
@@ -35,9 +36,7 @@
     "item.zapinators.yellow_zapinator": "Sarı Zapinatör",
     "item.zapinators.white_zapinator": "Beyaz Zapinatör",
 
-    "item.zapinators.ender_zapinator": "Ender Zapinatör",
-
-    "item.zapinators.core.description": "Bir zapinatörü bu renge işlemek için kullanılır",
+    "item.zapinators.core.description": "Bir zapinatörü %s rengine işlemek için kullanılır",
     "item.zapinators.gray_core": "Gri Çekirdek",
     "item.zapinators.orange_core": "Turuncu Çekirdek",
     "item.zapinators.red_core": "Kırmızı Çekirdek",
@@ -49,7 +48,9 @@
     "item.zapinators.white_core": "Beyaz Çekirdek",
 
     "item.zapinators.bee_gun": "Arı Silahı",
+    "item.zapinators.bee_gun.description": "Düşmanları takip eden küçük arılar atar",
     "item.zapinators.wand_of_sparking": "Kıvılcım Değneği",
+    "item.zapinators.wand_of_sparking.description": "Yüksek şansla hedefi tutuşturur",
 
     "item.zapinators.echo_staff": "Yankı Asası",
     "item.zapinators.diamond_staff": "Elmas Asa",
@@ -58,8 +59,8 @@
     "item.zapinators.lapis_staff": "Lapis Asa",
     "item.zapinators.redstone_staff": "Kızıltaş Asa",
 
-    "item.zapinators.rune.description": "Mücevher Rünü elde etmek için kullanılır",
-    "item.zapinators.gem_rune.description": "Mücevher Asası elde etmek için kullanılır",
+    "item.zapinators.rune.description": "Mücevher Rünü ya da Kıvılcım Değneği elde etmek için kullanılır",
+    "item.zapinators.gem_rune.description": "%s Asa elde etmek için kullanılır",
     "item.zapinators.rune": "Rün",
     "item.zapinators.echo_rune": "Yankı Rün",
     "item.zapinators.diamond_rune": "Elmas Rün",
@@ -71,8 +72,9 @@
     "item.zapinators.energy_cell": "Enerji Hücresi",
     "item.zapinators.fallen_star": "Düşmüş Yıldız",
     "item.zapinators.mana_crystal": "Mana Kristali",
+    "item.zapinators.mana_crystal_description": "Maksimum manayı kalıcı olarak 20 arttırır",
 
-    "item.zapinators.color_zapinator.description": "'Bozuk olabilir'",
+    "item.zapinators.color_zapinator.description": "Ek özellik yok",
     "item.zapinators.red_zapinator.description": "Yarım şansla hedefi tutuşturur",
     "item.zapinators.green_zapinator.description": "Yarım şansla hedefi zehirler",
     "item.zapinators.blue_zapinator.description": "Yarım şansla hedefe yavaşlık uygular",
@@ -94,7 +96,7 @@
     "item.zapinators.meteorite_chestplate": "Meteorit Göğüslük",
     "item.zapinators.meteorite_leggings": "Meteorit Tozluk",
     "item.zapinators.meteorite_boots": "Meteorit Çizme",
-    "item.zapinators.meteorite_armor.save_percent_tooltip": "%%%s şansla mermi tasarrufu",
+    "item.zapinators.meteorite_armor.description": "Bazı silahlar mana kullanmaz",
 
     "item.zapinators.meteorite_ore": "Meteorit Cevheri",
     "item.zapinators.raw_meteorite_block": "Ham Meteorit Bloğu",
