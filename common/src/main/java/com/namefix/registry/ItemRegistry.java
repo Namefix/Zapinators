@@ -77,10 +77,10 @@ public class ItemRegistry {
             null
     ));
 
-    public static final RegistrySupplier<Item> METEORITE_HELMET = registerItem("meteorite_helmet", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, Type.HELMET, properties.durability(Type.HELMET.getDurability(15)), 25));
-    public static final RegistrySupplier<Item> METEORITE_CHESTPLATE = registerItem("meteorite_chestplate", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, Type.CHESTPLATE, properties.durability(Type.CHESTPLATE.getDurability(15)), 25));
-    public static final RegistrySupplier<Item> METEORITE_LEGGINGS = registerItem("meteorite_leggings", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, Type.LEGGINGS, properties.durability(Type.LEGGINGS.getDurability(15)), 25));
-    public static final RegistrySupplier<Item> METEORITE_BOOTS = registerItem("meteorite_boots", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, Type.BOOTS, properties.durability(Type.BOOTS.getDurability(15)), 25));
+    public static final RegistrySupplier<Item> METEORITE_HELMET = registerItem("meteorite_helmet", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, Type.HELMET, properties.durability(Type.HELMET.getDurability(15))));
+    public static final RegistrySupplier<Item> METEORITE_CHESTPLATE = registerItem("meteorite_chestplate", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, Type.CHESTPLATE, properties.durability(Type.CHESTPLATE.getDurability(15))));
+    public static final RegistrySupplier<Item> METEORITE_LEGGINGS = registerItem("meteorite_leggings", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, Type.LEGGINGS, properties.durability(Type.LEGGINGS.getDurability(15))));
+    public static final RegistrySupplier<Item> METEORITE_BOOTS = registerItem("meteorite_boots", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, Type.BOOTS, properties.durability(Type.BOOTS.getDurability(15))));
 
     public static void register() {
         ITEMS.register();

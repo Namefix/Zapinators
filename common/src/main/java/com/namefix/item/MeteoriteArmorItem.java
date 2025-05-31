@@ -11,21 +11,15 @@ import net.minecraft.world.item.TooltipFlag;
 import java.util.List;
 
 public class MeteoriteArmorItem extends ArmorItem {
-    private int savePercent;
-
-    public MeteoriteArmorItem(ArmorMaterial armorMaterial, Type armorType, Properties properties, int savePercent) {
+    public MeteoriteArmorItem(ArmorMaterial armorMaterial, Type armorType, Properties properties) {
         super(Holder.direct(armorMaterial), armorType, properties);
-        this.savePercent = savePercent;
     }
 
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext tooltipContext, List<Component> list, TooltipFlag tooltipFlag) {
-        list.add(Component.translatable("item.zapinators.meteorite_armor.save_percent_tooltip", savePercent).withStyle(ChatFormatting.BLUE));
+        list.add(Component.translatable("item.zapinators.description.armor_full_set_bonus").withStyle(ChatFormatting.GRAY));
+        list.add(Component.translatable("item.zapinators.meteorite_armor.description").withStyle(ChatFormatting.BLUE));
 
         super.appendHoverText(itemStack, tooltipContext, list, tooltipFlag);
-    }
-
-    public int getSavePercent() {
-        return savePercent;
     }
 }

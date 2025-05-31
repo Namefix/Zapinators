@@ -23,7 +23,9 @@ public class RuneItem extends Item {
 		if(type == null) {
 			list.add(Component.translatable("item.zapinators.rune.description").withStyle(ChatFormatting.GRAY));
 		} else {
-			list.add(Component.translatable("item.zapinators.gem_rune.description").withStyle(ChatFormatting.GRAY));
+			String fullName = this.getName().getString();
+			String firstWord = fullName.split(" ")[0];
+			list.add(Component.translatable("item.zapinators.gem_rune.description", firstWord).withStyle(ChatFormatting.GRAY));
 		}
 		super.appendHoverText(itemStack, tooltipContext, list, tooltipFlag);
 	}

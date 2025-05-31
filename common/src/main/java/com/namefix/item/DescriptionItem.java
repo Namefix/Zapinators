@@ -1,24 +1,29 @@
 package com.namefix.item;
 
-import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class CoreItem extends Item {
-	public CoreItem(Properties properties) {
+public class DescriptionItem extends Item {
+	List<Component> components = new ArrayList<>();
+
+	public DescriptionItem(Properties properties, Component component) {
 		super(properties);
+		components.add(component);
+	}
+
+	public DescriptionItem(Properties properties, List<Component> component) {
+		super(properties);
+		components.addAll(component);
 	}
 
 	@Override
 	public void appendHoverText(ItemStack itemStack, TooltipContext tooltipContext, List<Component> list, TooltipFlag tooltipFlag) {
-		String fullName = this.getName().getString();
-		String firstWord = fullName.split(" ")[0];
-		list.add(Component.translatable("item.zapinators.core.description", firstWord).withStyle(ChatFormatting.GRAY));
-
+		list.addAll(components);
 		super.appendHoverText(itemStack, tooltipContext, list, tooltipFlag);
 	}
 }

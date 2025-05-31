@@ -21,6 +21,7 @@
     "entity.zapinators.orb": "Orb",
 
     "item.zapinators.description.mana_usage": "Uses %f mana",
+    "item.zapinators.description.armor_full_set_bonus": "Full Set Bonus:",
 
     "item.zapinators.space_gun": "Space Gun",
     "item.zapinators.laser_rifle": "Laser Rifle",
@@ -35,9 +36,7 @@
     "item.zapinators.yellow_zapinator": "Yellow Zapinator",
     "item.zapinators.white_zapinator": "White Zapinator",
 
-    "item.zapinators.ender_zapinator": "Ender Zapinator",
-
-    "item.zapinators.core.description": "Used to smith a zapinator to the core's color",
+    "item.zapinators.core.description": "Used to smith a zapinator to %s",
     "item.zapinators.gray_core": "Gray Core",
     "item.zapinators.orange_core": "Orange Core",
     "item.zapinators.red_core": "Red Core",
@@ -49,7 +48,9 @@
     "item.zapinators.white_core": "White Core",
 
     "item.zapinators.bee_gun": "Bee Gun",
+    "item.zapinators.bee_gun.description": "Shoots tiny bees that follow enemies",
     "item.zapinators.wand_of_sparking": "Wand of Sparking",
+    "item.zapinators.wand_of_sparking.description": "High chance to set the target on fire",
 
     "item.zapinators.echo_staff": "Echo Staff",
     "item.zapinators.diamond_staff": "Diamond Staff",
@@ -58,8 +59,8 @@
     "item.zapinators.lapis_staff": "Lapis Staff",
     "item.zapinators.redstone_staff": "Redstone Staff",
 
-    "item.zapinators.rune.description": "Used to craft a Gem Rune",
-    "item.zapinators.gem_rune.description": "Used to craft a Gem Staff",
+    "item.zapinators.rune.description": "Used to craft a Gem Rune or Wand of Sparking",
+    "item.zapinators.gem_rune.description": "Used to craft %s Staff",
     "item.zapinators.rune": "Rune",
     "item.zapinators.echo_rune": "Echo Rune",
     "item.zapinators.diamond_rune": "Diamond Rune",
@@ -71,9 +72,10 @@
     "item.zapinators.energy_cell": "Energy Cell",
     "item.zapinators.fallen_star": "Fallen Star",
     "item.zapinators.mana_crystal": "Mana Crystal",
+    "item.zapinators.mana_crystal_description": "Permanently increases maximum mana by 20",
 
-    "item.zapinators.color_zapinator.description": "'It might be broken'",
-    "item.zapinators.red_zapinator.description": "Half chance to lit the target on fire",
+    "item.zapinators.color_zapinator.description": "No additional modifiers",
+    "item.zapinators.red_zapinator.description": "Half chance to set the target on fire",
     "item.zapinators.green_zapinator.description": "Half chance to poison the target",
     "item.zapinators.blue_zapinator.description": "Half chance to apply slowness to the target",
     "item.zapinators.purple_zapinator.description": "Half chance to apply additional knockback to the target",
@@ -94,7 +96,7 @@
     "item.zapinators.meteorite_chestplate": "Meteorite Chestplate",
     "item.zapinators.meteorite_leggings": "Meteorite Leggings",
     "item.zapinators.meteorite_boots": "Meteorite Boots",
-    "item.zapinators.meteorite_armor.save_percent_tooltip": "%s%% chance to save ammo",
+    "item.zapinators.meteorite_armor.description": "Certain weapons don't use mana",
 
     "block.zapinators.meteorite_ore": "Meteorite Ore",
     "block.zapinators.raw_meteorite_block": "Block of Raw Meteorite",
