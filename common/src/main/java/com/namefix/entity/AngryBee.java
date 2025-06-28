@@ -1,6 +1,7 @@
 package com.namefix.entity;
 
 import com.namefix.item.BeeGunItem;
+import com.namefix.utils.Utils;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.core.particles.ParticleOptions;
@@ -20,6 +21,8 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Objects;
 
 public class AngryBee extends AbstractHurtingProjectile {
 	public double beeSpeed = BeeGunItem.BEE_SPEED;
@@ -142,7 +145,7 @@ public class AngryBee extends AbstractHurtingProjectile {
 	protected void onHitEntity(EntityHitResult entityHitResult) {
 		if(level().isClientSide) return;
 		Entity target = entityHitResult.getEntity();
-		if(this.getOwner() != null && target.getUUID().equals(this.getOwner().getUUID())) return;
+		if(this.getOwner() != null && target.getUUID().equals(this.getOwner().getUUID()) || Utils.isEntityTeammate(Objects.requireNonNull(this.getOwner()), target)) return;
 
 		target.hurtServer((ServerLevel) target.level(), damageSources().playerAttack((Player) this.getOwner()), baseDamage);
 		target.invulnerableTime = 0;
