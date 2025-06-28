@@ -13,6 +13,7 @@ import dev.architectury.event.events.client.ClientGuiEvent;
 import dev.architectury.event.events.client.ClientTickEvent;
 import dev.architectury.event.events.common.PlayerEvent;
 import dev.architectury.event.events.common.TickEvent;
+import net.minecraft.server.MinecraftServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,6 +21,7 @@ public final class ZapinatorsMod {
     public static final String MOD_ID = "zapinators";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
     public static final Configurator CONFIGURATOR = new Configurator(MOD_ID);
+    public static MinecraftServer SERVER;
 
     public static void init() {
         CONFIGURATOR.register(ZapinatorsConfig.class);
