@@ -16,7 +16,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import org.joml.Vector3f;
+import net.minecraft.world.scores.Team;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -131,5 +131,12 @@ public class Utils {
 			case 3, 5 -> 0.5;
 			default -> 0.2;
 		};
+    }
+
+    public static boolean isEntityTeammate(Entity entity1, Entity entity2) {
+        Team e1Team = entity1.getTeam();
+        Team e2Team = entity2.getTeam();
+        if(e1Team != null && e1Team.equals(e2Team)) return true;
+        return false;
     }
 }

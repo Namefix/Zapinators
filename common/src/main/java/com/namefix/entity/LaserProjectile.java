@@ -4,11 +4,9 @@ import com.namefix.config.ZapinatorsConfig;
 import com.namefix.enums.ZapinatorType;
 import com.namefix.mixin.EntityInvoker;
 import com.namefix.utils.Utils;
-import net.fabricmc.loader.impl.lib.sat4j.core.Vec;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -25,6 +23,7 @@ import net.minecraft.world.phys.*;
 import org.joml.Vector3f;
 
 import java.util.List;
+import java.util.Objects;
 
 public class LaserProjectile extends AbstractHurtingProjectile {
     private static final EntityDataAccessor<Integer> COLOR = SynchedEntityData.defineId(LaserProjectile.class, EntityDataSerializers.INT);
@@ -79,7 +78,11 @@ public class LaserProjectile extends AbstractHurtingProjectile {
         if(!this.level().isClientSide) {
             List<Entity> collidingEntities = this.level().getEntities(this, this.getBoundingBox().inflate(0.2), e -> e != this && e != this.getOwner() && e.isAlive());
             for (Entity entity : collidingEntities) {
-                if (entity instanceof LivingEntity living && !living.isInvulnerableTo(damageSources().mobAttack(living))) {
+                if (
+                    entity instanceof LivingEntity living &&
+                    !living.isInvulnerableTo(damageSources().mobAttack(living)) &&
+                    !Utils.isEntityTeammate(Objects.requireNonNull(this.getOwner()), entity)
+                ) {
                     if(!zapinatorType.equals(ZapinatorType.NONE) && entity.invulnerableTime == 0) {
                         handleZapinatorEntityCollision(entity);
                     }

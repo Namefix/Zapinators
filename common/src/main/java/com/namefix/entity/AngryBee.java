@@ -22,6 +22,8 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Objects;
+
 public class AngryBee extends AbstractHurtingProjectile {
 	public double beeSpeed = BeeGunItem.BEE_SPEED;
 	int blockBounces = 3;
@@ -143,7 +145,7 @@ public class AngryBee extends AbstractHurtingProjectile {
 	protected void onHitEntity(EntityHitResult entityHitResult) {
 		if(level().isClientSide) return;
 		Entity target = entityHitResult.getEntity();
-		if(this.getOwner() != null && target.getUUID().equals(this.getOwner().getUUID())) return;
+		if(this.getOwner() != null && target.getUUID().equals(this.getOwner().getUUID()) || Utils.isEntityTeammate(Objects.requireNonNull(this.getOwner()), target)) return;
 
 		target.hurt(damageSources().playerAttack((Player) this.getOwner()), baseDamage);
 		target.invulnerableTime = 0;

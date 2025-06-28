@@ -17,6 +17,7 @@ import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Orb extends AbstractHurtingProjectile {
 	private static final EntityDataAccessor<Integer> COLOR = SynchedEntityData.defineId(Orb.class, EntityDataSerializers.INT);
@@ -51,7 +52,11 @@ public class Orb extends AbstractHurtingProjectile {
 		if(!this.level().isClientSide) {
 			List<Entity> collidingEntities = this.level().getEntities(this, this.getBoundingBox().inflate(0.1), e -> e != this && e != this.getOwner() && e.isAlive());
 			for (Entity entity : collidingEntities) {
-				if (entity instanceof LivingEntity living && !living.isInvulnerableTo(damageSources().mobAttack(living))) {
+				if (
+						entity instanceof LivingEntity living &&
+						!living.isInvulnerableTo(damageSources().mobAttack(living)) &&
+						!Utils.isEntityTeammate(Objects.requireNonNull(this.getOwner()), entity)
+				) {
 					if(entity.invulnerableTime > 0) continue;
 					entity.hurt(damageSources().mobAttack((LivingEntity) this.getOwner()), baseDamage);
 					entity.invulnerableTime = 5;
