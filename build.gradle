@@ -11,6 +11,19 @@ architectury {
 allprojects {
     group = rootProject.maven_group
     version = rootProject.mod_version
+
+    repositories {
+        exclusiveContent {
+            forRepository {
+                maven {
+                    url "https://cursemaven.com"
+                }
+            }
+            filter {
+                includeGroup "curse.maven"
+            }
+        }
+    }
 }
 
 subprojects {

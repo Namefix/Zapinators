@@ -1,10 +1,12 @@
 package com.namefix.utils;
 
 import com.namefix.ZapinatorsMod;
+import com.namefix.compat.OpacCompat;
 import com.namefix.enums.ZapinatorType;
 import com.namefix.item.AbstractManaItem;
 import com.namefix.item.MeteoriteArmorItem;
 import com.namefix.registry.ItemRegistry;
+import dev.architectury.platform.Platform;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
@@ -137,6 +139,11 @@ public class Utils {
         Team e1Team = entity1.getTeam();
         Team e2Team = entity2.getTeam();
         if(e1Team != null && e1Team.equals(e2Team)) return true;
+
+        // Open Parties and Claims Compatibility
+        if(Platform.isModLoaded("openpartiesandclaims") && entity1 instanceof Player p1 && entity2 instanceof Player p2)
+            return OpacCompat.isPlayerTeammate(p1, p2);
+
         return false;
     }
 }
