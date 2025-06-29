@@ -145,7 +145,7 @@ public class AngryBee extends AbstractHurtingProjectile {
 	protected void onHitEntity(EntityHitResult entityHitResult) {
 		if(level().isClientSide) return;
 		Entity target = entityHitResult.getEntity();
-		if(this.getOwner() != null && target.getUUID().equals(this.getOwner().getUUID()) || Utils.isEntityTeammate(Objects.requireNonNull(this.getOwner()), target)) return;
+		if(this.getOwner() != null && target.getUUID().equals(this.getOwner().getUUID()) || Utils.canEntityDamageEntity(Objects.requireNonNull(this.getOwner()), target)) return;
 
 		target.hurtServer((ServerLevel) target.level(), damageSources().playerAttack((Player) this.getOwner()), baseDamage);
 		target.invulnerableTime = 0;

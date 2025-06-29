@@ -56,7 +56,7 @@ public class Orb extends AbstractHurtingProjectile {
 				if (
 					entity instanceof LivingEntity living &&
 					!living.isInvulnerableTo((ServerLevel) this.level(), damageSources().mobAttack(living)) &&
-					!Utils.isEntityTeammate(Objects.requireNonNull(this.getOwner()), entity)
+					!Utils.canEntityDamageEntity(Objects.requireNonNull(this.getOwner()), entity)
 				) {
 					if(entity.invulnerableTime > 0) continue;
 					entity.hurtServer((ServerLevel) this.level(), damageSources().mobAttack((LivingEntity) this.getOwner()), baseDamage);
