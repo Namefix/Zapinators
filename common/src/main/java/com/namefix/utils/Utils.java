@@ -135,10 +135,12 @@ public class Utils {
 		};
     }
 
-    public static boolean isEntityTeammate(Entity entity1, Entity entity2) {
+    public static boolean canEntityDamageEntity(Entity entity1, Entity entity2) {
         Team e1Team = entity1.getTeam();
         Team e2Team = entity2.getTeam();
-        if(e1Team != null && e1Team.equals(e2Team)) return true;
+
+        if(e1Team != null && e1Team.equals(e2Team))
+			return !e1Team.isAllowFriendlyFire();
 
         // Open Parties and Claims Compatibility
         if(Platform.isModLoaded("openpartiesandclaims") && entity1 instanceof Player p1 && entity2 instanceof Player p2)

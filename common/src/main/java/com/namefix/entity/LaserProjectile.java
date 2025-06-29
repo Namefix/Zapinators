@@ -81,7 +81,7 @@ public class LaserProjectile extends AbstractHurtingProjectile {
                 if (
                     entity instanceof LivingEntity living &&
                     !living.isInvulnerableTo(damageSources().mobAttack(living)) &&
-                    !Utils.isEntityTeammate(Objects.requireNonNull(this.getOwner()), entity)
+                    !Utils.canEntityDamageEntity(Objects.requireNonNull(this.getOwner()), entity)
                 ) {
                     if(!zapinatorType.equals(ZapinatorType.NONE) && entity.invulnerableTime == 0) {
                         handleZapinatorEntityCollision(entity);
