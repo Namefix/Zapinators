@@ -15,9 +15,10 @@ public class ZapinatorsModBlockLootTableProvider extends FabricBlockLootTablePro
 
     @Override
     public void generate() {
-        dropSelf(BlockRegistry.METEORITE_BLOCK.getA().get());
-        dropSelf(BlockRegistry.RAW_METEORITE_BLOCK.getA().get());
-
         add(BlockRegistry.METEORITE_ORE.getA().get(), createOreDrop(BlockRegistry.METEORITE_ORE.getA().get(), ItemRegistry.RAW_METEORITE.get()));
+        dropSelf(BlockRegistry.RAW_METEORITE_BLOCK.getA().get());
+        dropSelf(BlockRegistry.METEORITE_BLOCK.getA().get());
+
+        dropSelf(BlockRegistry.STAR_BLOCK.getA().get());
     }
 }

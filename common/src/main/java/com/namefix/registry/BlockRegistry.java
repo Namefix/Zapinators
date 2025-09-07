@@ -18,9 +18,11 @@ import net.minecraft.world.level.material.MapColor;
 public class BlockRegistry {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ZapinatorsMod.MOD_ID, Registries.BLOCK);
 
-    public static Tuple<RegistrySupplier<Block>, RegistrySupplier<BlockItem>> METEORITE_ORE = registerBlockWithItem("meteorite_ore", properties -> new Block(properties.mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
-    public static Tuple<RegistrySupplier<Block>, RegistrySupplier<BlockItem>> RAW_METEORITE_BLOCK = registerBlockWithItem("raw_meteorite_block", properties -> new Block(properties.mapColor(MapColor.RAW_IRON).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(5.0F, 6.0F)));
-    public static Tuple<RegistrySupplier<Block>, RegistrySupplier<BlockItem>> METEORITE_BLOCK = registerBlockWithItem("meteorite_block", properties -> new Block(properties.mapColor(MapColor.METAL).instrument(NoteBlockInstrument.IRON_XYLOPHONE).requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.METAL)));
+    public static Tuple<RegistrySupplier<Block>, RegistrySupplier<BlockItem>> METEORITE_ORE = registerBlockWithItem("meteorite_ore", properties -> new Block(properties.mapColor(MapColor.TERRACOTTA_BROWN).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
+    public static Tuple<RegistrySupplier<Block>, RegistrySupplier<BlockItem>> RAW_METEORITE_BLOCK = registerBlockWithItem("raw_meteorite_block", properties -> new Block(properties.mapColor(MapColor.TERRACOTTA_BROWN).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(5.0F, 6.0F)));
+    public static Tuple<RegistrySupplier<Block>, RegistrySupplier<BlockItem>> METEORITE_BLOCK = registerBlockWithItem("meteorite_block", properties -> new Block(properties.mapColor(MapColor.TERRACOTTA_BROWN).instrument(NoteBlockInstrument.IRON_XYLOPHONE).requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.METAL)));
+
+    public static Tuple<RegistrySupplier<Block>, RegistrySupplier<BlockItem>> STAR_BLOCK = registerBlockWithItem("star_block", properties -> new Block(properties.mapColor(MapColor.COLOR_YELLOW).instrument(NoteBlockInstrument.IRON_XYLOPHONE).requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.METAL)));
 
     public static void register() {
         BLOCKS.register();

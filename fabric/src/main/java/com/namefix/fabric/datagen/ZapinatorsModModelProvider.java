@@ -11,7 +11,6 @@ import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.data.models.model.TextureSlot;
-import net.minecraft.client.model.Model;
 import net.minecraft.resources.ResourceLocation;
 
 import java.util.Optional;
@@ -26,6 +25,7 @@ public class ZapinatorsModModelProvider extends FabricModelProvider {
         blockModelGenerators.createTrivialCube(BlockRegistry.METEORITE_ORE.getA().get());
         blockModelGenerators.createTrivialCube(BlockRegistry.RAW_METEORITE_BLOCK.getA().get());
         blockModelGenerators.createTrivialCube(BlockRegistry.METEORITE_BLOCK.getA().get());
+        blockModelGenerators.createTrivialCube(BlockRegistry.STAR_BLOCK.getA().get());
     }
 
     @Override
