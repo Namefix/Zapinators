@@ -25,6 +25,7 @@ public class ZapinatorsModModelProvider extends FabricModelProvider {
         blockModelGenerators.createTrivialCube(BlockRegistry.METEORITE_ORE.getA().get());
         blockModelGenerators.createTrivialCube(BlockRegistry.RAW_METEORITE_BLOCK.getA().get());
         blockModelGenerators.createTrivialCube(BlockRegistry.METEORITE_BLOCK.getA().get());
+        blockModelGenerators.createTrivialCube(BlockRegistry.STAR_BLOCK.getA().get());
     }
 
     @Override

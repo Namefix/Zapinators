@@ -18,11 +18,13 @@ public class ZapinatorsModBlockTagProvider extends FabricTagProvider.BlockTagPro
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(BlockRegistry.METEORITE_ORE.getA().get())
                 .add(BlockRegistry.RAW_METEORITE_BLOCK.getA().get())
-                .add(BlockRegistry.METEORITE_BLOCK.getA().get());
+                .add(BlockRegistry.METEORITE_BLOCK.getA().get())
+                .add(BlockRegistry.STAR_BLOCK.getA().get());
 
         getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(BlockRegistry.METEORITE_ORE.getA().get())
                 .add(BlockRegistry.RAW_METEORITE_BLOCK.getA().get())
-                .add(BlockRegistry.METEORITE_BLOCK.getA().get());
+                .add(BlockRegistry.METEORITE_BLOCK.getA().get())
+                .add(BlockRegistry.STAR_BLOCK.getA().get());
     }
 }
