@@ -23,4 +23,12 @@ public class ModArmorMaterials {
         enumMap.put(ArmorType.HELMET, 3);
         enumMap.put(ArmorType.BODY, 4);
     }), 9, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.0F, TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "repairs_meteorite_armor")), ResourceKey.create(EquipmentAssets.ROOT_ID, ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID,"meteorite")));
+
+    public static final ArmorMaterial BEE_ARMOR = new ArmorMaterial(13, (Map) Util.make(new EnumMap(ArmorType.class), (enumMap) -> {
+        enumMap.put(ArmorType.BOOTS, 3);
+        enumMap.put(ArmorType.LEGGINGS, 4);
+        enumMap.put(ArmorType.CHESTPLATE, 6);
+        enumMap.put(ArmorType.HELMET, 4);
+        enumMap.put(ArmorType.BODY, 5);
+    }), 8, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "repairs_bee_armor")), ResourceKey.create(EquipmentAssets.ROOT_ID, ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "bee")));
 }

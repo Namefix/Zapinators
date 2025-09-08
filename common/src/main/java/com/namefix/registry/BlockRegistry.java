@@ -22,7 +22,7 @@ public class BlockRegistry {
     public static Tuple<RegistrySupplier<Block>, RegistrySupplier<BlockItem>> RAW_METEORITE_BLOCK = registerBlockWithItem("raw_meteorite_block", properties -> new Block(properties.mapColor(MapColor.TERRACOTTA_BROWN).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(5.0F, 6.0F)));
     public static Tuple<RegistrySupplier<Block>, RegistrySupplier<BlockItem>> METEORITE_BLOCK = registerBlockWithItem("meteorite_block", properties -> new Block(properties.mapColor(MapColor.TERRACOTTA_BROWN).instrument(NoteBlockInstrument.IRON_XYLOPHONE).requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.METAL)));
 
-    public static Tuple<RegistrySupplier<Block>, RegistrySupplier<BlockItem>> STAR_BLOCK = registerBlockWithItem("star_block", properties -> new Block(properties.mapColor(MapColor.COLOR_YELLOW).instrument(NoteBlockInstrument.IRON_XYLOPHONE).requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.METAL)));
+    public static Tuple<RegistrySupplier<Block>, RegistrySupplier<BlockItem>> STAR_BLOCK = registerBlockWithItem("star_block", properties -> new Block(properties.mapColor(MapColor.COLOR_YELLOW).instrument(NoteBlockInstrument.IRON_XYLOPHONE).requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.METAL).lightLevel((bs) -> 15)));
 
     public static void register() {
         BLOCKS.register();

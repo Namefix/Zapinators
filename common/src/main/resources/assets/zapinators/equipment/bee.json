@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "zapinators:bee"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "zapinators:bee"
+      }
+    ]
+  }
+}

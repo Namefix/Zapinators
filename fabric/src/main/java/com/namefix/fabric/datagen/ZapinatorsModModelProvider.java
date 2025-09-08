@@ -81,9 +81,15 @@ public class ZapinatorsModModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(ItemRegistry.METEORITE_INGOT.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ItemRegistry.METEORITE_NUGGET.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ItemRegistry.ZAPINATOR_RESET_SMITHING_TEMPLATE.get(), ModelTemplates.FLAT_ITEM);
+
         itemModelGenerators.generateTrimmableItem(ItemRegistry.METEORITE_HELMET.get(), ModArmorMaterials.METEORITE_ARMOR.assetId(), "helmet", false);
         itemModelGenerators.generateTrimmableItem(ItemRegistry.METEORITE_CHESTPLATE.get(), ModArmorMaterials.METEORITE_ARMOR.assetId(), "chestplate", false);
         itemModelGenerators.generateTrimmableItem(ItemRegistry.METEORITE_LEGGINGS.get(), ModArmorMaterials.METEORITE_ARMOR.assetId(), "leggings", false);
         itemModelGenerators.generateTrimmableItem(ItemRegistry.METEORITE_BOOTS.get(), ModArmorMaterials.METEORITE_ARMOR.assetId(), "boots", false);
+
+        itemModelGenerators.generateTrimmableItem(ItemRegistry.BEE_HELMET.get(), ModArmorMaterials.BEE_ARMOR.assetId(), "helmet", false);
+        itemModelGenerators.generateTrimmableItem(ItemRegistry.BEE_CHESTPLATE.get(), ModArmorMaterials.BEE_ARMOR.assetId(), "chestplate", false);
+        itemModelGenerators.generateTrimmableItem(ItemRegistry.BEE_LEGGINGS.get(), ModArmorMaterials.BEE_ARMOR.assetId(), "leggings", false);
+        itemModelGenerators.generateTrimmableItem(ItemRegistry.BEE_BOOTS.get(), ModArmorMaterials.BEE_ARMOR.assetId(), "boots", false);
     }
 }
