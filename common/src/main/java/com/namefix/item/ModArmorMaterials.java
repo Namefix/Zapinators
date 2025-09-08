@@ -7,6 +7,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem.Type;
 import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 
 import java.util.EnumMap;
@@ -21,4 +22,12 @@ public class ModArmorMaterials {
         enumMap.put(Type.HELMET, 3);
         enumMap.put(Type.BODY, 4);
     }), 9, SoundEvents.ARMOR_EQUIP_IRON, () -> Ingredient.of(ItemRegistry.METEORITE_INGOT.get()), List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "meteorite"))), 0.0F, 0.0F);
+
+    public static final ArmorMaterial BEE_ARMOR = new ArmorMaterial((Map) Util.make(new EnumMap(Type.class), (enumMap) -> {
+        enumMap.put(Type.BOOTS, 3);
+        enumMap.put(Type.LEGGINGS, 4);
+        enumMap.put(Type.CHESTPLATE, 6);
+        enumMap.put(Type.HELMET, 4);
+        enumMap.put(Type.BODY, 5);
+    }), 8, SoundEvents.ARMOR_EQUIP_LEATHER, () -> Ingredient.of(Items.HONEYCOMB), List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "bee"))), 0.0F, 0.0F);
 }

@@ -98,6 +98,37 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(ItemRegistry.METEORITE_INGOT.get()), this.has(ItemRegistry.METEORITE_INGOT.get()))
                 .save(recipeOutput);
 
+        // bee armor
+        shaped(RecipeCategory.COMBAT, ItemRegistry.BEE_HELMET.get())
+                .pattern("HHH")
+                .pattern("H H")
+                .define('H', Items.HONEYCOMB)
+                .unlockedBy(RecipeProvider.getHasName(Items.HONEYCOMB), this.has(Items.HONEYCOMB))
+                .save(recipeOutput);
+
+        shaped(RecipeCategory.COMBAT, ItemRegistry.BEE_CHESTPLATE.get())
+                .pattern("H H")
+                .pattern("HHH")
+                .pattern("HHH")
+                .define('H', Items.HONEYCOMB)
+                .unlockedBy(RecipeProvider.getHasName(Items.HONEYCOMB), this.has(Items.HONEYCOMB))
+                .save(recipeOutput);
+
+        shaped(RecipeCategory.COMBAT, ItemRegistry.BEE_LEGGINGS.get())
+                .pattern("HHH")
+                .pattern("H H")
+                .pattern("H H")
+                .define('H', Items.HONEYCOMB)
+                .unlockedBy(RecipeProvider.getHasName(Items.HONEYCOMB), this.has(Items.HONEYCOMB))
+                .save(recipeOutput);
+
+        shaped(RecipeCategory.COMBAT, ItemRegistry.BEE_BOOTS.get())
+                .pattern("H H")
+                .pattern("H H")
+                .define('H', Items.HONEYCOMB)
+                .unlockedBy(RecipeProvider.getHasName(Items.HONEYCOMB), this.has(Items.HONEYCOMB))
+                .save(recipeOutput);
+
         // mana crystal
         shapeless(RecipeCategory.MISC, ItemRegistry.MANA_CRYSTAL.get())
                 .requires(ItemRegistry.FALLEN_STAR.get(), 5)

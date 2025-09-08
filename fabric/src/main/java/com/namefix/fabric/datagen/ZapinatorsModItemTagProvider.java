@@ -10,6 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -21,19 +22,34 @@ public class ZapinatorsModItemTagProvider extends FabricTagProvider.ItemTagProvi
     public static TagKey<Item> COLOR_ZAPINATORS = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "color_zapinators"));
     public static TagKey<Item> ZAPINATOR_CORES = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "zapinator_cores"));
     public static TagKey<Item> REPAIRS_METEORITE_ARMOR = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "repairs_meteorite_armor"));
+    public static TagKey<Item> REPAIRS_BEE_ARMOR = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "repairs_bee_armor"));
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        getOrCreateTagBuilder(ItemTags.HEAD_ARMOR).add(ItemRegistry.METEORITE_HELMET.get());
-        getOrCreateTagBuilder(ItemTags.CHEST_ARMOR).add(ItemRegistry.METEORITE_CHESTPLATE.get());
-        getOrCreateTagBuilder(ItemTags.LEG_ARMOR).add(ItemRegistry.METEORITE_LEGGINGS.get());
-        getOrCreateTagBuilder(ItemTags.FOOT_ARMOR).add(ItemRegistry.METEORITE_BOOTS.get());
+        getOrCreateTagBuilder(ItemTags.HEAD_ARMOR)
+                .add(ItemRegistry.METEORITE_HELMET.get())
+                .add(ItemRegistry.BEE_HELMET.get());
+        getOrCreateTagBuilder(ItemTags.CHEST_ARMOR)
+                .add(ItemRegistry.METEORITE_CHESTPLATE.get())
+                .add(ItemRegistry.BEE_CHESTPLATE.get());
+        getOrCreateTagBuilder(ItemTags.LEG_ARMOR)
+                .add(ItemRegistry.METEORITE_LEGGINGS.get())
+                .add(ItemRegistry.BEE_LEGGINGS.get());
+        getOrCreateTagBuilder(ItemTags.FOOT_ARMOR)
+                .add(ItemRegistry.METEORITE_BOOTS.get())
+                .add(ItemRegistry.BEE_BOOTS.get());
         getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
                 .add(ItemRegistry.METEORITE_HELMET.get())
                 .add(ItemRegistry.METEORITE_CHESTPLATE.get())
                 .add(ItemRegistry.METEORITE_LEGGINGS.get())
-                .add(ItemRegistry.METEORITE_BOOTS.get());
+                .add(ItemRegistry.METEORITE_BOOTS.get())
+                .add(ItemRegistry.BEE_HELMET.get())
+                .add(ItemRegistry.BEE_CHESTPLATE.get())
+                .add(ItemRegistry.BEE_LEGGINGS.get())
+                .add(ItemRegistry.BEE_BOOTS.get());
+
         getOrCreateTagBuilder(REPAIRS_METEORITE_ARMOR).add(ItemRegistry.METEORITE_INGOT.get());
+        getOrCreateTagBuilder(REPAIRS_BEE_ARMOR).add(Items.HONEYCOMB);
 
         getOrCreateTagBuilder(COLOR_ZAPINATORS)
                 .add(ItemRegistry.GRAY_ZAPINATOR.get())

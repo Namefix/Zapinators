@@ -98,6 +98,11 @@
     "item.zapinators.meteorite_boots": "Meteorite Boots",
     "item.zapinators.meteorite_armor.description": "Certain weapons don't use mana",
 
+    "item.zapinators.bee_helmet": "Bee Helmet",
+    "item.zapinators.bee_chestplate": "Bee Chestplate",
+    "item.zapinators.bee_leggings": "Bee Leggings",
+    "item.zapinators.bee_boots": "Bee Boots",
+
     "item.zapinators.meteorite_ore": "Meteorite Ore",
     "item.zapinators.raw_meteorite_block": "Block of Raw Meteorite",
     "item.zapinators.meteorite_block": "Block of Meteorite",
