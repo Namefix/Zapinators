@@ -22,6 +22,7 @@
 
     "item.zapinators.description.mana_usage": "%f mana kullanır",
     "item.zapinators.description.armor_full_set_bonus": "Full Set Bonusu:",
+    "item.zapinators.description.armor_extra_bonus": "Ek Bonus:",
 
     "item.zapinators.space_gun": "Uzay Silahı",
     "item.zapinators.laser_rifle": "Lazer Tüfeği",
@@ -102,6 +103,8 @@
     "item.zapinators.bee_chestplate": "Arı Göğüslük",
     "item.zapinators.bee_leggings": "Arı Tozluk",
     "item.zapinators.bee_boots": "Arı Çizme",
+    "item.zapinators.bee_armor.description": "Giyici hasar yediğinde arı salar",
+    "item.zapinators.bee_armor.extra_bonus": "Tüm arılar için +%s%% hasar",
 
     "item.zapinators.meteorite_ore": "Meteorit Cevheri",
     "item.zapinators.raw_meteorite_block": "Ham Meteorit Bloğu",

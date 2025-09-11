@@ -11,6 +11,7 @@ import com.namefix.trade.ModVillagerTrades;
 import com.teamresourceful.resourcefulconfig.api.loader.Configurator;
 import dev.architectury.event.events.client.ClientGuiEvent;
 import dev.architectury.event.events.client.ClientTickEvent;
+import dev.architectury.event.events.common.EntityEvent;
 import dev.architectury.event.events.common.PlayerEvent;
 import dev.architectury.event.events.common.TickEvent;
 import net.minecraft.server.MinecraftServer;
@@ -40,6 +41,7 @@ public final class ZapinatorsMod {
 
         PlayerEvent.PLAYER_JOIN.register(ZapinatorsServer::sendInitialSync);
         PlayerEvent.PLAYER_RESPAWN.register(ZapinatorsServer::onPlayerRespawn);
+        EntityEvent.LIVING_HURT.register(ZapinatorsServer::onPlayerDamage);
         TickEvent.SERVER_LEVEL_POST.register(ZapinatorsServer::tick);
 
         LOGGER.info("--- Zapinators --- Mod --- initialized. ---");
