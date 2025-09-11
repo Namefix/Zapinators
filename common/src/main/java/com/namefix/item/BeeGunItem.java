@@ -3,6 +3,7 @@ package com.namefix.item;
 import com.namefix.entity.AngryBee;
 import com.namefix.registry.EntityRegistry;
 import com.namefix.registry.SoundRegistry;
+import com.namefix.utils.Utils;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
@@ -43,6 +44,8 @@ public class BeeGunItem extends AbstractManaItem {
 
 				AngryBee bee = new AngryBee(EntityRegistry.ANGRY_BEE.get(), level);
 				bee.beeSpeed = BEE_SPEED;
+				bee.beeSource = AngryBee.BeeSource.BEE_GUN;
+				bee.baseDamage *= (1+0.05f*Utils.countPlayerArmorSet(player, BeeArmorItem.class));
 				bee.setPos(
 					player.getX() + offsetX,
 					player.getEyeY() - 0.1 + offsetY,

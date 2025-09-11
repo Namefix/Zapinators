@@ -4,7 +4,6 @@ import com.namefix.ZapinatorsMod;
 import com.namefix.compat.OpacCompat;
 import com.namefix.enums.ZapinatorType;
 import com.namefix.item.AbstractManaItem;
-import com.namefix.item.MeteoriteArmorItem;
 import com.namefix.registry.ItemRegistry;
 import dev.architectury.platform.Platform;
 import net.minecraft.core.BlockPos;
@@ -14,6 +13,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -21,6 +21,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.scores.Team;
 
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Utils {
     public static void rotateMotionXZ(Entity projectile, float degrees) {
@@ -78,15 +79,26 @@ public class Utils {
         }
     }
 
-    public static boolean getPlayerMeteoriteSetBonus(Player player) {
+    public static boolean getPlayerArmorFullSet(Player player, Class<? extends ArmorItem> armorClass) {
         AtomicBoolean fullset = new AtomicBoolean(true);
 
         var playerArmor = player.getArmorSlots();
         playerArmor.forEach(piece -> {
-            if(!(piece.getItem() instanceof MeteoriteArmorItem)) fullset.set(false);
+            if (!armorClass.isInstance(piece.getItem())) fullset.set(false);
         });
 
         return fullset.get();
+    }
+
+    public static int countPlayerArmorSet(Player player, Class<? extends ArmorItem> armorClass) {
+        AtomicInteger pieceCount = new AtomicInteger(0);
+
+        var playerArmor = player.getArmorSlots();
+        playerArmor.forEach(piece -> {
+            if (armorClass.isInstance(piece.getItem())) pieceCount.incrementAndGet();
+        });
+
+        return pieceCount.get();
     }
 
     public static boolean doesPlayerHoldManaWeapon(Player player) {
@@ -138,6 +150,8 @@ public class Utils {
     public static boolean canEntityDamageEntity(Entity entity1, Entity entity2) {
         Team e1Team = entity1.getTeam();
         Team e2Team = entity2.getTeam();
+
+        if(e1Team == null && e2Team == null) return true;
 
         if(e1Team != null && e1Team.equals(e2Team))
 			return !e1Team.isAllowFriendlyFire();

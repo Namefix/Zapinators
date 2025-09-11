@@ -24,7 +24,7 @@ public abstract class AbstractManaItem extends Item {
 	}
 
 	public boolean canPlayerUseManaItem(Level level, Player player) {
-		boolean meteoriteSetBonus = Utils.getPlayerMeteoriteSetBonus(player);
+		boolean meteoriteSetBonus = Utils.getPlayerArmorFullSet(player, MeteoriteArmorItem.class);
 		if(!meteoriteArmorSavesMana) meteoriteSetBonus = false;
 
 		if(!player.isCreative() && !meteoriteSetBonus && manaCost > 0.0f) {
@@ -39,7 +39,7 @@ public abstract class AbstractManaItem extends Item {
 	}
 
 	public void useManaItem(Level level, Player player, boolean meteoriteArmorSavesMana) {
-		boolean meteoriteSetBonus = Utils.getPlayerMeteoriteSetBonus(player);
+		boolean meteoriteSetBonus = Utils.getPlayerArmorFullSet(player, MeteoriteArmorItem.class);
 		if(!player.isCreative() && manaCost > 0.0f && (!meteoriteSetBonus || !meteoriteArmorSavesMana)) {
 			if(level.isClientSide()) {
 				ZapinatorsClient.decreaseMana(manaCost, true);

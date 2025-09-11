@@ -17,8 +17,10 @@ public class MeteoriteArmorItem extends ArmorItem {
 
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext tooltipContext, List<Component> list, TooltipFlag tooltipFlag) {
+        list.add(Component.empty());
         list.add(Component.translatable("item.zapinators.description.armor_full_set_bonus").withStyle(ChatFormatting.GRAY));
         list.add(Component.translatable("item.zapinators.meteorite_armor.description").withStyle(ChatFormatting.BLUE));
+        if(!itemStack.getEnchantments().isEmpty()) list.add(Component.empty());
 
         super.appendHoverText(itemStack, tooltipContext, list, tooltipFlag);
     }

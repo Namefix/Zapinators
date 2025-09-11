@@ -24,10 +24,10 @@ public class ModArmorMaterials {
     }), 9, SoundEvents.ARMOR_EQUIP_IRON, () -> Ingredient.of(ItemRegistry.METEORITE_INGOT.get()), List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "meteorite"))), 0.0F, 0.0F);
 
     public static final ArmorMaterial BEE_ARMOR = new ArmorMaterial((Map) Util.make(new EnumMap(Type.class), (enumMap) -> {
-        enumMap.put(Type.BOOTS, 3);
+        enumMap.put(Type.BOOTS, 2);
         enumMap.put(Type.LEGGINGS, 4);
-        enumMap.put(Type.CHESTPLATE, 6);
-        enumMap.put(Type.HELMET, 4);
-        enumMap.put(Type.BODY, 5);
+        enumMap.put(Type.CHESTPLATE, 5);
+        enumMap.put(Type.HELMET, 3);
+        enumMap.put(Type.BODY, 3);
     }), 8, SoundEvents.ARMOR_EQUIP_LEATHER, () -> Ingredient.of(Items.HONEYCOMB), List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "bee"))), 0.0F, 0.0F);
 }

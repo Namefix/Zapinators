@@ -6,10 +6,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.MoverType;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractHurtingProjectile;
@@ -25,10 +22,16 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Objects;
 
 public class AngryBee extends AbstractHurtingProjectile {
+	public enum BeeSource {
+		BEE_GUN,
+		BEE_ARMOR
+	}
+
 	public double beeSpeed = BeeGunItem.BEE_SPEED;
+	public BeeSource beeSource = BeeSource.BEE_GUN;
 	int blockBounces = 3;
 	int enemyHits = 3;
-	float baseDamage = 0.5f;
+	public float baseDamage = 0.5f;
 
 	double homingRadius = 8;
 
@@ -47,7 +50,7 @@ public class AngryBee extends AbstractHurtingProjectile {
 		double nearestDistance = Double.MAX_VALUE;
 		Entity nearestEntity = null;
 
-		if(this.tickCount > 5) {
+		if(this.beeSource.equals(BeeSource.BEE_ARMOR) || this.tickCount > 5) {
 			for (Entity entity : level().getEntities(this, getBoundingBox().inflate(homingRadius),
 					e -> e.isAlive() &&
 							!(e instanceof AngryBee) &&
@@ -145,11 +148,18 @@ public class AngryBee extends AbstractHurtingProjectile {
 	protected void onHitEntity(EntityHitResult entityHitResult) {
 		if(level().isClientSide) return;
 		Entity target = entityHitResult.getEntity();
-		if(this.getOwner() != null && target.getUUID().equals(this.getOwner().getUUID()) || Utils.canEntityDamageEntity(Objects.requireNonNull(this.getOwner()), target)) return;
+		if(target.invulnerableTime > 0) return;
+		if(this.getOwner() != null) {
+			if(target.getUUID().equals(this.getOwner().getUUID()) || !Utils.canEntityDamageEntity(Objects.requireNonNull(this.getOwner()), target)) return;
+			target.hurt(damageSources().playerAttack((Player) this.getOwner()), baseDamage);
+		} else {
+			if(target instanceof LivingEntity)
+				target.hurt(damageSources().sting((LivingEntity) target), baseDamage);
+			else
+				target.hurt(damageSources().generic(), baseDamage);
+		}
 
-		target.hurt(damageSources().playerAttack((Player) this.getOwner()), baseDamage);
-		target.invulnerableTime = 0;
-
+		target.invulnerableTime = 2;
 		enemyHits--;
 		if(enemyHits <= 0) this.discard();
 	}

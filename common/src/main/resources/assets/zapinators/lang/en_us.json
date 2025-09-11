@@ -22,6 +22,7 @@
 
     "item.zapinators.description.mana_usage": "Uses %f mana",
     "item.zapinators.description.armor_full_set_bonus": "Full Set Bonus:",
+    "item.zapinators.description.armor_extra_bonus": "Extra Bonus:",
 
     "item.zapinators.space_gun": "Space Gun",
     "item.zapinators.laser_rifle": "Laser Rifle",
@@ -102,11 +103,13 @@
     "item.zapinators.bee_chestplate": "Bee Chestplate",
     "item.zapinators.bee_leggings": "Bee Leggings",
     "item.zapinators.bee_boots": "Bee Boots",
+    "item.zapinators.bee_armor.description": "Wearer releases bees when damaged",
+    "item.zapinators.bee_armor.extra_bonus": "+%s%% damage for all bees",
 
-    "item.zapinators.meteorite_ore": "Meteorite Ore",
-    "item.zapinators.raw_meteorite_block": "Block of Raw Meteorite",
-    "item.zapinators.meteorite_block": "Block of Meteorite",
-    "item.zapinators.star_block": "Block of Star",
+    "block.zapinators.meteorite_ore": "Meteorite Ore",
+    "block.zapinators.raw_meteorite_block": "Block of Raw Meteorite",
+    "block.zapinators.meteorite_block": "Block of Meteorite",
+    "block.zapinators.star_block": "Block of Star",
 
     "tag.item.zapinators.color_zapinators": "Color Zapinators",
     "tag.item.zapinators.zapinator_cores": "Zapinator Cores",

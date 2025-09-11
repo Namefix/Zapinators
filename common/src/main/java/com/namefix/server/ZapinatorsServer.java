@@ -3,20 +3,27 @@ package com.namefix.server;
 import com.namefix.config.ZapinatorsConfig;
 import com.namefix.data.PlayerData;
 import com.namefix.data.StateSaver;
+import com.namefix.entity.AngryBee;
 import com.namefix.entity.FallenStar;
+import com.namefix.item.BeeArmorItem;
+import com.namefix.item.BeeGunItem;
 import com.namefix.network.payload.InitialSyncPayload;
 import com.namefix.network.payload.ManaStatusPayload;
 import com.namefix.registry.AttributeRegistry;
 import com.namefix.registry.EntityRegistry;
 import com.namefix.utils.Utils;
+import dev.architectury.event.EventResult;
 import dev.architectury.networking.NetworkManager;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.Vec3;
 
@@ -103,6 +110,45 @@ public class ZapinatorsServer {
 		star.setDeltaMovement(dx, dy, dz);
 		star.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3(targetX, targetY, targetZ));
 		player.level().addFreshEntity(star);
+	}
+
+	public static EventResult onPlayerDamage(LivingEntity livingEntity, DamageSource damageSource, float v) {
+		if(!(livingEntity instanceof ServerPlayer player)) return EventResult.pass();
+
+		if(v <= 0 || player.isCreative() || player.invulnerableTime > 0 || player.isInvulnerableTo(damageSource)) return EventResult.pass();
+
+		if(Utils.getPlayerArmorFullSet(player, BeeArmorItem.class)) {
+			Level level = player.level();
+			int initialBeeAmount = level.getRandom().nextInt(1, 3);
+
+			for (int i = 0; i < initialBeeAmount; i++) {
+				double speed = BeeGunItem.BEE_SPEED;
+				double offsetX = (level.getRandom().nextDouble() - 0.5) * 0.4;
+				double offsetY = (level.getRandom().nextDouble() - 0.5) * 0.4;
+				double offsetZ = (level.getRandom().nextDouble() - 0.5) * 0.4;
+
+				AngryBee bee = new AngryBee(EntityRegistry.ANGRY_BEE.get(), level);
+				bee.beeSpeed = speed;
+				bee.beeSource = AngryBee.BeeSource.BEE_ARMOR;
+				bee.baseDamage *= (1+0.05f*Utils.countPlayerArmorSet(player, BeeArmorItem.class));
+				bee.setPos(
+						player.getX() + offsetX,
+						player.getEyeY() - 0.2 + offsetY,
+						player.getZ() + offsetZ
+				);
+
+				double dx = (level.getRandom().nextDouble() - 0.5) * 2 * speed;
+				double dy = (level.getRandom().nextDouble() - 0.5) * 2 * speed;
+				double dz = (level.getRandom().nextDouble() - 0.5) * 2 * speed;
+				bee.setDeltaMovement(dx, dy, dz);
+				bee.setOwner(player);
+				bee.setXRot(level.getRandom().nextFloat() * 360.0f);
+				bee.setYRot(level.getRandom().nextFloat() * 360.0f);
+				level.addFreshEntity(bee);
+			}
+		}
+
+		return EventResult.pass();
 	}
 
 	public static PlayerData getPlayerData(ServerPlayer player) {
