@@ -28,12 +28,26 @@ public class ModLootTables {
 			if(key.location().toString().equals("minecraft:chests/desert_pyramid")) {
 				LootPool.Builder builder = LootPool.lootPool()
 						.setRolls(ConstantValue.exactly(1))
+						.when(LootItemRandomChanceCondition.randomChance(0.30f))
+						.add(LootItem.lootTableItem(ItemRegistry.ZAPINATOR_RESET_SMITHING_TEMPLATE.get()));
+				context.addPool(builder);
+			}
+			if(key.location().toString().equals("minecraft:chests/trial_chambers/reward_unique")) {
+				LootPool.Builder builder = LootPool.lootPool()
+						.setRolls(ConstantValue.exactly(1))
 						.when(LootItemRandomChanceCondition.randomChance(0.25f))
 						.add(LootItem.lootTableItem(ItemRegistry.ZAPINATOR_RESET_SMITHING_TEMPLATE.get()));
 				context.addPool(builder);
 			}
+			if(key.location().toString().equals("minecraft:chests/bastion_treasure")) {
+				LootPool.Builder builder = LootPool.lootPool()
+						.setRolls(ConstantValue.exactly(1))
+						.when(LootItemRandomChanceCondition.randomChance(0.5f))
+						.add(LootItem.lootTableItem(ItemRegistry.ZAPINATOR_RESET_SMITHING_TEMPLATE.get()));
+				context.addPool(builder);
+			}
 
-			// red core spawn
+			// red core
 			if(key.location().toString().equals("minecraft:chests/ruined_portal")) {
 				LootPool.Builder builder = LootPool.lootPool()
 						.setRolls(ConstantValue.exactly(1))
