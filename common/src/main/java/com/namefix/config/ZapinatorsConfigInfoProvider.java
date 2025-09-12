@@ -14,7 +14,7 @@ public class ZapinatorsConfigInfoProvider implements ResourcefulConfigInfo {
 
 	@Override
 	public TranslatableValue description() {
-		return new TranslatableValue("Zapinators", "modmenu.descriptionTranslation.zapinators");
+		return new TranslatableValue("Zapinators", "config.zapinators.description");
 	}
 
 	@Override

@@ -1,6 +1,7 @@
 {
-    "modmenu.descriptionTranslation.zapinators": "Zapinators, mevcut olanların yanı sıra yepyeni Zapinators ve diğer silahların da yer aldığı, ateş, zehir ve yavaşlatma gibi özel efektlere sahip benzersiz renk varyasyonlarıyla dikkat çeken heyecan verici bir koleksiyon ekler.",
-    "modmenu.summaryTranslation.zapinators": "Terraria'nın lazer silahlarını (ve daha fazlasını) Minecraft'ta deneyimle!",
+    "modmenu.descriptionTranslation.zapinators": "Terraria’nın ikonik silahlarını Minecraft’ın tarzında deneyimleyin! Her renkte zapinatorlardan lazer tüfeklerine, arı silahlarından mücevher asalarına, Zapinators Terraria’dan esinlenilmiş heyecan verici bir silah ve ekipman koleksiyonu ekler.",
+    "modmenu.summaryTranslation.zapinators": "Terraria’nın ikonik silahlarını Minecraft’ın tarzında deneyimleyin!",
+    "config.zapinators.description": "Zapinators'ın sunduğu seçenekleri ayarlayın",
 
     "sound.zapinators.space_gun_shot": "Uzay Silahı ateşlendi",
     "sound.zapinators.laser_rifle_shot": "Lazer Tüfeği ateşlendi",

@@ -1,6 +1,6 @@
 modLoader = "javafml"
 loaderVersion = "[4,)"
-#issueTrackerURL = ""
+issueTrackerURL = "https://github.com/Namefix/Zapinators/issues"
 license = "GPL-3.0"
 
 [[mods]]
@@ -9,7 +9,9 @@ version = "${version}"
 displayName = "Zapinators"
 authors = "Namefix"
 description = '''
-Adds the laser guns from Terraria
+Experience Terraria's iconic arsenal in the style of Minecraft!
+
+From zapinators of every color to laser rifles, from bee guns to gem staves, Zapinators brings (and will continue to bring) an exciting collection of Terraria-inspired weapons and equipment.
 '''
 logoFile = "assets/zapinators/icon.png"
 
