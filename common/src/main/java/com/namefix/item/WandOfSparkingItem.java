@@ -14,7 +14,7 @@ public class WandOfSparkingItem extends AbstractOrbShooterItem {
 		super(properties, manaCost, baseDamage, itemCooldown, color);
 		this.gravity = true;
 		this.shootSound = SoundRegistry.WAND_OF_SPARKING_SHOOT.getOrNull();
-		this.orbDespawnTick = 40;
+		this.orbDespawnTick = 50;
 		this.piercingAmount = 1;
 		this.fireChance = true;
 	}
