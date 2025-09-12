@@ -66,7 +66,7 @@ public abstract class AbstractLaserGunItem extends AbstractManaItem {
             projectile.setXRot(player.getXRot());
             projectile.setYRot(player.getYRot());
             projectile.setColor(color);
-            projectile.setBaseDamage(baseDamage);
+            projectile.setBaseDamage(baseDamage*getDamageModifier());
             projectile.setSize(new Vector3f(laserWidth, laserHeight, laserLength));
             projectile.setBlockPiercing(blockPiercing);
             projectile.setEntityPiercing(entityPiercing);
@@ -80,6 +80,10 @@ public abstract class AbstractLaserGunItem extends AbstractManaItem {
         player.getCooldowns().addCooldown(this, itemCooldown);
         if(shootSound != null) player.level().playSound(null, player.getX(), player.getY(), player.getZ(), shootSound, SoundSource.PLAYERS);
         return InteractionResultHolder.consume(player.getItemInHand(interactionHand));
+    }
+
+    public float getDamageModifier() {
+        return 1.0f;
     }
 
     @Override

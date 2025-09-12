@@ -1,5 +1,6 @@
 package com.namefix.item;
 
+import com.namefix.config.ZapinatorsConfig;
 import com.namefix.registry.SoundRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -16,6 +17,11 @@ public class WandOfSparkingItem extends AbstractOrbShooterItem {
 		this.orbDespawnTick = 40;
 		this.piercingAmount = 1;
 		this.fireChance = true;
+	}
+
+	@Override
+	public float getDamageModifier() {
+		return ZapinatorsConfig.Server.sparkingDamageMultiplier;
 	}
 
 	@Override

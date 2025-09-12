@@ -130,7 +130,7 @@ public class ZapinatorsServer {
 				AngryBee bee = new AngryBee(EntityRegistry.ANGRY_BEE.get(), level);
 				bee.beeSpeed = speed;
 				bee.beeSource = AngryBee.BeeSource.BEE_ARMOR;
-				bee.baseDamage *= (1+0.05f*Utils.countPlayerArmorSet(player, BeeArmorItem.class));
+				bee.baseDamage *= (1+0.05f*Utils.countPlayerArmorSet(player, BeeArmorItem.class))*ZapinatorsConfig.Server.beeDamageMultiplier;
 				bee.setPos(
 						player.getX() + offsetX,
 						player.getEyeY() - 0.2 + offsetY,
