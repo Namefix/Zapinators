@@ -154,12 +154,12 @@ public class Utils {
         if(e1Team == null && e2Team == null) return true;
 
         if(e1Team != null && e1Team.equals(e2Team))
-			return !e1Team.isAllowFriendlyFire();
+			return e1Team.isAllowFriendlyFire();
 
         // Open Parties and Claims Compatibility
         if(Platform.isModLoaded("openpartiesandclaims") && entity1 instanceof Player p1 && entity2 instanceof Player p2)
-            return OpacCompat.isPlayerTeammate(p1, p2);
+            return !OpacCompat.isPlayerTeammate(p1, p2);
 
-        return false;
+        return true;
     }
 }
