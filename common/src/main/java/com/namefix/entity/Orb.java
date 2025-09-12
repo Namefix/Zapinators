@@ -45,7 +45,7 @@ public class Orb extends AbstractHurtingProjectile {
 
 		Vec3 motion = this.getDeltaMovement();
 		if (this.hasGravity) {
-			motion = motion.add(0, -0.015, 0);
+			motion = motion.add(0, -0.009, 0);
 			this.setDeltaMovement(motion);
 		}
 		this.move(MoverType.SELF, motion);
@@ -65,7 +65,7 @@ public class Orb extends AbstractHurtingProjectile {
 						entity.hurtServer((ServerLevel) this.level(), damageSources().magic(), baseDamage);
 					}
 
-					entity.invulnerableTime = 5;
+					entity.invulnerableTime = 2;
 
 					if(fireChance) {
 						RandomSource rand = this.level().random;
