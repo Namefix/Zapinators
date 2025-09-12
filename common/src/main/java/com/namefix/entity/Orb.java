@@ -54,11 +54,16 @@ public class Orb extends AbstractHurtingProjectile {
 			for (Entity entity : collidingEntities) {
 				if (
 					entity instanceof LivingEntity living &&
-					!living.isInvulnerableTo(damageSources().mobAttack(living)) &&
-					!Utils.canEntityDamageEntity(Objects.requireNonNull(this.getOwner()), entity)
+					!living.isInvulnerableTo(damageSources().mobAttack(living))
 				) {
 					if(entity.invulnerableTime > 0) continue;
-					entity.hurt(damageSources().mobAttack((LivingEntity) this.getOwner()), baseDamage);
+					if(this.getOwner() != null) {
+						if (!Utils.canEntityDamageEntity(Objects.requireNonNull(this.getOwner()), entity)) continue;
+						entity.hurt(damageSources().mobAttack((LivingEntity) this.getOwner()), baseDamage);
+					} else {
+						entity.hurt(damageSources().magic(), baseDamage);
+					}
+					
 					entity.invulnerableTime = 5;
 
 					if(fireChance) {

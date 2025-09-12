@@ -80,14 +80,20 @@ public class LaserProjectile extends AbstractHurtingProjectile {
             for (Entity entity : collidingEntities) {
                 if (
                     entity instanceof LivingEntity living &&
-                    !living.isInvulnerableTo(damageSources().mobAttack(living)) &&
-                    !Utils.canEntityDamageEntity(Objects.requireNonNull(this.getOwner()), entity)
+                    !living.isInvulnerableTo(damageSources().mobAttack(living))
                 ) {
+                    Entity owner = this.getOwner();
+                    if(owner != null && !Utils.canEntityDamageEntity(Objects.requireNonNull(this.getOwner()), entity)) continue;
+
                     if(!zapinatorType.equals(ZapinatorType.NONE) && entity.invulnerableTime == 0) {
                         handleZapinatorEntityCollision(entity);
                     }
                     else { // non zapinator
-                        entity.hurt(damageSources().playerAttack((Player) this.getOwner()), baseDamage);
+                        if(owner != null)
+                            entity.hurt(damageSources().playerAttack((Player) this.getOwner()), baseDamage);
+                        else
+                            entity.hurt(damageSources().magic(), baseDamage);
+
                         entity.invulnerableTime = 0;
                     }
 
@@ -213,7 +219,10 @@ public class LaserProjectile extends AbstractHurtingProjectile {
             }
         }
 
-        target.hurt(damageSources().playerAttack((Player) this.getOwner()), damage*ZapinatorsConfig.Server.zapinatorDamageMultiplier);
+        if(this.getOwner() != null)
+            target.hurt(damageSources().playerAttack((Player) this.getOwner()), damage*ZapinatorsConfig.Server.zapinatorDamageMultiplier);
+        else
+            target.hurt(damageSources().magic(), damage*ZapinatorsConfig.Server.zapinatorDamageMultiplier);
         if(target instanceof LivingEntity livingTarget) Utils.applyKnockback(livingTarget, this, baseKnockback);
     }
 
