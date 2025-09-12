@@ -129,5 +129,6 @@
     "config.zapinators.customManaHudX": "Özel Mana Arayüzü X",
     "config.zapinators.customManaHudY": "Özel Mana Arayüzü Y",
     "config.zapinators.customManaHudScale": "Özel Mana Arayüzü Ölçeği",
-    "config.zapinators.laserRenderStyle": "Lazer Çizim Stili"
+    "config.zapinators.laserRenderStyle": "Lazer Çizim Stili",
+    "config.zapinators.manaRefillSound": "Mana Dolum Sesi"
 }

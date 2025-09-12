@@ -1,5 +1,6 @@
 package com.namefix.client;
 
+import com.namefix.config.ZapinatorsConfig;
 import com.namefix.network.payload.InitialSyncPayload;
 import com.namefix.network.payload.ManaStatusPayload;
 import com.namefix.registry.AttributeRegistry;
@@ -36,7 +37,7 @@ public class ZapinatorsClient {
 		else {
 			mana = (float) Mth.clamp(mana + manaRegen, 0.0, maxMana);
 
-			if(mana == maxMana && !manaFull) mc.player.playSound(SoundRegistry.MANA_FILL.get());
+			if(mana == maxMana && !manaFull && ZapinatorsConfig.Client.manaRefillSound) mc.player.playSound(SoundRegistry.MANA_FILL.get());
 			manaFull = mana == maxMana;
 		}
 	}

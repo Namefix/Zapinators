@@ -79,5 +79,11 @@ public class ZapinatorsConfig {
 				translation = "config.zapinators.laserRenderStyle"
 		)
 		public static LaserRenderStyle laserRenderStyle = LaserRenderStyle.FANCY;
+
+		@ConfigEntry(
+				id = "manaRefillSound",
+				translation = "config.zapinators.manaRefillSound"
+		)
+		public static boolean manaRefillSound = true;
 	}
 }
