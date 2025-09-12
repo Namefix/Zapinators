@@ -107,10 +107,10 @@
     "item.zapinators.bee_armor.description": "Giyici hasar yediğinde arı salar",
     "item.zapinators.bee_armor.extra_bonus": "Tüm arılar için +%s%% hasar",
 
-    "item.zapinators.meteorite_ore": "Meteorit Cevheri",
-    "item.zapinators.raw_meteorite_block": "Ham Meteorit Bloğu",
-    "item.zapinators.meteorite_block": "Meteorit Bloğu",
-    "item.zapinators.star_block": "Yıldız Bloğu",
+    "block.zapinators.meteorite_ore": "Meteorit Cevheri",
+    "block.zapinators.raw_meteorite_block": "Ham Meteorit Bloğu",
+    "block.zapinators.meteorite_block": "Meteorit Bloğu",
+    "block.zapinators.star_block": "Yıldız Bloğu",
 
     "tag.item.zapinators.color_zapinators": "Renkli Zapinatörler",
     "tag.item.zapinators.zapinator_cores": "Zapinatör Çekirdekleri",
@@ -131,5 +131,6 @@
     "config.zapinators.customManaHudX": "Özel Mana Arayüzü X",
     "config.zapinators.customManaHudY": "Özel Mana Arayüzü Y",
     "config.zapinators.customManaHudScale": "Özel Mana Arayüzü Ölçeği",
-    "config.zapinators.laserRenderStyle": "Lazer Çizim Stili"
+    "config.zapinators.laserRenderStyle": "Lazer Çizim Stili",
+    "config.zapinators.manaRefillSound": "Mana Dolum Sesi"
 }
