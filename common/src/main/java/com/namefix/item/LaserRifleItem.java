@@ -1,5 +1,6 @@
 package com.namefix.item;
 
+import com.namefix.config.ZapinatorsConfig;
 import com.namefix.registry.SoundRegistry;
 
 public class LaserRifleItem extends AbstractLaserGunItem {
@@ -12,5 +13,10 @@ public class LaserRifleItem extends AbstractLaserGunItem {
         this.laserLength = 2.5f;
         this.manaCost = 10f;
         this.shootSound = SoundRegistry.LASER_RIFLE_SHOOT.getOrNull();
+    }
+
+    @Override
+    public float getDamageModifier() {
+        return ZapinatorsConfig.Server.laserRifleDamageMultiplier;
     }
 }

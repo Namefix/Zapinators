@@ -1,5 +1,6 @@
 package com.namefix.item;
 
+import com.namefix.config.ZapinatorsConfig;
 import com.namefix.registry.SoundRegistry;
 
 public class SpaceGunItem extends AbstractLaserGunItem {
@@ -11,5 +12,10 @@ public class SpaceGunItem extends AbstractLaserGunItem {
         this.manaCost = 4f;
         this.meteoriteArmorSavesMana = true;
         this.shootSound = SoundRegistry.SPACE_GUN_SHOOT.getOrNull();
+    }
+
+    @Override
+    public float getDamageModifier() {
+        return ZapinatorsConfig.Server.spaceGunDamageMultiplier;
     }
 }

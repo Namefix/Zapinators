@@ -19,13 +19,6 @@ public class ZapinatorsConfig {
 
 	@Category(value = "Server")
 	public static class Server {
-		@ConfigOption.Range(min=0f, max=10f)
-		@ConfigEntry(
-				id = "zapinatorDamageMultiplier",
-				translation = "config.zapinators.zapinatorDamageMultiplier"
-		)
-		public static float zapinatorDamageMultiplier = 1.0f;
-
 		@Comment(value = "fallenStarEntityDamageDesc", translation = "config.zapinators.fallenStarEntityDamage.description")
 		@ConfigEntry(
 				id = "fallenStarEntityDamage",
@@ -39,6 +32,48 @@ public class ZapinatorsConfig {
 				translation = "config.zapinators.fallenStarMoonPhase"
 		)
 		public static boolean fallenStarMoonPhase = true;
+
+		@ConfigOption.Range(min=0f, max=100f)
+		@ConfigEntry(
+				id = "zapinatorDamageMultiplier",
+				translation = "config.zapinators.zapinatorDamageMultiplier"
+		)
+		public static float zapinatorDamageMultiplier = 1.0f;
+
+		@ConfigOption.Range(min=0f, max=100f)
+		@ConfigEntry(
+				id = "spaceGunDamageMultiplier",
+				translation = "config.zapinators.spaceGunDamageMultiplier"
+		)
+		public static float spaceGunDamageMultiplier = 1.0f;
+
+		@ConfigOption.Range(min=0f, max=100f)
+		@ConfigEntry(
+				id = "laserRifleDamageMultiplier",
+				translation = "config.zapinators.laserRifleDamageMultiplier"
+		)
+		public static float laserRifleDamageMultiplier = 1.0f;
+
+		@ConfigOption.Range(min=0f, max=100f)
+		@ConfigEntry(
+				id = "beeDamageMultiplier",
+				translation = "config.zapinators.beeDamageMultiplier"
+		)
+		public static float beeDamageMultiplier = 1.0f;
+
+		@ConfigOption.Range(min=0f, max=100f)
+		@ConfigEntry(
+				id = "sparkingDamageMultiplier",
+				translation = "config.zapinators.sparkingDamageMultiplier"
+		)
+		public static float sparkingDamageMultiplier = 1.0f;
+
+		@ConfigOption.Range(min=0f, max=100f)
+		@ConfigEntry(
+				id = "gemStavesDamageMultiplier",
+				translation = "config.zapinators.gemStavesDamageMultiplier"
+		)
+		public static float gemStavesDamageMultiplier = 1.0f;
 	}
 
 	@Category(value = "Client")

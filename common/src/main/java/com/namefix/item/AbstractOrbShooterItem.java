@@ -61,7 +61,7 @@ public abstract class AbstractOrbShooterItem extends AbstractManaItem {
 			orb.setXRot(player.getXRot());
 			orb.setYRot(player.getYRot());
 			orb.setHasGravity(this.gravity);
-			orb.setBaseDamage(baseDamage);
+			orb.setBaseDamage(baseDamage*getDamageModifier());
 			orb.setDespawnTicks(orbDespawnTick);
 			orb.setPiercingLeft(piercingAmount);
 			orb.setFireChance(fireChance);
@@ -72,6 +72,10 @@ public abstract class AbstractOrbShooterItem extends AbstractManaItem {
 		player.getCooldowns().addCooldown(player.getItemInHand(interactionHand), itemCooldown);
 		if(shootSound != null) player.level().playSound(null, player.getX(), player.getY(), player.getZ(), shootSound, SoundSource.PLAYERS);
 		return InteractionResult.SUCCESS;
+	}
+
+	public float getDamageModifier() {
+		return 1.0f;
 	}
 
 	protected SoundEvent getShootSound() {
