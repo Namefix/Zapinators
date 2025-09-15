@@ -34,7 +34,7 @@ public class Orb extends AbstractHurtingProjectile {
 
 	@Override
 	public void tick() {
-		if(despawnTicks <= 0 || this.horizontalCollision || this.verticalCollision) {
+		if(despawnTicks <= 0 || this.horizontalCollision || this.verticalCollision || this.tickCount > 200 || (fireChance && Utils.isEntityInLiquidCustom(this))) {
 			this.discard();
 			return;
 		}

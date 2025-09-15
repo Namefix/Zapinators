@@ -2,6 +2,7 @@ package com.namefix.entity;
 
 import com.namefix.item.BeeGunItem;
 import com.namefix.utils.Utils;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.core.particles.ParticleOptions;
@@ -13,6 +14,9 @@ import net.minecraft.world.entity.projectile.AbstractHurtingProjectile;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
@@ -41,7 +45,7 @@ public class AngryBee extends AbstractHurtingProjectile {
 
 	@Override
 	public void tick() {
-		if(!this.level().isClientSide && (this.tickCount > 200 || this.isInLiquid())) {
+		if(!this.level().isClientSide && (this.tickCount > 200 || Utils.isEntityInLiquidCustom(this))) {
 			((ServerLevel)this.level()).sendParticles(new DustParticleOptions(Vec3.fromRGB24(0xbfbfbf).toVector3f(), 1.0f), this.getX(), this.getY(), this.getZ(), 1, 0.0D, 0.0D, 0.0D, 0.0);
 			this.discard();
 			return;
