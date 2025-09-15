@@ -17,6 +17,9 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.scores.Team;
 
@@ -145,6 +148,17 @@ public class Utils {
 			case 3, 5 -> 0.5;
 			default -> 0.2;
 		};
+    }
+
+    // custom liquid check implementation because the default one decides not to work.
+    public static boolean isEntityInLiquidCustom(Entity entity) {
+        BlockPos pos = entity.blockPosition();
+        BlockState blockState = entity.level().getBlockState(pos);
+
+        return blockState.getBlock() instanceof LiquidBlock ||
+                !blockState.getFluidState().isEmpty() ||
+                blockState.is(Blocks.WATER) ||
+                blockState.is(Blocks.LAVA);
     }
 
     public static boolean canEntityDamageEntity(Entity entity1, Entity entity2) {
