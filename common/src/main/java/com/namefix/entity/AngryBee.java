@@ -58,6 +58,7 @@ public class AngryBee extends AbstractHurtingProjectile {
 							e instanceof Mob mob &&
 							(mob.isAggressive() || e instanceof Monster)
 			)) {
+				if(this.getOwner() != null && !Utils.canEntityDamageEntity(Objects.requireNonNull(this.getOwner()), entity)) continue;
 				double dist = this.distanceToSqr(entity);
 				if (dist < nearestDistance) {
 					nearestDistance = dist;
