@@ -124,6 +124,7 @@
     "config.zapinators.fallenStarEntityDamage.description": "Bir Düşen Yıldız'ın canlı üstüne düştüğünde vereceği hasar",
     "config.zapinators.fallenStarMoonPhase": "Düşen Yıldız Ay Evreleri",
     "config.zapinators.fallenStarMoonPhase.description": "Ay evresi, düşen yıldız şansını etkiler",
+    "config.zapinators.beesApplyKnockback": "Arılar Savurma Uygular",
     "config.zapinators.zapinatorDamageMultiplier": "Zapinatör Hasar Çarpanı",
     "config.zapinators.spaceGunDamageMultiplier": "Uzay Silahı Hasar Çarpanı",
     "config.zapinators.laserRifleDamageMultiplier": "Laser Tüfeği Hasar Çarpanı",

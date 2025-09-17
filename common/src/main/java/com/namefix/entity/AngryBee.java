@@ -1,5 +1,6 @@
 package com.namefix.entity;
 
+import com.namefix.config.ZapinatorsConfig;
 import com.namefix.item.BeeGunItem;
 import com.namefix.utils.Utils;
 import net.minecraft.core.BlockPos;
@@ -34,8 +35,8 @@ public class AngryBee extends AbstractHurtingProjectile {
 	public double beeSpeed = BeeGunItem.BEE_SPEED;
 	public BeeSource beeSource = BeeSource.BEE_GUN;
 	int blockBounces = 3;
-	int enemyHits = 3;
-	public float baseDamage = 0.5f;
+	int enemyHits = 2;
+	public float baseDamage = 1.0f;
 
 	double homingRadius = 8;
 
@@ -153,7 +154,11 @@ public class AngryBee extends AbstractHurtingProjectile {
 	protected void onHitEntity(EntityHitResult entityHitResult) {
 		if(level().isClientSide) return;
 		Entity target = entityHitResult.getEntity();
-		if(target.invulnerableTime > 0) return;
+		if(!target.isOnFire() && target.invulnerableTime > 0) return;
+		boolean knockback = ZapinatorsConfig.Server.beesApplyKnockback;
+
+		Vec3 originalVelocity = target.getDeltaMovement();
+
 		if(this.getOwner() != null) {
 			if(target.getUUID().equals(this.getOwner().getUUID()) || !Utils.canEntityDamageEntity(Objects.requireNonNull(this.getOwner()), target)) return;
 			target.hurt(damageSources().playerAttack((Player) this.getOwner()), baseDamage);
@@ -164,7 +169,9 @@ public class AngryBee extends AbstractHurtingProjectile {
 				target.hurt(damageSources().generic(), baseDamage);
 		}
 
-		target.invulnerableTime = 2;
+		if(!knockback) target.setDeltaMovement(originalVelocity);
+
+		target.invulnerableTime = 4;
 		enemyHits--;
 		if(enemyHits <= 0) this.discard();
 	}
@@ -172,6 +179,11 @@ public class AngryBee extends AbstractHurtingProjectile {
 	@Override
 	protected @Nullable ParticleOptions getTrailParticle() {
 		return null;
+	}
+
+	@Override
+	public boolean shouldBeSaved() {
+		return false;
 	}
 
 	@Override

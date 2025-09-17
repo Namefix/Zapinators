@@ -27,7 +27,7 @@ public class BeeGunItem extends AbstractManaItem {
 
 	public BeeGunItem(Properties properties) {
 		super(properties);
-		manaCost = 12f;
+		manaCost = 8f;
 	}
 
 	@Override
