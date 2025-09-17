@@ -100,32 +100,36 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
 
         // bee armor
         shaped(RecipeCategory.COMBAT, ItemRegistry.BEE_HELMET.get())
-                .pattern("HHH")
+                .pattern("BHB")
                 .pattern("H H")
                 .define('H', Items.HONEYCOMB)
+                .define('B', ItemRegistry.BEE_CORE.get())
                 .unlockedBy(RecipeProvider.getHasName(Items.HONEYCOMB), this.has(Items.HONEYCOMB))
                 .save(recipeOutput);
 
         shaped(RecipeCategory.COMBAT, ItemRegistry.BEE_CHESTPLATE.get())
                 .pattern("H H")
-                .pattern("HHH")
-                .pattern("HHH")
+                .pattern("HBH")
+                .pattern("HBH")
                 .define('H', Items.HONEYCOMB)
+                .define('B', ItemRegistry.BEE_CORE.get())
                 .unlockedBy(RecipeProvider.getHasName(Items.HONEYCOMB), this.has(Items.HONEYCOMB))
                 .save(recipeOutput);
 
         shaped(RecipeCategory.COMBAT, ItemRegistry.BEE_LEGGINGS.get())
-                .pattern("HHH")
+                .pattern("BHB")
                 .pattern("H H")
                 .pattern("H H")
                 .define('H', Items.HONEYCOMB)
+                .define('B', ItemRegistry.BEE_CORE.get())
                 .unlockedBy(RecipeProvider.getHasName(Items.HONEYCOMB), this.has(Items.HONEYCOMB))
                 .save(recipeOutput);
 
         shaped(RecipeCategory.COMBAT, ItemRegistry.BEE_BOOTS.get())
                 .pattern("H H")
-                .pattern("H H")
+                .pattern("B B")
                 .define('H', Items.HONEYCOMB)
+                .define('B', ItemRegistry.BEE_CORE.get())
                 .unlockedBy(RecipeProvider.getHasName(Items.HONEYCOMB), this.has(Items.HONEYCOMB))
                 .save(recipeOutput);
 
@@ -137,10 +141,11 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
 
         // bee gun
         shaped(RecipeCategory.COMBAT, ItemRegistry.BEE_GUN.get())
+                .pattern("BHH")
                 .pattern("H  ")
-                .pattern("HHH")
                 .pattern("H  ")
                 .define('H', Items.HONEYCOMB)
+                .define('B', ItemRegistry.BEE_CORE.get())
                 .unlockedBy(RecipeProvider.getHasName(Items.HONEYCOMB), this.has(Items.HONEYCOMB))
                 .save(recipeOutput);
         
