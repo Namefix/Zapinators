@@ -2,6 +2,7 @@ package com.namefix.mixin;
 
 import com.namefix.registry.ItemRegistry;
 import com.namefix.utils.Utils;
+import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
@@ -19,8 +20,11 @@ public abstract class ItemEntityMixin {
 	@Inject(method = "tick", at = @At("HEAD"))
 	private void zapinators$onTick(CallbackInfo ci) {
 		ItemEntity ent = ((ItemEntity)(Object)this);
-		if(this.getItem().getItem().equals(ItemRegistry.FALLEN_STAR.get()) && Utils.entityFallenStarCheck(ent)) {
-			ent.discard();
+		if(this.getItem().getItem().equals(ItemRegistry.FALLEN_STAR.get())) {
+			ent.level().addParticle(new DustParticleOptions(15656731, 1.069f), ent.getX(), ent.getY()+0.2, ent.getZ(), 0.0D, 0.0D, 0.0D);
+
+			if(Utils.entityFallenDespawnStarCheck(ent))
+				ent.discard();
 		}
 	}
 }

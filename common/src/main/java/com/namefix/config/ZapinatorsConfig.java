@@ -19,12 +19,12 @@ public class ZapinatorsConfig {
 
 	@Category(value = "Server")
 	public static class Server {
-		@Comment(value = "fallenStarEntityDamageDesc", translation = "config.zapinators.fallenStarEntityDamage.description")
+		@ConfigOption.Range(min=0f, max=100f)
 		@ConfigEntry(
-				id = "fallenStarEntityDamage",
-				translation = "config.zapinators.fallenStarEntityDamage"
+				id = "fallenStarDropRateMultiplier",
+				translation = "config.zapinators.fallenStarDropRateMultiplier"
 		)
-		public static float fallenStarEntityDamage = 0.0f;
+		public static float fallenStarDropRateMultiplier = 1.0f;
 
 		@Comment(value = "fallenStarMoonPhaseDesc", translation = "config.zapinators.fallenStarMoonPhase.description")
 		@ConfigEntry(
@@ -32,6 +32,13 @@ public class ZapinatorsConfig {
 				translation = "config.zapinators.fallenStarMoonPhase"
 		)
 		public static boolean fallenStarMoonPhase = true;
+
+		@Comment(value = "fallenStarEntityDamageDesc", translation = "config.zapinators.fallenStarEntityDamage.description")
+		@ConfigEntry(
+				id = "fallenStarEntityDamage",
+				translation = "config.zapinators.fallenStarEntityDamage"
+		)
+		public static float fallenStarEntityDamage = 0.0f;
 
 		@ConfigEntry(
 				id = "beesApplyKnockback",

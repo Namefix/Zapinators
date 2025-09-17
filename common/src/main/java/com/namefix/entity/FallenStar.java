@@ -3,6 +3,7 @@ package com.namefix.entity;
 import com.namefix.config.ZapinatorsConfig;
 import com.namefix.registry.ItemRegistry;
 import com.namefix.registry.SoundRegistry;
+import com.namefix.utils.Utils;
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -66,7 +67,7 @@ public class FallenStar extends Entity {
 			drop();
 		}
 
-		this.level().addParticle(new DustParticleOptions(15656731, 1.069f), this.getX(), this.getY()+0.2, this.getZ(), 0.0D, 0.0D, 0.0D);
+		this.level().addParticle(new DustParticleOptions(Utils.getRandomBrightColor(this.random), 1.069f), this.getX(), this.getY()+0.2, this.getZ(), 0.0D, 0.0D, 0.0D);
 	}
 
 	public void drop() {
@@ -86,7 +87,7 @@ public class FallenStar extends Entity {
 				double dy = speed * Math.cos(phi);
 				double dz = speed * Math.sin(theta) * Math.sin(phi);
 
-				((ServerLevel)this.level()).sendParticles(new DustParticleOptions(15656731, 1.0f), this.getX(), this.getY(), this.getZ(), 1, dx, dy, dz, 0.0);
+				((ServerLevel)this.level()).sendParticles(new DustParticleOptions(15656731, 1.069f), this.getX(), this.getY(), this.getZ(), 1, dx, dy, dz, 0.0);
 			}
 		}
 
