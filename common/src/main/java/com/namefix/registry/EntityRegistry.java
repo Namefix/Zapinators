@@ -31,7 +31,7 @@ public class EntityRegistry {
     public static final RegistrySupplier<EntityType<AngryBee>> ANGRY_BEE = ENTITY_TYPES.register("angry_bee", () ->
             EntityType.Builder.of(AngryBee::new, MobCategory.MISC)
                     .sized(0.2f, 0.2f)
-                    .updateInterval(10)
+                    .updateInterval(1)
                     .build(ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "angry_bee")))
             );
 

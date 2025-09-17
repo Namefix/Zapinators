@@ -239,6 +239,11 @@ public class LaserProjectile extends AbstractHurtingProjectile {
     }
 
     @Override
+    public boolean shouldBeSaved() {
+        return false;
+    }
+
+    @Override
     protected boolean shouldBurn() {
         return false;
     }

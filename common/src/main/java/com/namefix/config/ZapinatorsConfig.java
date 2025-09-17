@@ -33,6 +33,12 @@ public class ZapinatorsConfig {
 		)
 		public static boolean fallenStarMoonPhase = true;
 
+		@ConfigEntry(
+				id = "beesApplyKnockback",
+				translation = "config.zapinators.beesApplyKnockback"
+		)
+		public static boolean beesApplyKnockback = false;
+
 		@ConfigOption.Range(min=0f, max=100f)
 		@ConfigEntry(
 				id = "zapinatorDamageMultiplier",
