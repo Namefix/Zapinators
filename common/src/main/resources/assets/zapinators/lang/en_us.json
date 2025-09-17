@@ -120,10 +120,11 @@
     "attribute.name.mana_regeneration": "Mana Regeneration",
     "attribute.name.max_mana": "Max Mana",
 
-    "config.zapinators.fallenStarEntityDamage": "Falling Star Damage to Entities",
-    "config.zapinators.fallenStarEntityDamage.description": "Damage dealt when a falling star lands on an enemy",
+    "config.zapinators.fallenStarDropRateMultiplier": "Falling Star Drop Rate Multiplier",
     "config.zapinators.fallenStarMoonPhase": "Falling Star Moon Phase",
     "config.zapinators.fallenStarMoonPhase.description": "Controls if moon phase affect falling star rate",
+    "config.zapinators.fallenStarEntityDamage": "Falling Star Damage to Entities",
+    "config.zapinators.fallenStarEntityDamage.description": "Damage dealt when a falling star lands on an enemy",
     "config.zapinators.beesApplyKnockback": "Bees Apply Knockback",
     "config.zapinators.zapinatorDamageMultiplier": "Zapinator Damage Multiplier",
     "config.zapinators.spaceGunDamageMultiplier": "Space Gun Damage Multiplier",

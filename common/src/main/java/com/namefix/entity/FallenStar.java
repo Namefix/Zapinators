@@ -68,7 +68,7 @@ public class FallenStar extends Entity {
 			drop();
 		}
 
-		this.level().addParticle(new DustParticleOptions(Vec3.fromRGB24(15656731).toVector3f(), 1.069f), this.getX(), this.getY()+0.2, this.getZ(), 0.0D, 0.0D, 0.0D);
+		this.level().addParticle(new DustParticleOptions(Vec3.fromRGB24(Utils.getRandomBrightColor(this.random)).toVector3f(), 1.069f), this.getX(), this.getY()+0.2, this.getZ(), 0.0D, 0.0D, 0.0D);
 	}
 
 	public void drop() {
@@ -88,7 +88,7 @@ public class FallenStar extends Entity {
 				double dy = speed * Math.cos(phi);
 				double dz = speed * Math.sin(theta) * Math.sin(phi);
 
-				((ServerLevel)this.level()).sendParticles(new DustParticleOptions(Vec3.fromRGB24(15656731).toVector3f(), 1.0f), this.getX(), this.getY(), this.getZ(), 1, dx, dy, dz, 0.0);
+				((ServerLevel)this.level()).sendParticles(new DustParticleOptions(Vec3.fromRGB24(15656731).toVector3f(), 1.069f), this.getX(), this.getY(), this.getZ(), 1, dx, dy, dz, 0.0);
 			}
 		}
 

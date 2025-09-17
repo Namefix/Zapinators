@@ -8,6 +8,7 @@ import com.namefix.registry.ItemRegistry;
 import dev.architectury.platform.Platform;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LightningBolt;
@@ -124,9 +125,9 @@ public class Utils {
         level.addFreshEntity(lightning);
     }
 
-    public static boolean entityFallenStarCheck(Entity ent) {
+    public static boolean entityFallenDespawnStarCheck(Entity ent) {
             if (ent.level().isDay() && !ent.level().isClientSide && ent.tickCount > 100) {
-                BlockPos blockPos = BlockPos.containing(ent.getX(), ent.getEyeY(), ent.getZ());
+                BlockPos blockPos = BlockPos.containing(ent.getX(), ent.getY(), ent.getZ());
                 if (ent.level().canSeeSky(blockPos)) {
                     return true;
                 }
@@ -148,6 +149,13 @@ public class Utils {
 			case 3, 5 -> 0.5;
 			default -> 0.2;
 		};
+    }
+
+    public static int getRandomBrightColor(RandomSource random) {
+        int red = 128 + random.nextInt(128);
+        int green = 128 + random.nextInt(128);
+        int blue = 128 + random.nextInt(128);
+        return (red << 16) | (green << 8) | blue;
     }
 
     // custom liquid check implementation because the default one decides not to work.

@@ -120,10 +120,11 @@
     "attribute.name.mana_regeneration": "Mana Rejenerasyon",
     "attribute.name.max_mana": "Maksimum Mana",
 
-    "config.zapinators.fallenStarEntityDamage": "Düşen Yıldız Canlı Hasarı",
-    "config.zapinators.fallenStarEntityDamage.description": "Bir Düşen Yıldız'ın canlı üstüne düştüğünde vereceği hasar",
+    "config.zapinators.fallenStarDropRateMultiplier": "Düşen Yıldız Düşme Şansı Çarpanı",
     "config.zapinators.fallenStarMoonPhase": "Düşen Yıldız Ay Evreleri",
     "config.zapinators.fallenStarMoonPhase.description": "Ay evresi, düşen yıldız şansını etkiler",
+    "config.zapinators.fallenStarEntityDamage": "Düşen Yıldız Canlı Hasarı",
+    "config.zapinators.fallenStarEntityDamage.description": "Bir Düşen Yıldız'ın canlı üstüne düştüğünde vereceği hasar",
     "config.zapinators.beesApplyKnockback": "Arılar Savurma Uygular",
     "config.zapinators.zapinatorDamageMultiplier": "Zapinatör Hasar Çarpanı",
     "config.zapinators.spaceGunDamageMultiplier": "Uzay Silahı Hasar Çarpanı",

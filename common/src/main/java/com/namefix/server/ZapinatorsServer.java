@@ -28,7 +28,7 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.Vec3;
 
 public class ZapinatorsServer {
-	static int baseFallingStarDropRate = 8000;
+	static int baseFallingStarDropRate = 10000;
 
 	public static void onPlayerRespawn(ServerPlayer player, boolean b, Entity.RemovalReason removalReason) {
 		if(removalReason == Entity.RemovalReason.KILLED) {
@@ -59,12 +59,17 @@ public class ZapinatorsServer {
 		});
 
 		ServerLevel overworld = serverLevel.getServer().getLevel(ServerLevel.OVERWORLD);
+		if(overworld == null) return;
 
-		int dropRate = ZapinatorsConfig.Server.fallenStarMoonPhase ? (int) (baseFallingStarDropRate / Utils.getMoonMultiplier(serverLevel)) : baseFallingStarDropRate;
-		if(overworld.isNight() && overworld.random.nextIntBetweenInclusive(0, dropRate) == 0) {
-			Player randomPlayer = overworld.getRandomPlayer();
-			if(randomPlayer == null) return;
-			spawnFallenStar(randomPlayer);
+		float dropMultiplier = 1.0f / ZapinatorsConfig.Server.fallenStarDropRateMultiplier;
+		int moonDropMultiplier = ZapinatorsConfig.Server.fallenStarMoonPhase ? (int) (baseFallingStarDropRate / Utils.getMoonMultiplier(serverLevel)) : baseFallingStarDropRate;
+		int dropRate = (int) (moonDropMultiplier * dropMultiplier);
+
+		if(dropMultiplier > .0f && overworld.isNight()) {
+			for(ServerPlayer player : overworld.players()) {
+				if(overworld.random.nextIntBetweenInclusive(0, dropRate) == 0)
+					spawnFallenStar(player);
+			}
 		}
 	}
 
