@@ -81,6 +81,7 @@ public class ZapinatorsModModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(ItemRegistry.METEORITE_INGOT.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ItemRegistry.METEORITE_NUGGET.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ItemRegistry.ZAPINATOR_RESET_SMITHING_TEMPLATE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ItemRegistry.BEE_CORE.get(), ModelTemplates.FLAT_ITEM);
 
         itemModelGenerators.generateTrimmableItem(ItemRegistry.METEORITE_HELMET.get(), ModArmorMaterials.METEORITE_ARMOR.assetId(), "helmet", false);
         itemModelGenerators.generateTrimmableItem(ItemRegistry.METEORITE_CHESTPLATE.get(), ModArmorMaterials.METEORITE_ARMOR.assetId(), "chestplate", false);

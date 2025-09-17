@@ -76,6 +76,7 @@ public class ItemRegistry {
             null,
             properties.rarity(Rarity.UNCOMMON)
     ));
+    public static final RegistrySupplier<Item> BEE_CORE = registerItem("bee_core", properties -> new DescriptionItem(properties, Component.translatable("item.zapinators.bee_core.description").withStyle(ChatFormatting.GRAY)));
 
     public static final RegistrySupplier<Item> METEORITE_HELMET = registerItem("meteorite_helmet", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, ArmorType.HELMET, properties));
     public static final RegistrySupplier<Item> METEORITE_CHESTPLATE = registerItem("meteorite_chestplate", properties -> new MeteoriteArmorItem(ModArmorMaterials.METEORITE_ARMOR, ArmorType.CHESTPLATE, properties));

@@ -93,6 +93,8 @@
     "item.zapinators.smithing_template.zapinator_reset.base_slot_description": "Bir renkli zapinatör ekle",
     "item.zapinators.smithing_template.zapinator_reset.ingredients": "Renk Çekirdekleri",
     "item.zapinators.smithing_template.zapinator_reset.additions_slot_description": "Bir renkli çekirdek ekle",
+    "item.zapinators.bee_core": "Arı Çekirdeği",
+    "item.zapinators.bee_core.description": "Arı Zırhı ve Arı Silahı elde etmek için kullanılır.",
 
     "item.zapinators.meteorite_helmet": "Meteorit Miğfer",
     "item.zapinators.meteorite_chestplate": "Meteorit Göğüslük",

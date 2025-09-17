@@ -93,6 +93,8 @@
     "item.zapinators.smithing_template.zapinator_reset.base_slot_description": "Add a colored zapinator",
     "item.zapinators.smithing_template.zapinator_reset.ingredients": "Any Color Core",
     "item.zapinators.smithing_template.zapinator_reset.additions_slot_description": "Add a color core",
+    "item.zapinators.bee_core": "Bee Core",
+    "item.zapinators.bee_core.description": "Used to craft Bee Armor and Bee Gun",
 
     "item.zapinators.meteorite_helmet": "Meteorite Helmet",
     "item.zapinators.meteorite_chestplate": "Meteorite Chestplate",
