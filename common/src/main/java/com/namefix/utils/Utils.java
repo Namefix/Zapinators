@@ -8,12 +8,14 @@ import com.namefix.registry.ItemRegistry;
 import dev.architectury.platform.Platform;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -156,6 +158,26 @@ public class Utils {
         int green = 128 + random.nextInt(128);
         int blue = 128 + random.nextInt(128);
         return (red << 16) | (green << 8) | blue;
+    }
+
+    public static boolean shouldProjectileForceRemove(Projectile entity) {
+        if (entity.tickCount > 200) return true;
+        if (!entity.level().hasChunk(entity.chunkPosition().x, entity.chunkPosition().z)) return true;
+
+        if (!entity.level().isClientSide) {
+            Entity owner = entity.getOwner();
+            if (owner != null && owner.distanceToSqr(entity) > 96 * 96) return true;
+
+            boolean nearPlayer = entity.level().players().stream()
+                    .anyMatch(player -> player.distanceToSqr(entity) < 80 * 80);
+            if (!nearPlayer) return true;
+
+            if (entity.level() instanceof ServerLevel serverLevel) {
+                return !serverLevel.isPositionEntityTicking(entity.blockPosition());
+            }
+        }
+
+        return false;
     }
 
     // custom liquid check implementation because the default one decides not to work.

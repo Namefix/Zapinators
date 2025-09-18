@@ -47,7 +47,7 @@ public class LaserProjectile extends AbstractHurtingProjectile {
     @Override
     public void tick() {
         noPhysics = true;
-        if(this.tickCount > 200) {
+        if (Utils.shouldProjectileForceRemove(this)) {
             this.discard();
             return;
         }
@@ -282,6 +282,15 @@ public class LaserProjectile extends AbstractHurtingProjectile {
     @Override
     public boolean shouldBeSaved() {
         return false;
+    }
+
+    @Override
+    public void checkDespawn() {
+        if (Utils.shouldProjectileForceRemove(this)) {
+            this.discard();
+            return;
+        }
+        super.checkDespawn();
     }
 
     @Override
