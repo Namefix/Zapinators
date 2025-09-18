@@ -148,6 +148,18 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
                 .define('B', ItemRegistry.BEE_CORE.get())
                 .unlockedBy(RecipeProvider.getHasName(Items.HONEYCOMB), this.has(Items.HONEYCOMB))
                 .save(recipeOutput);
+
+        // star cannon
+        shaped(RecipeCategory.COMBAT, ItemRegistry.STAR_CANNON.get())
+                .pattern("SSM")
+                .pattern("SMM")
+                .pattern("M  ")
+                .define('S', ItemRegistry.FALLEN_STAR.get())
+                .define('M', ItemRegistry.METEORITE_INGOT.get())
+                .unlockedBy(RecipeProvider.getHasName(ItemRegistry.FALLEN_STAR.get()), this.has(ItemRegistry.FALLEN_STAR.get()))
+                .unlockedBy(RecipeProvider.getHasName(ItemRegistry.METEORITE_INGOT.get()), this.has(ItemRegistry.METEORITE_INGOT.get()))
+                .save(recipeOutput);
+
         
         for(ZapinatorType zap1 : ZapinatorType.values()) {
             if (zap1.equals(ZapinatorType.NONE)) continue;
