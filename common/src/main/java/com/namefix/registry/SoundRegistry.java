@@ -22,6 +22,7 @@ public class SoundRegistry {
     public static final RegistrySupplier<SoundEvent> BEE_GUN_SHOOT = SOUNDS.register("bee_gun_shoot", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "bee_gun_shoot")));
     public static final RegistrySupplier<SoundEvent> GEM_STAFF_SHOOT = SOUNDS.register("gem_staff_shoot", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "gem_staff_shoot")));
     public static final RegistrySupplier<SoundEvent> WAND_OF_SPARKING_SHOOT = SOUNDS.register("wand_of_sparking_shoot", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "wand_of_sparking_shoot")));
+    public static final RegistrySupplier<SoundEvent> STAR_CANNON_SHOOT = SOUNDS.register("star_cannon_shoot", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(ZapinatorsMod.MOD_ID, "star_cannon_shoot")));
 
     public static void register() {
         SOUNDS.register();

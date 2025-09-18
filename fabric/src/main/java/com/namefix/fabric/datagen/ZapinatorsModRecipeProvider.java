@@ -40,7 +40,7 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
                 this.oreBlasting(List.of(ItemRegistry.RAW_METEORITE.get(), BlockRegistry.METEORITE_ORE.getB().get()), RecipeCategory.MISC, ItemRegistry.METEORITE_INGOT.get(), 0.7f, 100, "meteorite_ingot");
 
                 // space gun
-                this.shaped(RecipeCategory.COMBAT, ItemRegistry.SPACE_GUN.get())
+                shaped(RecipeCategory.COMBAT, ItemRegistry.SPACE_GUN.get())
                         .pattern("M  ")
                         .pattern("MMM")
                         .pattern("M  ")
@@ -49,7 +49,7 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
                         .save(recipeOutput);
 
                 // energy cell
-                this.shaped(RecipeCategory.MISC, ItemRegistry.ENERGY_CELL.get(), 16)
+                shaped(RecipeCategory.MISC, ItemRegistry.ENERGY_CELL.get(), 16)
                         .pattern("MRG")
                         .define('M', ItemRegistry.METEORITE_NUGGET.get())
                         .define('R', Items.REDSTONE)
@@ -58,7 +58,7 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
                         .save(recipeOutput);
 
                 // zapinator reset smithing template
-                this.shaped(RecipeCategory.MISC, ItemRegistry.ZAPINATOR_RESET_SMITHING_TEMPLATE.get(), 2)
+                shaped(RecipeCategory.MISC, ItemRegistry.ZAPINATOR_RESET_SMITHING_TEMPLATE.get(), 2)
                         .pattern("ITI")
                         .pattern("NIN")
                         .pattern("INI")
@@ -69,14 +69,14 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
                         .save(recipeOutput);
 
                 // meteorite armor
-                this.shaped(RecipeCategory.COMBAT, ItemRegistry.METEORITE_HELMET.get())
+                shaped(RecipeCategory.COMBAT, ItemRegistry.METEORITE_HELMET.get())
                         .pattern("MMM")
                         .pattern("M M")
                         .define('M', ItemRegistry.METEORITE_INGOT.get())
                         .unlockedBy(RecipeProvider.getHasName(ItemRegistry.METEORITE_INGOT.get()), this.has(ItemRegistry.METEORITE_INGOT.get()))
                         .save(recipeOutput);
 
-                this.shaped(RecipeCategory.COMBAT, ItemRegistry.METEORITE_CHESTPLATE.get())
+                shaped(RecipeCategory.COMBAT, ItemRegistry.METEORITE_CHESTPLATE.get())
                         .pattern("M M")
                         .pattern("MMM")
                         .pattern("MMM")
@@ -84,7 +84,7 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(RecipeProvider.getHasName(ItemRegistry.METEORITE_INGOT.get()), this.has(ItemRegistry.METEORITE_INGOT.get()))
                         .save(recipeOutput);
 
-                this.shaped(RecipeCategory.COMBAT, ItemRegistry.METEORITE_LEGGINGS.get())
+                shaped(RecipeCategory.COMBAT, ItemRegistry.METEORITE_LEGGINGS.get())
                         .pattern("MMM")
                         .pattern("M M")
                         .pattern("M M")
@@ -92,7 +92,7 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(RecipeProvider.getHasName(ItemRegistry.METEORITE_INGOT.get()), this.has(ItemRegistry.METEORITE_INGOT.get()))
                         .save(recipeOutput);
 
-                this.shaped(RecipeCategory.COMBAT, ItemRegistry.METEORITE_BOOTS.get())
+                shaped(RecipeCategory.COMBAT, ItemRegistry.METEORITE_BOOTS.get())
                         .pattern("M M")
                         .pattern("M M")
                         .define('M', ItemRegistry.METEORITE_INGOT.get())
@@ -101,7 +101,7 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
 
                 // bee armor
 
-                this.shaped(RecipeCategory.COMBAT, ItemRegistry.BEE_HELMET.get())
+                shaped(RecipeCategory.COMBAT, ItemRegistry.BEE_HELMET.get())
                         .pattern("BHB")
                         .pattern("H H")
                         .define('H', Items.HONEYCOMB)
@@ -109,7 +109,7 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(RecipeProvider.getHasName(Items.HONEYCOMB), this.has(Items.HONEYCOMB))
                         .save(recipeOutput);
 
-                this.shaped(RecipeCategory.COMBAT, ItemRegistry.BEE_CHESTPLATE.get())
+                shaped(RecipeCategory.COMBAT, ItemRegistry.BEE_CHESTPLATE.get())
                         .pattern("H H")
                         .pattern("HBH")
                         .pattern("HBH")
@@ -118,7 +118,7 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(RecipeProvider.getHasName(Items.HONEYCOMB), this.has(Items.HONEYCOMB))
                         .save(recipeOutput);
 
-                this.shaped(RecipeCategory.COMBAT, ItemRegistry.BEE_LEGGINGS.get())
+                shaped(RecipeCategory.COMBAT, ItemRegistry.BEE_LEGGINGS.get())
                         .pattern("BHB")
                         .pattern("H H")
                         .pattern("H H")
@@ -127,7 +127,7 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(RecipeProvider.getHasName(Items.HONEYCOMB), this.has(Items.HONEYCOMB))
                         .save(recipeOutput);
 
-                this.shaped(RecipeCategory.COMBAT, ItemRegistry.BEE_BOOTS.get())
+                shaped(RecipeCategory.COMBAT, ItemRegistry.BEE_BOOTS.get())
                         .pattern("H H")
                         .pattern("B B")
                         .define('H', Items.HONEYCOMB)
@@ -136,19 +136,30 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
                         .save(recipeOutput);
 
                 // mana crystal
-                this.shapeless(RecipeCategory.MISC, ItemRegistry.MANA_CRYSTAL.get())
+                shapeless(RecipeCategory.MISC, ItemRegistry.MANA_CRYSTAL.get())
                         .requires(ItemRegistry.FALLEN_STAR.get(), 5)
                         .unlockedBy(RecipeProvider.getHasName(ItemRegistry.FALLEN_STAR.get()), this.has(ItemRegistry.FALLEN_STAR.get()))
                         .save(recipeOutput);
 
                 // bee gun
-                this.shaped(RecipeCategory.COMBAT, ItemRegistry.BEE_GUN.get())
+                shaped(RecipeCategory.COMBAT, ItemRegistry.BEE_GUN.get())
                         .pattern("BHH")
                         .pattern("H  ")
                         .pattern("H  ")
                         .define('H', Items.HONEYCOMB)
                         .define('B', ItemRegistry.BEE_CORE.get())
                         .unlockedBy(RecipeProvider.getHasName(Items.HONEYCOMB), this.has(Items.HONEYCOMB))
+                        .save(recipeOutput);
+                
+                // star cannon
+                shaped(RecipeCategory.COMBAT, ItemRegistry.STAR_CANNON.get())
+                        .pattern("SSM")
+                        .pattern("SMM")
+                        .pattern("M  ")
+                        .define('S', ItemRegistry.FALLEN_STAR.get())
+                        .define('M', ItemRegistry.METEORITE_INGOT.get())
+                        .unlockedBy(RecipeProvider.getHasName(ItemRegistry.FALLEN_STAR.get()), this.has(ItemRegistry.FALLEN_STAR.get()))
+                        .unlockedBy(RecipeProvider.getHasName(ItemRegistry.METEORITE_INGOT.get()), this.has(ItemRegistry.METEORITE_INGOT.get()))
                         .save(recipeOutput);
 
                 // zapinator cores
@@ -161,42 +172,42 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
                 }
 
                 // runes
-                this.shapeless(RecipeCategory.MISC, ItemRegistry.ECHO_RUNE.get())
+                shapeless(RecipeCategory.MISC, ItemRegistry.ECHO_RUNE.get())
                         .requires(ItemRegistry.RUNE.get())
                         .requires(Items.ECHO_SHARD, 8)
                         .unlockedBy(RecipeProvider.getHasName(ItemRegistry.RUNE.get()), this.has(ItemRegistry.RUNE.get()))
                         .unlockedBy(RecipeProvider.getHasName(Items.ECHO_SHARD), this.has(Items.ECHO_SHARD))
                         .save(recipeOutput);
 
-                this.shapeless(RecipeCategory.MISC, ItemRegistry.DIAMOND_RUNE.get())
+                shapeless(RecipeCategory.MISC, ItemRegistry.DIAMOND_RUNE.get())
                         .requires(ItemRegistry.RUNE.get())
                         .requires(Items.DIAMOND, 8)
                         .unlockedBy(RecipeProvider.getHasName(ItemRegistry.RUNE.get()), this.has(ItemRegistry.RUNE.get()))
                         .unlockedBy(RecipeProvider.getHasName(Items.DIAMOND), this.has(Items.DIAMOND))
                         .save(recipeOutput);
 
-                this.shapeless(RecipeCategory.MISC, ItemRegistry.EMERALD_RUNE.get())
+                shapeless(RecipeCategory.MISC, ItemRegistry.EMERALD_RUNE.get())
                         .requires(ItemRegistry.RUNE.get())
                         .requires(Items.EMERALD, 8)
                         .unlockedBy(RecipeProvider.getHasName(ItemRegistry.RUNE.get()), this.has(ItemRegistry.RUNE.get()))
                         .unlockedBy(RecipeProvider.getHasName(Items.EMERALD), this.has(Items.EMERALD))
                         .save(recipeOutput);
 
-                this.shapeless(RecipeCategory.MISC, ItemRegistry.AMETHYST_RUNE.get())
+                shapeless(RecipeCategory.MISC, ItemRegistry.AMETHYST_RUNE.get())
                         .requires(ItemRegistry.RUNE.get())
                         .requires(Items.AMETHYST_SHARD, 8)
                         .unlockedBy(RecipeProvider.getHasName(ItemRegistry.RUNE.get()), this.has(ItemRegistry.RUNE.get()))
                         .unlockedBy(RecipeProvider.getHasName(Items.AMETHYST_SHARD), this.has(Items.AMETHYST_SHARD))
                         .save(recipeOutput);
 
-                this.shapeless(RecipeCategory.MISC, ItemRegistry.LAPIS_RUNE.get())
+                shapeless(RecipeCategory.MISC, ItemRegistry.LAPIS_RUNE.get())
                         .requires(ItemRegistry.RUNE.get())
                         .requires(Items.LAPIS_LAZULI, 8)
                         .unlockedBy(RecipeProvider.getHasName(ItemRegistry.RUNE.get()), this.has(ItemRegistry.RUNE.get()))
                         .unlockedBy(RecipeProvider.getHasName(Items.LAPIS_LAZULI), this.has(Items.LAPIS_LAZULI))
                         .save(recipeOutput);
 
-                this.shapeless(RecipeCategory.MISC, ItemRegistry.REDSTONE_RUNE.get())
+                shapeless(RecipeCategory.MISC, ItemRegistry.REDSTONE_RUNE.get())
                         .requires(ItemRegistry.RUNE.get())
                         .requires(Items.REDSTONE, 8)
                         .unlockedBy(RecipeProvider.getHasName(ItemRegistry.RUNE.get()), this.has(ItemRegistry.RUNE.get()))
@@ -204,7 +215,7 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
                         .save(recipeOutput);
 
                 // gem staffs
-                this.shaped(RecipeCategory.COMBAT, ItemRegistry.ECHO_STAFF.get())
+                shaped(RecipeCategory.COMBAT, ItemRegistry.ECHO_STAFF.get())
                         .pattern("  R")
                         .pattern(" S ")
                         .pattern("S  ")
@@ -214,7 +225,7 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(RecipeProvider.getHasName(ItemRegistry.ECHO_RUNE.get()), this.has(ItemRegistry.ECHO_RUNE.get()))
                         .save(recipeOutput);
 
-                this.shaped(RecipeCategory.COMBAT, ItemRegistry.DIAMOND_STAFF.get())
+                shaped(RecipeCategory.COMBAT, ItemRegistry.DIAMOND_STAFF.get())
                         .pattern("  R")
                         .pattern(" S ")
                         .pattern("S  ")
@@ -224,7 +235,7 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(RecipeProvider.getHasName(ItemRegistry.DIAMOND_RUNE.get()), this.has(ItemRegistry.DIAMOND_RUNE.get()))
                         .save(recipeOutput);
 
-                this.shaped(RecipeCategory.COMBAT, ItemRegistry.EMERALD_STAFF.get())
+                shaped(RecipeCategory.COMBAT, ItemRegistry.EMERALD_STAFF.get())
                         .pattern("  R")
                         .pattern(" S ")
                         .pattern("S  ")
@@ -234,7 +245,7 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(RecipeProvider.getHasName(ItemRegistry.EMERALD_RUNE.get()), this.has(ItemRegistry.EMERALD_RUNE.get()))
                         .save(recipeOutput);
 
-                this.shaped(RecipeCategory.COMBAT, ItemRegistry.AMETHYST_STAFF.get())
+                shaped(RecipeCategory.COMBAT, ItemRegistry.AMETHYST_STAFF.get())
                         .pattern("  R")
                         .pattern(" S ")
                         .pattern("S  ")
@@ -244,7 +255,7 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(RecipeProvider.getHasName(ItemRegistry.AMETHYST_RUNE.get()), this.has(ItemRegistry.AMETHYST_RUNE.get()))
                         .save(recipeOutput);
 
-                this.shaped(RecipeCategory.COMBAT, ItemRegistry.LAPIS_STAFF.get())
+                shaped(RecipeCategory.COMBAT, ItemRegistry.LAPIS_STAFF.get())
                         .pattern("  R")
                         .pattern(" S ")
                         .pattern("S  ")
@@ -254,7 +265,7 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(RecipeProvider.getHasName(ItemRegistry.LAPIS_RUNE.get()), this.has(ItemRegistry.LAPIS_RUNE.get()))
                         .save(recipeOutput);
 
-                this.shaped(RecipeCategory.COMBAT, ItemRegistry.REDSTONE_STAFF.get())
+                shaped(RecipeCategory.COMBAT, ItemRegistry.REDSTONE_STAFF.get())
                         .pattern("  R")
                         .pattern(" S ")
                         .pattern("S  ")
@@ -264,7 +275,7 @@ public class ZapinatorsModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(RecipeProvider.getHasName(ItemRegistry.REDSTONE_RUNE.get()), this.has(ItemRegistry.REDSTONE_RUNE.get()))
                         .save(recipeOutput);
 
-                this.shaped(RecipeCategory.COMBAT, ItemRegistry.WAND_OF_SPARKING.get())
+                shaped(RecipeCategory.COMBAT, ItemRegistry.WAND_OF_SPARKING.get())
                         .pattern(" R")
                         .pattern("S ")
                         .define('R', ItemRegistry.RUNE.get())

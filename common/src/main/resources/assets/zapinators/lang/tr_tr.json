@@ -15,8 +15,10 @@
     "sound.zapinators.bee_gun_shot": "Arı Silahı ateşlendi",
     "sound.zapinators.gem_staff_shot": "Mücevher Asa kullanıldı",
     "sound.zapinators.wand_of_sparking_shot": "Kıvılcım Değneği kullanıldı",
+    "sound.zapinators.star_cannon_shot": "Yıldız Topu ateşlendi",
 
     "entity.zapinators.fallen_star": "Düşen Yıldız",
+    "entity.zapinators.star_projectile": "Yıldız Mermisi",
     "entity.zapinators.laser_projectile": "Lazer",
     "entity.zapinators.angry_bee": "Öfkeli Arı",
     "entity.zapinators.orb": "Küre",
@@ -53,6 +55,8 @@
     "item.zapinators.bee_gun.description": "Düşmanları takip eden küçük arılar atar",
     "item.zapinators.wand_of_sparking": "Kıvılcım Değneği",
     "item.zapinators.wand_of_sparking.description": "Yüksek şansla hedefi tutuşturur",
+    "item.zapinators.star_cannon": "Yıldız Topu",
+    "item.zapinators.star_cannon.description": "Düşmüş yıldız ateşler",
 
     "item.zapinators.echo_staff": "Yankı Asası",
     "item.zapinators.diamond_staff": "Elmas Asa",

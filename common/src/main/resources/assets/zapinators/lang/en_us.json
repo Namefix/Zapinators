@@ -15,8 +15,10 @@
     "sound.zapinators.bee_gun_shot": "Bee Gun shot",
     "sound.zapinators.gem_staff_shot": "Gem Staff shot",
     "sound.zapinators.wand_of_sparking_shot": "Wand of Sparking shot",
+    "sound.zapinators.star_cannon_shot": "Star Cannon shot",
 
-    "entity.zapinators.fallen_star": "Fallen Star",
+    "entity.zapinators.fallen_star": "Falling Star",
+    "entity.zapinators.star_projectile": "Star Projectile",
     "entity.zapinators.laser_projectile": "Laser",
     "entity.zapinators.angry_bee": "Angry Bee",
     "entity.zapinators.orb": "Orb",
@@ -53,6 +55,8 @@
     "item.zapinators.bee_gun.description": "Shoots tiny bees that follow enemies",
     "item.zapinators.wand_of_sparking": "Wand of Sparking",
     "item.zapinators.wand_of_sparking.description": "High chance to set the target on fire",
+    "item.zapinators.star_cannon": "Star Cannon",
+    "item.zapinators.star_cannon.description": "Shoots fallen stars",
 
     "item.zapinators.echo_staff": "Echo Staff",
     "item.zapinators.diamond_staff": "Diamond Staff",

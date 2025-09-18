@@ -44,6 +44,7 @@ public class ItemRegistry {
 
     public static final RegistrySupplier<Item> BEE_GUN = registerItem("bee_gun", properties -> new BeeGunItem(properties.stacksTo(1)));
     public static final RegistrySupplier<Item> WAND_OF_SPARKING = registerItem("wand_of_sparking", properties -> new WandOfSparkingItem(properties.stacksTo(1), 4f, 2f, 12, 0xff591c));
+    public static final RegistrySupplier<Item> STAR_CANNON = registerItem("star_cannon", properties -> new StarCannonItem(properties.stacksTo(1)));
 
     public static final RegistrySupplier<Item> ECHO_STAFF = registerItem("echo_staff", properties -> new GemStaffItem(properties.stacksTo(1).rarity(Rarity.RARE), 10f, 10f, 5, 0x0b4075, GemStaffType.ECHO));
     public static final RegistrySupplier<Item> DIAMOND_STAFF = registerItem("diamond_staff", properties -> new GemStaffItem(properties.stacksTo(1).rarity(Rarity.UNCOMMON), 6f, 6f, 5, 0xd1e3ff, GemStaffType.DIAMOND));

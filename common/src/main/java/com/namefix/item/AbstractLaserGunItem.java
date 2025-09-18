@@ -23,7 +23,7 @@ import java.util.List;
 public abstract class AbstractLaserGunItem extends AbstractManaItem {
     protected int color = 0xFFFFFF;
     protected float baseDamage = 1.0f;
-    protected float projectileSpeed = 0.8f;
+    protected float projectileSpeed = 1.2f;
     protected int itemCooldown = 20;
     protected float laserLength = 1.6f;
     protected float laserWidth = 0.15f;

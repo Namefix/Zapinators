@@ -57,6 +57,7 @@ public class ZapinatorsModModelProvider extends FabricModelProvider {
 
         itemModelGenerators.generateFlatItem(ItemRegistry.BEE_GUN.get(), gunTemplate);
         itemModelGenerators.generateFlatItem(ItemRegistry.WAND_OF_SPARKING.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerators.generateFlatItem(ItemRegistry.STAR_CANNON.get(), gunTemplate);
 
         itemModelGenerators.generateFlatItem(ItemRegistry.ECHO_STAFF.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModelGenerators.generateFlatItem(ItemRegistry.DIAMOND_STAFF.get(), ModelTemplates.FLAT_HANDHELD_ITEM);

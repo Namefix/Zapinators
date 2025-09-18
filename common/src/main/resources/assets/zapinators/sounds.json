@@ -76,5 +76,11 @@
     "sounds": [
       "zapinators:wand_of_sparking_shoot"
     ]
+  },
+  "star_cannon_shoot": {
+    "subtitle": "sound.zapinators.star_cannon_shot",
+    "sounds": [
+      "zapinators:star_cannon_shoot"
+    ]
   }
 }

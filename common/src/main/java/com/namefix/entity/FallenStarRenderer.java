@@ -8,12 +8,14 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
-public class FallenStarRenderer<T extends FallenStar, S extends FallenStarRenderState> extends EntityRenderer<T, S> {
+public class FallenStarRenderer<T extends Entity, S extends FallenStarRenderState> extends EntityRenderer<T, S> {
 	private final ItemStack starStack;
+	private long lastRenderTime = 0;
 
 	public FallenStarRenderer(EntityRendererProvider.Context context) {
 		super(context);
@@ -23,7 +25,11 @@ public class FallenStarRenderer<T extends FallenStar, S extends FallenStarRender
 	@Override
 	public void render(S entityRenderState, PoseStack poseStack, MultiBufferSource multiBufferSource, int i) {
 		Minecraft mc = Minecraft.getInstance();
-		long ms = System.currentTimeMillis();
+		if(mc.isPaused()) {
+			if(lastRenderTime == 0) lastRenderTime = System.currentTimeMillis();
+		}
+		else lastRenderTime = 0;
+		long ms = lastRenderTime == 0 ? System.currentTimeMillis() : lastRenderTime;
 		float rotation = (ms % 1000L) / 1000.0f * 360.0f;
 
 		poseStack.pushPose();
