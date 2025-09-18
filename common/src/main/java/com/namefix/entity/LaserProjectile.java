@@ -57,17 +57,8 @@ public class LaserProjectile extends AbstractHurtingProjectile {
 
         Vec3 motion = this.getDeltaMovement();
 
-        Vec3 start = this.position();
-        Vec3 end = start.add(motion);
-        BlockHitResult hitResult = this.level().clip(new ClipContext(
-                start, end,
-                ClipContext.Block.COLLIDER,
-                ClipContext.Fluid.NONE,
-                this
-        ));
-
-        if (hitResult.getType() == HitResult.Type.BLOCK && !this.blockPiercing) {
-            this.setPos(hitResult.getLocation());
+        // custom block detection
+        if (!this.blockPiercing && checkCustomBlockCollision(motion)) {
             this.discard();
             return;
         }
@@ -107,11 +98,61 @@ public class LaserProjectile extends AbstractHurtingProjectile {
                     return;
                 }
             }
-            if(!blockPiercing && (this.horizontalCollision || this.verticalCollision)) {
-                this.discard();
+        }
+    }
+
+    private boolean checkCustomBlockCollision(Vec3 motion) {
+        if (motion.lengthSqr() < 0.001) return false;
+
+        Vector3f size = getSize();
+        Vec3 start = this.position();
+
+        // quality
+        int samples = 2;
+
+        Vec3 forward = motion.normalize();
+        Vec3 up = new Vec3(0, 1, 0);
+        Vec3 right = forward.cross(up);
+
+        if (right.lengthSqr() < 0.000001) {
+            up = new Vec3(1, 0, 0);
+            right = forward.cross(up);
+        }
+        right = right.normalize();
+        up = right.cross(forward);
+        float widthStep = size.x / (samples + 1);
+        float heightStep = size.y / (samples + 1);
+        float collisionLength = (float) Math.min(size.z * 0.3f, motion.length() + 0.1f);
+
+        ClipContext clipContext;
+        for (int i = 0; i < samples; i++) {
+            for (int j = 0; j < samples; j++) {
+                float widthOffset = (i - (samples - 1) * 0.5f) * widthStep;
+                float heightOffset = (j - (samples - 1) * 0.5f) * heightStep;
+
+                Vec3 offset = right.scale(widthOffset).add(up.scale(heightOffset));
+                Vec3 sampleStart = start.add(offset);
+
+                Vec3 checkStart = sampleStart;
+                Vec3 checkEnd = sampleStart.add(forward.scale(collisionLength));
+
+                clipContext = new ClipContext(
+                        checkStart, checkEnd,
+                        ClipContext.Block.COLLIDER,
+                        ClipContext.Fluid.NONE,
+                        this
+                );
+
+                BlockHitResult hitResult = this.level().clip(clipContext);
+
+                if (hitResult.getType() == HitResult.Type.BLOCK) {
+                    this.setPos(hitResult.getLocation());
+                    return true;
+                }
             }
         }
 
+        return false;
     }
 
     protected void handleZapinatorEntityCollision(Entity target) {
