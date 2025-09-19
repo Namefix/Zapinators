@@ -138,6 +138,7 @@
     "config.zapinators.beeDamageMultiplier": "Bee Damage Multiplier",
     "config.zapinators.sparkingDamageMultiplier": "Wand of Sparking Damage Multiplier",
     "config.zapinators.gemStavesDamageMultiplier": "Gem Staves Damage Multiplier",
+    "config.zapinators.starCannonDamageMultiplier": "Star Cannon Damage Multiplier",
     "config.zapinators.manaHudStyle": "Mana HUD Style",
     "config.zapinators.manaHudHideAuto": "Auto Hide Mana HUD",
     "config.zapinators.manaHudHideAuto.description": "Hides the mana HUD when not needed",
