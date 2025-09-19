@@ -87,6 +87,13 @@ public class ZapinatorsConfig {
 				translation = "config.zapinators.gemStavesDamageMultiplier"
 		)
 		public static float gemStavesDamageMultiplier = 1.0f;
+
+		@ConfigOption.Range(min=0f, max=100f)
+		@ConfigEntry(
+				id = "starCannonDamageMultiplier",
+				translation = "config.zapinators.starCannonDamageMultiplier"
+		)
+		public static float starCannonDamageMultiplier = 1.0f;
 	}
 
 	@Category(value = "Client")

@@ -1,5 +1,6 @@
 package com.namefix.item;
 
+import com.namefix.config.ZapinatorsConfig;
 import com.namefix.entity.StarProjectile;
 import com.namefix.registry.EntityRegistry;
 import com.namefix.registry.ItemRegistry;
@@ -52,6 +53,7 @@ public class StarCannonItem extends Item {
 					adjustedLookVec.z * this.starSpeed
 			);
 			star.setOwner(player);
+			star.setBaseDamage(star.getBaseDamage()*getDamageModifier());
 			star.shotFromCreative = player.isCreative();
 			star.setXRot(player.getXRot());
 			star.setYRot(player.getYRot());
@@ -67,7 +69,7 @@ public class StarCannonItem extends Item {
 	}
 
 	public float getDamageModifier() {
-		return 1.0f;
+		return ZapinatorsConfig.Server.starCannonDamageMultiplier;
 	}
 
 	@Override
